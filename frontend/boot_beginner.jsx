@@ -1,28 +1,7 @@
-const path = require('path');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-module.exports = {
-    context: __dirname,
-    entry: './frontend/boot_beginner.jsx',
-    output: {
-        path: path.join(__dirname, 'app', 'assets', 'javascripts'),
-        filename: 'bundle.js'
-    },
-    resolve: {
-        extensions: ['.js', '.jsx', '*']
-    },
-    module: {
-        rules: [
-            {
-                test: /\.jsx?$/,
-                exclude: /(node_modules)/,
-                use: {
-                    loader: 'babel-loader',
-                    query: {
-                        presets: ['@babel/env', '@babel/react']
-                    }
-                },
-            }
-        ]
-    },
-    devtool: 'eval-source-map'
-};
+document.addEventListener('DOMContentLoaded', () =>{
+    const root = document.getElementById('root');
+    ReactDOM.render(<Root store={store}/>, root);
+})
