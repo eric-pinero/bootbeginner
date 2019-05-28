@@ -28,5 +28,5 @@
 
 #ignore the bundle a node modules
 node_modules/
-bundle.js
+bundle.js*
 bundle.js.map

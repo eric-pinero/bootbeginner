@@ -1,7 +1,7 @@
 import {
     RECEIVE_CURRENT_USER,
     LOGOUT_CURRENT_USER
-} from "../actions/sessions_actions";
+} from "../actions/session_actions";
 import {merge} from "lodash";
 
 const sessionReducer = (state = {id: null}, action) => {
