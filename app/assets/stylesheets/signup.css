@@ -1,0 +1,13 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h3 {
+    background-color: #F0F0F0
+}
+
+.news > p {
+    display: flex;
+}

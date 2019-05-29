@@ -2,21 +2,20 @@ import {
     RECEIVE_CURRENT_USER,
     RECEIVE_ERRORS,
 } from "../actions/session_actions";
-import { merge } from "lodash";
 
-const sessionErrorsReducer = (oldState = [], action) =>{
-    Object.freeze(oldState);
+const sessionErrorsReducer = (state = [], action) =>{
+    Object.freeze(state);
+    let newState;
     switch (action.type) {
         case RECEIVE_ERRORS:
-            let newState = merge({}, oldState, action.session);
+            newState = action.errors;
+            return newState;
 
-            return newState;
         case RECEIVE_CURRENT_USER:
-            newState = merge({}, oldState);
-            delete oldState[session];
-            return newState;
+            return [];
+            
         default:
-            return oldState;
+            return state;
     }
 };
 

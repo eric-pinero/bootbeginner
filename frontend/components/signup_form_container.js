@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
-import { signup } from "../../actions/sessions_actions";
+import { signup } from "../actions/session_actions";
 import SessionForm from "./session_form";
 
-const msp = (state, ownProps) => {
+const msp = (state) => {
     const errors = state.errors;
     return {
         errors,
