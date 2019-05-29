@@ -19,13 +19,13 @@ const receiveErrors = (errors) => ({
 });
 
 export const login = (user) => dispatch => {
-    APIUtil.login(user).then( (user) => dispatch(receiveCurrentUser(user)),
+    return APIUtil.login(user).then( (user) => dispatch(receiveCurrentUser(user)),
         response => dispatch(receiveErrors(response))
     );
 };
 
 export const logout = () => dispatch => {
-    APIUtil.logout().then( () => dispatch(logoutCurrentUser()));
+    return APIUtil.logout().then( () => dispatch(logoutCurrentUser()));
 };
 
 export const signup = (user) => dispatch => {

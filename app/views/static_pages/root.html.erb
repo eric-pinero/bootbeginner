@@ -1,4 +1,3 @@
-<main id="root">
 <% if logged_in? %>
   <script type="text/javascript">
     window.currentUser = <%= render(
@@ -6,4 +5,6 @@
       user: current_user
     ).html_safe %>
   </script>
-<% end %></main>
+<% end %>
+<main id="root">
+</main>
