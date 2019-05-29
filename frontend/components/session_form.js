@@ -41,16 +41,28 @@ class SessionForm extends React.Component{
         } else{
             header = "Sign up";
             destination = "/login";
-            linkName = "Sign In"
+            linkName = "Log in"
             submitName = "Create Account"
         }
 
+        const emailInput = this.props.formType == "signup" ?
+            <label>Email:
+                <input
+                    type="text"
+                    value={this.state.email}
+                    onChange={this.handleChange('email')}
+                />
+            </label>
+            :
+            null
+
+
         return (
-            <>
-                <h1>{header}</h1>
-                <Link to={destination}>{linkName}</Link>
+            <main>
+                <h3>Have an account? <Link to={destination}>{linkName}</Link></h3>
 
                 <form onSubmit={this.handleSubmit}>
+                <h1>{header}</h1>
                     <label>Username:
                         <input 
                             type="text" 
@@ -59,13 +71,7 @@ class SessionForm extends React.Component{
                         />
                     </label>
 
-                    <label>Email:
-                        <input
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.handleChange('email')}
-                        />
-                    </label>
+                    {emailInput}
 
                     <label>Password:
                         <input 
@@ -74,13 +80,26 @@ class SessionForm extends React.Component{
                             onChange={this.handleChange('password')}
                         />
                     </label>
+
+                    <div className="news">
+                        <input type="checkbox"/>
+                        <span>Receive a weekly mix of hadpicked projects, 
+                            plus occasional Bootbeginner news</span>
+                    </div>
+
                     <input type="submit" value={submitName}/>
+                    <p>By signing up, you agree to our <a src="/">terms of use</a>, 
+                    <a src="/"> privacy policy</a>, and <a src="/"> cookie policy</a>.
+                    <br/> 
+                    <a>Read more</a></p>
+
+                    <p>or</p>
                 </form>
                 
                 <ul>
                     {errors}
                 </ul>
-            </>
+            </main>
         )
 
     }
