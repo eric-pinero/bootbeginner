@@ -46,60 +46,67 @@ class SessionForm extends React.Component{
         }
 
         const emailInput = this.props.formType == "signup" ?
-            <label>Email:
+            <label>
                 <input
+                    id="email"
+                    className="signup-input"
                     type="text"
                     value={this.state.email}
+                    placeholder="Email"
                     onChange={this.handleChange('email')}
                 />
             </label>
             :
             null
+        ;
 
 
         return (
-            <main>
-                <h3>Have an account? <Link to={destination}>{linkName}</Link></h3>
+            <div className="session-form">
+                <div className="signup-frame">
+                    <h3>Have an account? <Link to={destination}>{linkName}</Link></h3>
 
-                <form onSubmit={this.handleSubmit}>
-                <h1>{header}</h1>
-                    <label>Username:
-                        <input 
-                            type="text" 
-                            value={this.state.username} 
-                            onChange={this.handleChange('username')} 
-                        />
-                    </label>
+                    <form onSubmit={this.handleSubmit}>
+                    <h1>{header}</h1>
+                        <label>
+                            <input
+                                id="username"
+                                className="signup-input"
+                                type="text" 
+                                value={this.state.username}
+                                placeholder="Name"
+                                onChange={this.handleChange('username')} 
+                            />
+                        </label>
 
-                    {emailInput}
+                        {emailInput}
 
-                    <label>Password:
-                        <input 
-                            type="password" 
-                            value={this.state.password} 
-                            onChange={this.handleChange('password')}
-                        />
-                    </label>
+                        <label>
+                            <input 
+                                id="password"
+                                className="signup-input"
+                                type="password" 
+                                value={this.state.password}
+                                placeholder="Password" 
+                                onChange={this.handleChange('password')}
+                            />
+                        </label>
 
-                    <div className="news">
-                        <input type="checkbox"/>
-                        <span>Receive a weekly mix of hadpicked projects, 
-                            plus occasional Bootbeginner news</span>
-                    </div>
+                        <div className="news signup-input">
+                            <input type="checkbox"/>
+                            <span>Check this box if you love boots!</span>
+                        </div>
 
-                    <input type="submit" value={submitName}/>
-                    <p>By signing up, you agree to our <a src="/">terms of use</a>, 
-                    <a src="/"> privacy policy</a>, and <a src="/"> cookie policy</a>.
-                    <br/> 
-                    <a>Read more</a></p>
-
-                    <p>or</p>
-                </form>
-                
-                <ul>
-                    {errors}
-                </ul>
-            </main>
+                        <section className="submit-section">
+                            <input  className="submit-button" type="submit" value={submitName}/>
+                        </section>
+                    </form>
+                    
+                    <ul>
+                        {errors}
+                    </ul>
+                </div>
+            </div>
         )
 
     }

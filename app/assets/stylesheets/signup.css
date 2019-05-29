@@ -1,13 +1,90 @@
-main {
+.session-form {
+    background-color: #F0F0F0;
+    height: 100%;
+    padding: 18px;
+    font: 16px/1.5 "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+}
+
+.signup-frame {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #FFFFFF;
+    border: 1px #F1EEEA solid;
+    border-radius: 2px;
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
 }
 
 h3 {
-    background-color: #F0F0F0
+    background-color: rgba(241,238,234,0.2);
+    width: 100%;
+    text-align: center;
+    font: inherit;
+    color: #3D3D66;
+    padding: 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #F1EEEA;
 }
 
-.news > p {
+h1 {
+    font: inherit;
+    font-size: 28px;
+    color: #282828;
+    align-self: flex-start;
+    width: 340px;
+}
+
+
+.signup-frame > form {
+    padding: 20px 30px;
     display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.signup-input{
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    height: 44px;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.signup-input:focus{
+    outline: 1px #009E74 solid
+}
+
+.news{
+    display: flex;
+    padding:0;
+    color: #282828;
+    height: auto;
+}
+
+.news > span {
+    font-weight: 400;
+    padding-left: 10px;
+}
+
+
+.submit-button{
+    background-color: #009E74;
+    width: 100%;
+    color: #FFFFFF;
+    height: 42px;
+    font-size: 14px;
+    margin-top: 36px;
+    font-weight: 300;
+}
+
+.submit-section > p {
+    font: inherit;
+    color: #656969;
+    font-size: 12px;
+    height: 33px;
+    margin-top: 12px;
 }

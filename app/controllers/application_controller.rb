@@ -23,6 +23,7 @@ class ApplicationController < ActionController::Base
    
    
     def logged_in?
+        # debugger
         !!current_user
     end
 end
