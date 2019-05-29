@@ -6,9 +6,10 @@ import {merge} from "lodash";
 
 const sessionReducer = (state = {id: null}, action) => {
     Object.freeze(state);
+    let newState;
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            let newState = merge({}, state);
+            newState = merge({}, state);
             newState.id = [action.user.id];
 
             return newState;
