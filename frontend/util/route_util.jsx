@@ -1,4 +1,5 @@
-import {Route, withRouter} from 'react-router-dom';
+import React from 'react';
+import {Route, withRouter, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 const Auth = ({component: Component, path, loggedIn, exact}) => {
@@ -8,7 +9,7 @@ const Auth = ({component: Component, path, loggedIn, exact}) => {
                 !loggedIn ? (
                     <Component {...props} />
                 ) : (
-                    <Redirect tp="/" />
+                    <Redirect to="/" />
                 )
             )
         }
@@ -20,4 +21,6 @@ const msp = state => {
     return {loggedIn: Boolean(state.session.id)}
 }
 
-export const AuthRoute = withRouter(connect(msp, null)(Auth))
+const AuthRoute = withRouter(connect(msp, null)(Auth))
+
+export default AuthRoute;

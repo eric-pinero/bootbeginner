@@ -1,0 +1,25 @@
+
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+
+
+.nav-main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font: 16px/1.5 "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+    height: 70px;
+}
+
+.nav-main > h1{
+    font-family: 'Fredoka One', cursive;
+    color: #00CD69;
+    text-align: center;
+    margin: 0;
+    align-self: center;
+}
+
+.nav-main > div{
+    display: flex;
+    justify-content: space-between;
+    width: 16.6666%;
+}

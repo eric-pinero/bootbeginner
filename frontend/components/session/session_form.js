@@ -16,7 +16,6 @@ class SessionForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         const user = Object.assign({}, this.state);
-
         this.props.processForm(user).then(() => this.props.history.push("/"));
     }
 
@@ -31,13 +30,13 @@ class SessionForm extends React.Component{
         let destination;
         let linkName;
         let submitName;
-        
         const errors = this.props.errors.length == 0 ?
             null
             :
             <ul className="errors">
                 {this.props.errors.map(error => <li>{error}</li>)}
             </ul>
+
         if (this.props.formType === 'login'){
             formHeader = "Log in";
             destination = "/signup";
@@ -72,9 +71,16 @@ class SessionForm extends React.Component{
         ;
 
         const loginFooter = this.props.formType == "login" ?
-            <p className="login-footer">New to Bootbeginner? <Link class="session-link" to={destination}>{linkName}</Link></p>
+            <p className="login-footer">New to Bootbeginner? <Link className="session-link" to={destination}>{linkName}</Link></p>
             :
             null
+        ;
+
+        const demoUser = this.props.formType == "login" ?
+            <Link to="/" id="demo">Demo User</Link>
+            :
+            null
+        ;
             
             return (
             <div className="session-form">
@@ -107,22 +113,17 @@ class SessionForm extends React.Component{
                             placeholder="Password" 
                             onChange={this.handleChange('password')}
                         />
-{/* 
-                        <div className="checkbox signup-input">
-                            <input type="checkbox"/>
-                            <span>Check this box if you love boots!</span>
-                        </div> */}
 
                         <section className="submit-section">
                             <input  className="submit-button" type="submit" value={submitName}/>
                         </section>
 
-                    </form>
                         {loginFooter}
-                    
+                        {demoUser}
+                    </form>
                 </div>
             </div>
-        )
+            )
 
     }
 }
