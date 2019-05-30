@@ -1,7 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-export const startProjectPage = () => {
+export const StartProjectPage = () => {
+    return(
     <content className="start-project">
         <h1>Bring your creative project to life</h1>
         <Link>Start a Project</Link>
@@ -32,7 +33,7 @@ export const startProjectPage = () => {
                     <h3>What can I use Bootbeginner to fund?</h3>
                     <p>
                         Bootbeginner is specifically for creative footwear projects in the 
-                        following categories: Sneakers, Boots, Clogs, Flats, Heels, Loafers.
+                        following categories: Sneakers, Boots, Clogs, Flats, Heels, and Loafers.
                     </p>
                 </li>
 
@@ -108,6 +109,55 @@ export const startProjectPage = () => {
             </ul>
 
         </section>
-        
+
+        <section className="categories">
+            <h2>Create a project in any of the following categories</h2>
+
+            <ul>
+                <li id="sneakers">Sneakers</li>
+                <li id="boots">Boots</li>
+                <li id="clogs">Clogs</li>
+                <li id="flats">Flats</li>
+                <li id="heels">Heels</li>
+                <li id="loafers">Loafers</li>
+            </ul>
+
+            <section className="mid-categories">
+                <div className="category-description">
+                    <p id="sneakers-description">
+                        Comfortable, versatile, and stylish. Who doesn't love a good sneaker?
+                    </p>
+                    <p id="boots-description" hidden>
+                        Boots are incredibly diverse. You can find them on a hiking trail or on a catwalk.
+                    </p>
+                    <p id="clogs-description" hidden>
+                        Beautiful, sturdy, mysterious. They greatly resemble the trees that gave them life.
+                    </p>
+                    <p id="flats-description" hidden>
+                        Flats sit firmly at the intersection of form and function. 
+                        Providing fashion without compromising an ounce of utility.
+                    </p>
+                    <p id="heels-description" hidden>
+                        For those who not only want to stand out, but to stand above.
+                    </p>
+                    <p id="loafers-description" hidden>
+                        Don't let the name fool you, this daring footwear 
+                        is just as at home in a lounge as it is in a workplace.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Interested?</h3>
+                    <p>
+                        Click start and get sketching. See how it looks. 
+                        Then share it with your friends
+                    </p>
+                    <Link to="/"></Link> 
+                    {/* need to replace / with next page route */}
+                </div>
+            </section>
+            
+        </section>
     </content>
-    }
+    )
+}

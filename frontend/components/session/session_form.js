@@ -105,8 +105,6 @@ class SessionForm extends React.Component{
                             onChange={this.handleChange('email')}
                         />
 
-
-
                         <input 
                             id="password"
                             className="signup-input"

@@ -19,7 +19,7 @@ class Navbar extends React.Component{
             <nav className="nav-main">
                 <div>
                     <Link to="/">Explore</Link>
-                    <Link to="/">Start a Project</Link>
+                    <Link to="/start-project">Start a Project</Link>
                 </div>
 
                 <h1>Bootbeginner</h1>
