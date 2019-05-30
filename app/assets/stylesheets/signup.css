@@ -1,7 +1,7 @@
 .session-form {
     background-color: #F0F0F0;
     height: 100%;
-    padding: 18px;
+    padding: 60px 18px;
     font: 16px/1.5 "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
 }
 
@@ -28,12 +28,25 @@ h3 {
     border-bottom: 1px solid #F1EEEA;
 }
 
+.session-link{
+    color: #2752ff;}
+.session-link:visited{
+    color: #2752ff;}
+
 h1 {
     font: inherit;
     font-size: 28px;
     color: #282828;
     align-self: flex-start;
     width: 340px;
+    margin-bottom: 10px;
+}
+
+.errors{
+    background-color: red;
+    color: white;
+    list-style: none; 
+    padding: 10px 20px;
 }
 
 
@@ -52,20 +65,24 @@ h1 {
     height: 44px;
     margin: 10px 0;
     font-size: 14px;
+    outline: none;
+    border: 1px solid #DCDEDD;
+    transition: border-color 100ms ease-in;
 }
 
 .signup-input:focus{
-    outline: 1px #009E74 solid
+    border: 1px #009E74 solid;
+    transition: border-color 100ms ease-in;
 }
 
-.news{
+.checkbox{
     display: flex;
     padding:0;
     color: #282828;
     height: auto;
 }
 
-.news > span {
+.checkbox > span {
     font-weight: 400;
     padding-left: 10px;
 }
@@ -87,4 +104,13 @@ h1 {
     font-size: 12px;
     height: 33px;
     margin-top: 12px;
+}
+
+.login-footer {
+    border-top: 1px solid #F1EEEA ;
+    border-bottom: 1px solid #F1EEEA ;
+    padding: 20px;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
 }

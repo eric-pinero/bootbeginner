@@ -3,7 +3,12 @@ import { signup } from "../actions/session_actions";
 import SessionForm from "./session_form";
 
 const msp = (state) => {
-    const errors = state.errors;
+    let errors;
+    if (state.errors.session.length === 0){
+        errors = []
+    } else {
+        errors = state.errors.session.responseJSON
+    }
     return {
         errors,
         formType: 'signup'

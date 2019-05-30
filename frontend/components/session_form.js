@@ -27,84 +27,99 @@ class SessionForm extends React.Component{
     }
 
     render(){
-        let header;
+        let formHeader;
         let destination;
         let linkName;
         let submitName;
         
-        const errors = this.props.errors.session.map(error => <li>{error}</li>)
+        const errors = this.props.errors.length == 0 ?
+            null
+            :
+            <ul className="errors">
+                {this.props.errors.map(error => <li>{error}</li>)}
+            </ul>
         if (this.props.formType === 'login'){
-            header = "Log in";
+            formHeader = "Log in";
             destination = "/signup";
-            linkName = "Sign Up"
+            linkName = "Sign Up!"
             submitName = "Log me in!"
         } else{
-            header = "Sign up";
+            formHeader = "Sign up";
             destination = "/login";
             linkName = "Log in"
             submitName = "Create Account"
         }
 
-        const emailInput = this.props.formType == "signup" ?
-            <label>
-                <input
-                    id="email"
-                    className="signup-input"
-                    type="text"
-                    value={this.state.email}
-                    placeholder="Email"
-                    onChange={this.handleChange('email')}
-                />
-            </label>
+        const nameInput = this.props.formType == "signup" ?
+            <input
+                id="username"
+                className="signup-input"
+                type="text" 
+                value={this.state.username}
+                placeholder="Name"
+                onChange={this.handleChange('username')} 
+            />
             :
             null
         ;
 
+        const signupHeader = this.props.formType == "signup" ?
+            <h3>Have an account? 
+                <Link className="session-link" to={destination}> {linkName}</Link>
+            </h3>
+            :
+            null
+        ;
 
-        return (
+        const loginFooter = this.props.formType == "login" ?
+            <p className="login-footer">New to Bootbeginner? <Link class="session-link" to={destination}>{linkName}</Link></p>
+            :
+            null
+            
+            return (
             <div className="session-form">
                 <div className="signup-frame">
-                    <h3>Have an account? <Link to={destination}>{linkName}</Link></h3>
-
+                    {signupHeader}
+                    
                     <form onSubmit={this.handleSubmit}>
-                    <h1>{header}</h1>
-                        <label>
-                            <input
-                                id="username"
-                                className="signup-input"
-                                type="text" 
-                                value={this.state.username}
-                                placeholder="Name"
-                                onChange={this.handleChange('username')} 
-                            />
-                        </label>
+                        <h1>{formHeader}</h1>
+                            
+                        {errors}
 
-                        {emailInput}
+                        {nameInput}
 
-                        <label>
-                            <input 
-                                id="password"
-                                className="signup-input"
-                                type="password" 
-                                value={this.state.password}
-                                placeholder="Password" 
-                                onChange={this.handleChange('password')}
-                            />
-                        </label>
+                        <input
+                            id="email"
+                            className="signup-input"
+                            type="email"
+                            value={this.state.email}
+                            placeholder="Email"
+                            onChange={this.handleChange('email')}
+                        />
 
-                        <div className="news signup-input">
+
+
+                        <input 
+                            id="password"
+                            className="signup-input"
+                            type="password" 
+                            value={this.state.password}
+                            placeholder="Password" 
+                            onChange={this.handleChange('password')}
+                        />
+{/* 
+                        <div className="checkbox signup-input">
                             <input type="checkbox"/>
                             <span>Check this box if you love boots!</span>
-                        </div>
+                        </div> */}
 
                         <section className="submit-section">
                             <input  className="submit-button" type="submit" value={submitName}/>
                         </section>
+
                     </form>
+                        {loginFooter}
                     
-                    <ul>
-                        {errors}
-                    </ul>
                 </div>
             </div>
         )
