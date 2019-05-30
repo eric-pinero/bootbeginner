@@ -86,6 +86,25 @@ export const startProjectPage = () => {
                         focus and dedication
                     </p>
                 </li>
+
+                <li>
+                    <span>2</span>
+                    <h3>Bootbeginner offers both technical and arch support</h3>
+                    <p>
+                        We want you to succeed and we know that's not possible if you
+                        worry about your crowdfunding site not functioning or if your 
+                        shoes don't offer you adequate support.
+                    </p>
+                </li>
+
+                <li>
+                    <span>3</span>
+                    <h3>Bootbeginner is the premiere platform in its space</h3>
+                    <p>
+                        Bootbeginner has the largest community of any footwear based
+                        crowdfunding site, beating out Indiegogoboots and Platformeon.
+                    </p>
+                </li>
             </ul>
 
         </section>

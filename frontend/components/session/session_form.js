@@ -11,6 +11,7 @@ class SessionForm extends React.Component{
         };
 
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.demoSubmit = this.demoSubmit.bind(this)
     }
 
     handleSubmit(e){
@@ -23,6 +24,13 @@ class SessionForm extends React.Component{
         return (e) => {
             this.setState({[field]: e.target.value })
         }
+    }
+
+    demoSubmit(e){
+
+        e.preventDefault();
+        const demo ={email: "bootsonboots@bootjack.com", password: "test123"}
+        this.props.processForm(demo).then(() => this.props.history.push("/"));
     }
 
     render(){
@@ -75,13 +83,7 @@ class SessionForm extends React.Component{
             :
             null
         ;
-
-        const demoUser = this.props.formType == "login" ?
-            <Link to="/" id="demo">Demo User</Link>
-            :
-            null
-        ;
-            
+        
             return (
             <div className="session-form">
                 <div className="signup-frame">
@@ -119,7 +121,7 @@ class SessionForm extends React.Component{
                         </section>
 
                         {loginFooter}
-                        {demoUser}
+                        <button id="demo" onClick={this.demoSubmit}>Demo User</button>
                     </form>
                 </div>
             </div>
