@@ -2,7 +2,6 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 const StartProject = () => {
-    debugger
     return(
     <content className="start-project">
         <h1>Bring your creative project to life</h1>
