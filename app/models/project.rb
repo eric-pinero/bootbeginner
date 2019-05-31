@@ -19,7 +19,9 @@
 #
 
 class Project < ApplicationRecord
-    validates :title, :subtitle, :description, :risks, :faqs, :length, :amount_received, :goal
+    validates :title, :subtitle, :description, :risks, :faqs, :length, presence: true, length: { minimum: 1}
+    validates :amount_received, numericality: { minimum: 0}, presence: true
+    validates :goal, numericality: { minimum: 1 }, presence: true
 
     belongs_to :creator,
     primary_key: :id,

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_31_141708) do
+ActiveRecord::Schema.define(version: 2019_05_31_155602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_05_31_141708) do
     t.string "subtitle", null: false
     t.integer "creator_id", null: false
     t.integer "category_id", null: false
-    t.integer "subcategory_id", null: false
+    t.integer "subcategory_id"
     t.text "description", null: false
     t.text "risks", null: false
     t.text "faqs", null: false
