@@ -6,7 +6,7 @@ import LoginFormContainer from "./session/login_form_container";
 import { logout } from "../actions/session_actions";
 import AuthRoute from "../util/route_util";
 import Navbar from "./navbar/navbar_container";
-import {StartProject} from "./project_create/start_project"
+import StartProject from "./project_create/start_project"
 const App = () => (
     <div>
         <header>

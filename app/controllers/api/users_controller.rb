@@ -21,3 +21,7 @@ class Api::UsersController < ApplicationController
         params.require(:user).permit(:username, :email, :password )
     end
 end
+
+def lower(string)
+    string.to_str.downcase
+end

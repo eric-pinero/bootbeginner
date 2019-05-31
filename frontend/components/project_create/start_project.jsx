@@ -1,7 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-export const StartProjectPage = () => {
+const StartProject = () => {
+    debugger
     return(
     <content className="start-project">
         <h1>Bring your creative project to life</h1>
@@ -155,9 +156,24 @@ export const StartProjectPage = () => {
                     <Link to="/"></Link> 
                     {/* need to replace / with next page route */}
                 </div>
+
             </section>
+            <div className="category-images">
+                <img></img>
+                <img></img>
+                <img></img>
+                <img></img>
+            </div>
             
+        </section>
+
+        <section className="closing">
+            <h1>"Every shoe has a tongue that cannot be silenced"</h1>
+            <span>- Brian Shoeman, a successful Bootbeginner project creator</span>
+            <Link to="/"></Link> 
         </section>
     </content>
     )
 }
+
+export default StartProject;
