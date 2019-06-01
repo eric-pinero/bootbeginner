@@ -1,11 +1,12 @@
 import { connect } from "react-redux";
-import { signup, login } from "../../actions/session_actions";
+import { signup, login, receiveErrors } from "../../actions/session_actions";
 import SessionForm from "./session_form";
 
 const msp = (state) => {
+    
     let errors;
-    if (state.errors.session.length === 0){
-        errors = []
+    if (Array.isArray(state.errors.session)){
+        errors = state.errors.session
     } else {
         errors = state.errors.session.responseJSON
     }
@@ -17,9 +18,11 @@ const msp = (state) => {
 
 
 const mdp = (dispatch) => {
+    
     return {
         processForm: (user) => dispatch(signup(user)),
         demoLogin: (demo) => dispatch(login(demo)),
+        receiveErrors: (errors) => dispatch(receiveErrors(errors)),
 
     };
 };

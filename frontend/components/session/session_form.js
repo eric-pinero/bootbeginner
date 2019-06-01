@@ -22,18 +22,20 @@ class SessionForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        debugger
         const user = Object.assign({}, this.state);
 
-        // if (this.props.formType === 'signup'){
-        //     if (this.state.email !== this.state.email2 ){
-        //         return this.props.errors.push('Emails must match')
-        //     } else if (this.state.password === this.state.password2){
-        //         return this.props.errors.push('Passwords must match')
-        //     }
-        // }
-
-        this.props.processForm(user).then(() => this.props.history.push("/"));
+        if (this.props.formType === 'signup'){
+            const errors = [];
+            if (this.state.email !== this.state.email2 && this.state.password !== this.state.password2 ){
+                this.props.receiveErrors(['Emails must match', 'Passwords must match' ])
+            }else if (this.state.email !== this.state.email2 && this.state.password === this.state.password2 ){
+                this.props.receiveErrors(['Emails must match'])
+            }else if ( this.state.email === this.state.email2 && this.state.password !== this.state.password2 ){
+                this.props.receiveErrors(['Passwords must match'])
+            } else {
+                this.props.processForm(user).then(() => this.props.history.push("/"));
+            }
+        }
     }
 
     handleSignupSubmit(e){
@@ -41,9 +43,11 @@ class SessionForm extends React.Component{
 
         if (this.props.formType === 'signup'){
             if (this.state.email !== this.state.email2 ){
-                this.setState({[errors]: ['Emails must match']})
+                this.props.errors.push('Emails must match')
+                receiveErrors(this.props.errors)
             } else if (this.state.password === this.state.password2){
-                this.setState({[errors]: ['Passwords must match']})
+                this.props.errors.push('Passwords must match')
+                receiveErrors(this.props.errors)
             }
         }
 
