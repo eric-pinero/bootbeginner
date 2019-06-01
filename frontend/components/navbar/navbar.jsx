@@ -1,33 +1,47 @@
 import React from "react";
 import { Link } from "react-router-dom"
+import Dropdown from "./dropdown"
 
 class Navbar extends React.Component{
+    
+    displayDropdown(){
+        return <Dropdown/>
+    }
+
     render() {
         const logoutButton = this.props.loggedIn ? 
-            <button onClick={() => dispatch(logout())}>Logout</button>
+            <button onClick={this.displayDropdown} id="dropbtn">Dropdown</button>
             :
             null
         ;
 
         const signIn = !this.props.loggedIn ?
-            <Link to="/login">Sign in</Link>
+            <Link className="nav-link" to="/login">Sign in</Link>
+            :
+            null
+        ;
+
+        const dropdown = this.props.loggedIn ?
+            <Dropdown/>
             :
             null
         ;
 
         return(
             <nav className="nav-main">
-                <div>
-                    <Link to="/">Explore</Link>
-                    <Link to="/start-project">Start a Project</Link>
+                <div className="nav-left">
+                    <Link className="nav-link" to="/">Explore</Link>
+                    <Link className="nav-link" to="/start-project">Start a project</Link>
                 </div>
 
-                <h1>Bootbeginner</h1>
+                <h1><Link to="/">Bootbeginner</Link></h1>
 
-                <div>
-                    <Link to="/">Search</Link>
+                <div className="nav-right">
+                    <Link className="nav-link" to="/">Search
+                    <img src="https://img.icons8.com/ios-glyphs/26/000000/search.png"></img>
+                    </Link>
                     {signIn}
-                    {logoutButton}
+                    {dropdown}
                 </div>
 
             </nav>

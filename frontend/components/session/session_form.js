@@ -8,16 +8,45 @@ class SessionForm extends React.Component{
             username: "",
             email: "",
             password: "",
+            reenterEmail: false,
+            reenterPwd: false,
+            email2: "",
+            password2: "",
         };
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.demoSubmit = this.demoSubmit.bind(this)
+        this.confirmEmail = this.confirmEmail.bind(this)
+        this.handleSignupSubmit = this.handleSignupSubmit.bind(this)
     }
 
     handleSubmit(e){
         e.preventDefault();
+        debugger
         const user = Object.assign({}, this.state);
+
+        // if (this.props.formType === 'signup'){
+        //     if (this.state.email !== this.state.email2 ){
+        //         return this.props.errors.push('Emails must match')
+        //     } else if (this.state.password === this.state.password2){
+        //         return this.props.errors.push('Passwords must match')
+        //     }
+        // }
+
         this.props.processForm(user).then(() => this.props.history.push("/"));
+    }
+
+    handleSignupSubmit(e){
+        e.preventDefault();
+
+        if (this.props.formType === 'signup'){
+            if (this.state.email !== this.state.email2 ){
+                this.setState({[errors]: ['Emails must match']})
+            } else if (this.state.password === this.state.password2){
+                this.setState({[errors]: ['Passwords must match']})
+            }
+        }
+
     }
 
     handleChange(field){
@@ -27,10 +56,44 @@ class SessionForm extends React.Component{
     }
 
     demoSubmit(e){
-
         e.preventDefault();
         const demo ={email: "bootsonboots@bootjack.com", password: "test123"}
-        this.props.processForm(demo).then(() => this.props.history.push("/"));
+        if (this.props.formType === 'login') {
+            this.props.processForm(demo).then(() => this.props.history.push("/"));
+        } else {
+            this.props.demoLogin(demo).then(() => this.props.history.push("/"))
+        }
+    }
+
+    confirmEmail(){
+            if (this.state.reenterEmail && this.props.formType === "signup"){
+                return(<input
+                    className="signup-input"
+                    type="email"
+                    placeholder="Re-enter Email"
+                    value={this.state.email2}
+                    onChange={this.handleChange('email2')}
+                />
+            )
+            } else{
+                return null;
+            }
+    }
+
+    confirmPwd(){
+            if (this.state.reenterPwd && this.props.formType === "signup"){
+                return(<input
+                    className="signup-input"
+                    id=""
+                    type="password"
+                    placeholder="Re-enter Password"
+                    value={this.state.password2}
+                    onChange={this.handleChange('password2')}
+                />
+            )
+            } else{
+                return null;
+            }
     }
 
     render(){
@@ -38,6 +101,7 @@ class SessionForm extends React.Component{
         let destination;
         let linkName;
         let submitName;
+        
         const errors = this.props.errors.length == 0 ?
             null
             :
@@ -48,7 +112,7 @@ class SessionForm extends React.Component{
         if (this.props.formType === 'login'){
             formHeader = "Log in";
             destination = "/signup";
-            linkName = "Sign Up!"
+            linkName = " Sign Up!"
             submitName = "Log me in!"
         } else{
             formHeader = "Sign up";
@@ -79,7 +143,9 @@ class SessionForm extends React.Component{
         ;
 
         const loginFooter = this.props.formType == "login" ?
-            <p className="login-footer">New to Bootbeginner? <Link className="session-link" to={destination}>{linkName}</Link></p>
+            <div className="login-footer-frame">
+                <p className="login-footer">New to Bootbeginner?  <Link className="session-link" to={destination}>{linkName}</Link></p>
+            </div>
             :
             null
         ;
@@ -103,7 +169,10 @@ class SessionForm extends React.Component{
                             value={this.state.email}
                             placeholder="Email"
                             onChange={this.handleChange('email')}
+                            onFocus={() => this.setState({reenterEmail: true})}
                         />
+
+                        {this.confirmEmail()}
 
                         <input 
                             id="password"
@@ -112,14 +181,25 @@ class SessionForm extends React.Component{
                             value={this.state.password}
                             placeholder="Password" 
                             onChange={this.handleChange('password')}
+                            onFocus={() => this.setState({reenterPwd: true})}
                         />
+
+                        {this.confirmPwd()}
+
 
                         <section className="submit-section">
                             <input  className="submit-button" type="submit" value={submitName}/>
                         </section>
 
-                        {loginFooter}
+                        <div className="line">
+                            <div className="grey-line"></div>
+                            <span>or</span>
+                            <div className="grey-line"></div>
+                        </div>
+
                         <button id="demo" onClick={this.demoSubmit}>Demo User</button>
+                        
+                            {loginFooter}
                     </form>
                 </div>
             </div>
