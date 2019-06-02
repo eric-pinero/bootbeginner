@@ -25,7 +25,6 @@ class SessionForm extends React.Component{
         const user = Object.assign({}, this.state);
 
         if (this.props.formType === 'signup'){
-            const errors = [];
             if (this.state.email !== this.state.email2 && this.state.password !== this.state.password2 ){
                 this.props.receiveErrors(['Emails must match', 'Passwords must match' ])
             }else if (this.state.email !== this.state.email2 && this.state.password === this.state.password2 ){

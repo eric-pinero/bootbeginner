@@ -9,7 +9,7 @@ class Api::ProjectsController < ApplicationController
         if @project.save
             render :show
         else
-            render json: @project.errors.full_messages, status: 422
+            render json: @project.errors.full_messages, status: 401 
         end
     end
 
@@ -21,9 +21,15 @@ class Api::ProjectsController < ApplicationController
     end
 
     def update
+        if @project.update(project_params)
+            render: show
+        else
+            render json: @project.errors.full_messages, status: 401
     end
 
     def destroy
+        @project.destroy
+        head :no_content
     end
 
     private
@@ -32,6 +38,6 @@ class Api::ProjectsController < ApplicationController
     end
 
     def project_params
-        params.require(:project).permit(:title, :subtitle, :category, :description, :risks, :faqs, :length, :goal)
+        params.require(:project).permit(:category, :subtitle, :location)
     end
 end

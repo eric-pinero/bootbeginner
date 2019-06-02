@@ -1,5 +1,5 @@
-import React from "react"
-import {Link} from "react-router-dom"
+import React from "react";
+import {Link} from "react-router-dom";
 
 class ProjectForm extends React.Component{
     constructor(props){
@@ -7,26 +7,42 @@ class ProjectForm extends React.Component{
         this.state = {
             page: 1,
             category: "",
-            description: "",
+            subtitle: "",
             location: "",
-        }
-        this.nextPage = this.nextPage.bind(this)
-        this.prevPage = this.prevPage.bind(this)
+        };
+        this.nextPage = this.nextPage.bind(this);
+        this.prevPage = this.prevPage.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     nextPage(){
         
-        this.setState({page : (this.state.page + 1)})
+        this.setState({page : (this.state.page + 1)});
     }
 
     prevPage(){
-        this.setState({page : (this.state.page - 1)})
+        this.setState({page : (this.state.page - 1)});
     }
 
     handleChange(field){
         return (e) => {
-            this.setState({[field]: e.target.value })
+            this.setState({[field]: e.target.value });
+        };
+    }
+
+    handleSubmit(e){
+        e.preventDefault();
+        const category = this.state.category;
+        const subtitle = this.state.subtitle;
+        const location = this.state.location;
+
+        const project = Object.assign({}, this.state)
+        if (category && subtitle && location){
+            this.props.createProject(project)
+        }else {
+            this.props.receiveErrors(['Please complete all sections before proceeding'])
         }
+
     }
 
     render(){
@@ -39,15 +55,15 @@ class ProjectForm extends React.Component{
                     update this later.
                 </h2>
                 <form>
-                    <select defaultValue={'DEFAULT'} onChange={this.handleChange('category')} className="categories">
+                    <select value={this.state.category} onChange={this.handleChange('category')} className="categories">
                         <option value="DEFAULT" disabled>Select your category</option>
-                        {/* figure out how to make default option disappear after selection */}
-                        <option id="sneakers">Sneakers</option>
-                        <option id="boots">Boots</option>
-                        <option id="clogs">Clogs</option>
-                        <option id="flats">Flats</option>
-                        <option id="heels">Heels</option>
-                        <option id="loafers">Loafers</option>
+                        {/* figure out how to make default option disappear after selection while preserving the selection*/}
+                        <option value="sneakers">Sneakers</option>
+                        <option value="boots">Boots</option>
+                        <option value="clogs">Clogs</option>
+                        <option value="flats">Flats</option>
+                        <option value="heels">Heels</option>
+                        <option value="loafers">Loafers</option>
                     </select>
                     <div className="grey-line"/>
                     <div className="form-footer">
@@ -65,7 +81,7 @@ class ProjectForm extends React.Component{
                 And don't worry, you can edit this later, too.
             </h2>
             <form>
-                <textarea onChange={this.handleChange('description')}></textarea>
+                <textarea value={this.state.description} onChange={this.handleChange('description')}></textarea>
 
                 <div className="grey-line"/>
                 
@@ -85,7 +101,7 @@ class ProjectForm extends React.Component{
                     Tell us where you’re based and confirm a few other details 
                     before we proceed.
                 </h2>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <select onChange={this.handleChange('location')}>
                         <option></option>
                         <option id="australia">Australia</option>
@@ -114,7 +130,7 @@ class ProjectForm extends React.Component{
 
                     <div className="form-footer">
                         <span className="prev-button" onClick={() => this.prevPage()}>Project Idea</span>
-                        <input className="next-button" onClick={() => this.nextPage()} type="submit" value="Continue"/>
+                        <span className="next-button" onClick={this.handleSubmit}>Continue</span>
                     </div>
                 </form>
             </section>
