@@ -7,7 +7,7 @@
 }
 
 .create-form{
-    margin: 50px auto 0 auto;
+    margin: 50px auto 0 58px;
     width: 600px;
     border-bottom: 1px solid #E8E8E8;
 }
@@ -17,8 +17,14 @@
     text-align: center;
 }
 
-.form-footer > span{
-    
+.form-footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.next-button{
+    background-color: black;
+    color: white;
 }
 
 .create-form > form > textarea{

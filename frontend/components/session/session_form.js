@@ -38,21 +38,6 @@ class SessionForm extends React.Component{
         }
     }
 
-    handleSignupSubmit(e){
-        e.preventDefault();
-
-        if (this.props.formType === 'signup'){
-            if (this.state.email !== this.state.email2 ){
-                this.props.errors.push('Emails must match')
-                receiveErrors(this.props.errors)
-            } else if (this.state.password === this.state.password2){
-                this.props.errors.push('Passwords must match')
-                receiveErrors(this.props.errors)
-            }
-        }
-
-    }
-
     handleChange(field){
         return (e) => {
             this.setState({[field]: e.target.value })

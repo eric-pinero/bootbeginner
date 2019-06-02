@@ -6,6 +6,9 @@ class ProjectForm extends React.Component{
         super(props);
         this.state = {
             page: 1,
+            category: "",
+            description: "",
+            location: "",
         }
         this.nextPage = this.nextPage.bind(this)
         this.prevPage = this.prevPage.bind(this)
@@ -20,6 +23,12 @@ class ProjectForm extends React.Component{
         this.setState({page : (this.state.page - 1)})
     }
 
+    handleChange(field){
+        return (e) => {
+            this.setState({[field]: e.target.value })
+        }
+    }
+
     render(){
         const categoryPage = 
             <section className="create-form">
@@ -30,7 +39,9 @@ class ProjectForm extends React.Component{
                     update this later.
                 </h2>
                 <form>
-                    <select name="categories">
+                    <select defaultValue={'DEFAULT'} onChange={this.handleChange('category')} className="categories">
+                        <option value="DEFAULT" disabled>Select your category</option>
+                        {/* figure out how to make default option disappear after selection */}
                         <option id="sneakers">Sneakers</option>
                         <option id="boots">Boots</option>
                         <option id="clogs">Clogs</option>
@@ -40,6 +51,7 @@ class ProjectForm extends React.Component{
                     </select>
                     <div className="grey-line"/>
                     <div className="form-footer">
+                        <div/>
                         <span className="next-button" onClick={() => this.nextPage()}>Next: Project Idea</span>
                     </div>
                 </form>
@@ -53,7 +65,7 @@ class ProjectForm extends React.Component{
                 And don't worry, you can edit this later, too.
             </h2>
             <form>
-                <textarea></textarea>
+                <textarea onChange={this.handleChange('description')}></textarea>
 
                 <div className="grey-line"/>
                 
@@ -74,7 +86,7 @@ class ProjectForm extends React.Component{
                     before we proceed.
                 </h2>
                 <form>
-                    <select name="categories">
+                    <select onChange={this.handleChange('location')}>
                         <option></option>
                         <option id="australia">Australia</option>
                         <option id="boots">Austria</option>
