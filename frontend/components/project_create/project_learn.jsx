@@ -1,11 +1,11 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const StartProject = () => {
+const ProjectLearn = () => {
     return(
     <content className="start-project">
         <h1>Bring your creative project to life</h1>
-        <Link>Start a Project</Link>
+        <Link to="./project-start">Start a Project</Link>
 
         <section className="start img-top">
             <div className="start img-left">
@@ -71,7 +71,7 @@ const StartProject = () => {
                         You can reach out with your questions via messenger pigeon, 
                         smoke signal, or Pony Express. 
                     </p>
-\                </li>
+                </li>
 
                 <div className="promo">
                     <video></video>
@@ -152,8 +152,7 @@ const StartProject = () => {
                         Click start and get sketching. See how it looks. 
                         Then share it with your friends
                     </p>
-                    <Link to="/"></Link> 
-                    {/* need to replace / with next page route */}
+                    <Link to="./project-start"></Link> 
                 </div>
 
             </section>
@@ -169,10 +168,10 @@ const StartProject = () => {
         <section className="closing">
             <h1>"Every shoe has a tongue that cannot be silenced"</h1>
             <span>- Brian Shoeman, a successful Bootbeginner project creator</span>
-            <Link to="/"></Link> 
+            <Link to="./project-start"></Link> 
         </section>
     </content>
     )
 }
 
-export default StartProject;
+export default ProjectLearn;

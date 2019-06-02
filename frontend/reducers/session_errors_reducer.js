@@ -8,7 +8,6 @@ const sessionErrorsReducer = (state = [], action) =>{
     let newState;
     switch (action.type) {
         case RECEIVE_ERRORS:
-            debugger
             newState = action.errors;
             return newState;
 

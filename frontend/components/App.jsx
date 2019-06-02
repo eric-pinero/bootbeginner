@@ -6,7 +6,9 @@ import LoginFormContainer from "./session/login_form_container";
 import { logout } from "../actions/session_actions";
 import AuthRoute from "../util/route_util";
 import Navbar from "./navbar/navbar_container";
-import StartProject from "./project_create/start_project"
+import ProjectLearn from "./project_create/project_learn"
+import ProjectFormContainer from "./project_create/project_form_container"
+
 const App = () => (
     <div>
         <header>
@@ -15,7 +17,8 @@ const App = () => (
                 <Route exact path="/" />
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
                 <AuthRoute path="/login" component={LoginFormContainer} />
-                <Route path="/start-project" component={StartProject}/>
+                <Route path="/project-learn" component={ProjectLearn}/>
+                <Route path="/project-start" component={ProjectFormContainer}/>
             </Switch>
         </header>
     </div>
