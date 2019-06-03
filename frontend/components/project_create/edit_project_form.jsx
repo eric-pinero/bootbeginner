@@ -21,10 +21,6 @@ class EditProjectForm extends React.Component{
             return <Redirect to="/"/>;
         }
 
-
-        let view = this.state.section;
-
-
         debugger
         return (
             <content>

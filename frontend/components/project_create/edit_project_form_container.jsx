@@ -3,10 +3,7 @@ import { requestProject, updateProject, receiveErrors } from "../../actions/proj
 import EditProjectForm from "./edit_project_form";
 
 const msp = (state, ownProps) => {
-    debugger
     const projectId = ownProps.match.params.projectId;
-
-
     const project = state.entities.projects[projectId] ?
         state.entities.projects[projectId]
         :

@@ -54,7 +54,7 @@ class ProjectOverview extends React.Component{
                     <h3>Project overview</h3>
                     <ul>
                         <li className="project-section">
-                            <Link to="/">Basics</Link>
+                            <Link project={this.props.project} to="/">Basics</Link>
                             <span>Name your project, upload an image or video, and establish your campaign details.</span>
                         </li>
                         <li className="project-section">
