@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class ProjectOverview extends React.Component{
     constructor(props){
@@ -33,7 +33,7 @@ class ProjectOverview extends React.Component{
                         <ul>
                             <li><img></img></li>
                             <li><h2>Take a moment to review our rules</h2></li>
-                            <li><span>Here are five rules every Bootbeginer project must follow.</span></li>
+                            <li><span>Here are five rules every Bootbeginner project must follow.</span></li>
                         </ul>
 
 
@@ -67,7 +67,7 @@ class ProjectOverview extends React.Component{
                         </li>
                         <li className="project-section">
                             <Link to="/">People</Link>
-                            <span>Edit your Kickstarter profile and add collaborators.</span>
+                            <span>Edit your Bootbeginner profile and add collaborators.</span>
                         </li>
                         <li className="project-section">
                             <Link to="/">Payment</Link>
