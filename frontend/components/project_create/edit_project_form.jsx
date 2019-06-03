@@ -4,7 +4,9 @@ import {Redirect, withRouter} from 'react-router-dom';
 class EditProjectForm extends React.Component{
     constructor(props){
         super(props);
-        this.state = this.props.project;
+        this.state = {
+            section: <Main project={this.props.project}/>,
+        };
     }
 
     componentDidMount(){
@@ -12,11 +14,28 @@ class EditProjectForm extends React.Component{
     }
 
     render(){
-        if (this.state && this.props.currentUserId !== this.state.creator_id){
+        debugger
+
+        const project = this.props.project ? 
+            this.props.project
+            :
+            {}
+        ;
+
+        if (this.props.project.id && this.props.currentUserId !== this.state.creator_id){
             return <Redirect to="/"/>;
         }
 
-        return <h1>Edit</h1>
+
+        let view = this.state.section;
+
+
+        debugger
+        return (
+            <content>
+                {this.state.section}
+            </content>
+        )
     }
 }
 

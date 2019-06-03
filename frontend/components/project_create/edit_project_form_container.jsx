@@ -5,8 +5,29 @@ import EditProjectForm from "./edit_project_form";
 const msp = (state, ownProps) => {
     debugger
     const projectId = ownProps.match.params.projectId;
-    const project = state.entities.projects[projectId];
+
+
+    const project = state.entities.projects[projectId] ?
+        state.entities.projects[projectId]
+        :
+        {
+            id: "",
+            title: "",
+            subtitle: "",
+            creator_id: "",
+            category_id: "",
+            subcategory_id: "",
+            description: "",
+            risks: "",
+            faqs: "",
+            length: "",
+            amount_received: "",
+            goal: "",        
+        }
+    ;
+
     const currentUserId = state.session.id;
+    const creatorId = project.creator_id;
     return {
         project,
         currentUserId,
