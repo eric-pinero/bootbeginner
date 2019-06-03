@@ -6,7 +6,6 @@ import {
   import { merge } from "lodash";
 
   const ProjectsReducer = (state = {}, action) => {
-    debugger
     Object.freeze(state);
     switch (action.type) {
       case RECEIVE_PROJECTS:
@@ -14,7 +13,6 @@ import {
         return newState;
   
       case RECEIVE_PROJECT:
-        debugger
         newState = merge({}, state, {[action.project.id]: action.project});
         return newState;
   

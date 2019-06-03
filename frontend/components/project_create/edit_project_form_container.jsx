@@ -27,7 +27,6 @@ const msp = (state, ownProps) => {
     ;
 
     const currentUserId = state.session.id;
-    const creatorId = project.creator_id;
     return {
         project,
         currentUserId,

@@ -1,11 +1,12 @@
 import React from 'react';
 import {Redirect, withRouter} from 'react-router-dom';
+import ProjectOverview from "./edit_form_sections/project_overview";
 
 class EditProjectForm extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            section: <Main project={this.props.project}/>,
+            section: <ProjectOverview project={this.props.project}/>,
         };
     }
 
@@ -16,13 +17,7 @@ class EditProjectForm extends React.Component{
     render(){
         debugger
 
-        const project = this.props.project ? 
-            this.props.project
-            :
-            {}
-        ;
-
-        if (this.props.project.id && this.props.currentUserId !== this.state.creator_id){
+        if (this.props.project.id && this.props.currentUserId !== this.props.project.creator_id){
             return <Redirect to="/"/>;
         }
 
