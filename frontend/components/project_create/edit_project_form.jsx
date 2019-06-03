@@ -4,16 +4,15 @@ import {Redirect, withRouter} from 'react-router-dom';
 class EditProjectForm extends React.Component{
     constructor(props){
         super(props);
+        this.state = this.props.project;
     }
 
     componentDidMount(){
-        debugger
-        this.props.requestReport(this.props.match.params.projectId);
+        this.props.requestProject(this.props.match.params.projectId);
     }
 
     render(){
-        debugger
-        if (currentUserId !== this.props.creator_id){
+        if (this.state && this.props.currentUserId !== this.state.creator_id){
             return <Redirect to="/"/>;
         }
 

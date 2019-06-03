@@ -1,10 +1,15 @@
 import { connect } from "react-redux";
 import { requestProject, updateProject, receiveErrors } from "../../actions/project_actions";
-import EditProjectForm from "./project_form";
+import EditProjectForm from "./edit_project_form";
 
-const msp = (state) => {
+const msp = (state, ownProps) => {
+    debugger
+    const projectId = ownProps.match.params.projectId;
+    const project = state.entities.projects[projectId];
+    const currentUserId = state.session.id;
     return {
-        loggedIn,
+        project,
+        currentUserId,
     };
 };
 
@@ -16,4 +21,4 @@ const mdp = (dispatch) => {
     };
 };
 
-export default connect(null,mdp)(EditProjectForm);
+export default connect(msp,mdp)(EditProjectForm);
