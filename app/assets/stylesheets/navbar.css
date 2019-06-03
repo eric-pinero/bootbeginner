@@ -43,6 +43,8 @@ a:visited{
 .nav-link > img {
     height: 14px;
     margin-left: 4px;
+    position: relative;
+    top: 2px;
 }
 
   
@@ -59,6 +61,9 @@ a:visited{
     color: inherit;
   }
 
+.link{
+    cursor: pointer;
+}
   
   /* Dropdown Content (Hidden by Default) */
   .dropdown-menu {
@@ -71,7 +76,7 @@ a:visited{
     flex-direction: column;
     right: -8px;
     top: 78px;
-    padding: 43px;
+    padding: 43px 43px 35px 43px;
   }
 
   .dropdown-menu > content {
@@ -91,15 +96,21 @@ a:visited{
       margin-bottom: 43px;
   }
 
+  .grey-line{
+      width: 100%;
+      border-bottom: 1px #F1EEEA solid;
+  }
+
   .dropdown-menu > button {
-      padding-top: 21.5px;
+      padding: 35px 0 0 0;
+      width: fit-content;
       background: none;
       border: none;
       text-align: left;
-      border-top: 1px #F1EEEA solid;
       font-size: inherit;
       color: inherit;
       outline: none;
+      cursor: pointer;
   }
 
   

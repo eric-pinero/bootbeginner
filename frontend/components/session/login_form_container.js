@@ -6,10 +6,10 @@ const msp = (state) => {
     
     let errors;
     if (Array.isArray(state.errors.session)){
-        errors = state.errors.session
+        errors = state.errors.session;
     } else {
         
-        errors = state.errors.session.responseJSON
+        errors = state.errors.session.responseJSON;
     }
     return {
         errors,

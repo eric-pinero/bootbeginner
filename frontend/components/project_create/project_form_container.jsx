@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
-import { createProject, receiveErrors } from "../../actions/project_actions"
+import { createProject, receiveErrors } from "../../actions/project_actions";
 import ProjectForm from "./project_form";
 
 const msp = (state) => {
-    const loggedIn = !!state.session
+    const loggedIn = !!state.session;
     return {
         loggedIn,
     };
@@ -16,4 +16,4 @@ const mdp = (dispatch) => {
     };
 };
 
-export default connect(msp,mdp)(ProjectForm)
+export default connect(msp,mdp)(ProjectForm);

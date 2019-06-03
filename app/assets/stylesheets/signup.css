@@ -166,7 +166,13 @@ h1 {
     align-items: center;
 }
 
-#demo:hover, .submit-button:hover{
+#demo:hover{
     background-color: #344E86;
     transition: background-color 300ms ease-in;
+    cursor: pointer;
+}
+.submit-button:hover{
+    background-color: #037362;
+    transition: background-color 300ms ease-in;
+    cursor: pointer;
 }

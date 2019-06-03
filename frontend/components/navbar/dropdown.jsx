@@ -23,34 +23,35 @@ class Dropdown extends React.Component{
                 <div className="dropdown-section">
                     <h2>YOUR ACCOUNT</h2>
                     <ul className="account-options">
-                        <li>Saved Projects</li>
-                        <li>Recommended for You</li>
-                        <li>Following</li>
+                        <li className="link">Saved Projects</li>
+                        <li className="link">Recommended for You</li>
+                        <li className="link">Following</li>
                     </ul>
                     <div id="space"/>
                     <ul className="account-options">
-                        <li>Profile</li>
-                        <li>Settings</li>
-                        <li>Messages</li>
-                        <li>Activity</li>
+                        <li className="link">Profile</li>
+                        <li className="link">Settings</li>
+                        <li className="link">Messages</li>
+                        <li className="link">Activity</li>
                     </ul>
                 </div>
 
                 <div className="dropdown-section">
                     <h2>BACKED PROJECTS</h2>
                     <ul>
-                        <li>Project 1</li>
+                        <li className="link">Project 1</li>
                     </ul>
                 </div>
 
                 <div className="dropdown-section">
                     <h2>CREATED PROJECTS</h2>
                     <ul>
-                        <li>Project 1</li>
+                        <li className="link">Project 1</li>
                     </ul>
                 </div>
                 </content>
-            <button onClick={() => dispatch(logout())}>Logout</button>
+            <div className="grey-line"/>
+            <button className="link" onClick={() => dispatch(logout())}>Logout</button>
             </div>
             </>
             :
@@ -60,7 +61,7 @@ class Dropdown extends React.Component{
 
         return(
         <div className="dropdown">
-            <h1 onClick={this.toggleDropdown}>Dropdown</h1>
+            <h1 className="link" onClick={this.toggleDropdown}>Dropdown</h1>
             {dropdown}
         </div>
         )

@@ -2,9 +2,11 @@ class Api::ProjectsController < ApplicationController
     before_action :ensure_logged_in
 
     def create
-        @project = Project.new(project_params)
-        @project.user_id = current_user.id
-        @project.category_id = Category.find_by(title: params[:category]).id
+        @project = Project.new
+        @project.subtitle = project_params["subtitle"]
+        @project.location = project_params["location"]
+        @project.category_id = Category.find_by(name: project_params["categoryName"]).id
+        @project.creator_id = current_user.id
 
         if @project.save
             render :show
@@ -17,14 +19,12 @@ class Api::ProjectsController < ApplicationController
         @project = selected_project
     end
 
-    def edit
-    end
-
     def update
         if @project.update(project_params)
-            render: show
+            render :show
         else
             render json: @project.errors.full_messages, status: 401
+        end
     end
 
     def destroy
@@ -38,6 +38,6 @@ class Api::ProjectsController < ApplicationController
     end
 
     def project_params
-        params.require(:project).permit(:category, :subtitle, :location)
+        params.require(:project).permit(:categoryName, :subtitle, :location, :page)
     end
 end

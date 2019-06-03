@@ -14,10 +14,9 @@ class SessionForm extends React.Component{
             password2: "",
         };
 
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.demoSubmit = this.demoSubmit.bind(this)
-        this.confirmEmail = this.confirmEmail.bind(this)
-        this.handleSignupSubmit = this.handleSignupSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoSubmit = this.demoSubmit.bind(this);
+        this.confirmEmail = this.confirmEmail.bind(this);
     }
 
     handleSubmit(e){
@@ -26,30 +25,32 @@ class SessionForm extends React.Component{
 
         if (this.props.formType === 'signup'){
             if (this.state.email !== this.state.email2 && this.state.password !== this.state.password2 ){
-                this.props.receiveErrors(['Emails must match', 'Passwords must match' ])
+                this.props.receiveErrors(['Emails must match', 'Passwords must match' ]);
             }else if (this.state.email !== this.state.email2 && this.state.password === this.state.password2 ){
-                this.props.receiveErrors(['Emails must match'])
+                this.props.receiveErrors(['Emails must match']);
             }else if ( this.state.email === this.state.email2 && this.state.password !== this.state.password2 ){
-                this.props.receiveErrors(['Passwords must match'])
+                this.props.receiveErrors(['Passwords must match']);
             } else {
                 this.props.processForm(user).then(() => this.props.history.push("/"));
             }
+        } else{
+            this.props.processForm(user).then(() => this.props.history.push("/")); 
         }
     }
 
     handleChange(field){
         return (e) => {
-            this.setState({[field]: e.target.value })
+            this.setState({[field]: e.target.value });
         }
     }
 
     demoSubmit(e){
         e.preventDefault();
-        const demo ={email: "bootsonboots@bootjack.com", password: "test123"}
+        const demo ={email: "bootsonboots@bootjack.com", password: "test123"};
         if (this.props.formType === 'login') {
             this.props.processForm(demo).then(() => this.props.history.push("/"));
         } else {
-            this.props.demoLogin(demo).then(() => this.props.history.push("/"))
+            this.props.demoLogin(demo).then(() => this.props.history.push("/"));
         }
     }
 

@@ -4,8 +4,8 @@ export const fetchProjects = () => {
             method: 'GET',
             url: '/api/projects',
         })
-    )
-}
+    );
+};
 
 export const fetchProject = (id) => {
     return(
@@ -13,8 +13,8 @@ export const fetchProject = (id) => {
             method: 'GET',
             url: `/api/projects/${id}`
         })
-    )
-}
+    );
+};
 
 export const createProject = (project) => {
     return(
@@ -23,7 +23,7 @@ export const createProject = (project) => {
             url:'/api/projects',
             data: { project },
         })
-    )
+    );
 };
 
 export const updateProject = (project) => {
@@ -34,8 +34,8 @@ export const updateProject = (project) => {
             data: {project}
 
         })
-    )
-}
+    );
+};
 
 export const deleteProject = (id) => {
     return (
@@ -43,5 +43,5 @@ export const deleteProject = (id) => {
             method: 'DELETE',
             url: `api/reports/${id}`
         })
-    )
-}
+    );
+};

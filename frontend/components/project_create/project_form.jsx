@@ -1,14 +1,13 @@
 import React from "react";
-import {Link} from "react-router-dom";
 
 class ProjectForm extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            page: 1,
-            category: "",
+            categoryName: "",
             subtitle: "",
             location: "",
+            page: 1,
         };
         this.nextPage = this.nextPage.bind(this);
         this.prevPage = this.prevPage.bind(this);
@@ -32,15 +31,16 @@ class ProjectForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        const category = this.state.category;
+        const categoryName = this.state.categoryName;
         const subtitle = this.state.subtitle;
         const location = this.state.location;
 
-        const project = Object.assign({}, this.state)
-        if (category && subtitle && location){
-            this.props.createProject(project)
+        const project = Object.assign({}, this.state);
+
+        if (categoryName && subtitle && location){
+            this.props.createProject(project);
         }else {
-            this.props.receiveErrors(['Please complete all sections before proceeding'])
+            this.props.receiveErrors(['Please complete all sections before proceeding']);
         }
 
     }
@@ -55,7 +55,7 @@ class ProjectForm extends React.Component{
                     update this later.
                 </h2>
                 <form>
-                    <select value={this.state.category} onChange={this.handleChange('category')} className="categories">
+                    <select value={this.state.categoryName} onChange={this.handleChange('categoryName')} className="categories">
                         <option value="DEFAULT" disabled>Select your category</option>
                         {/* figure out how to make default option disappear after selection while preserving the selection*/}
                         <option value="sneakers">Sneakers</option>
@@ -81,7 +81,7 @@ class ProjectForm extends React.Component{
                 And don't worry, you can edit this later, too.
             </h2>
             <form>
-                <textarea value={this.state.description} onChange={this.handleChange('description')}></textarea>
+                <textarea value={this.state.subtitle} onChange={this.handleChange('subtitle')}></textarea>
 
                 <div className="grey-line"/>
                 

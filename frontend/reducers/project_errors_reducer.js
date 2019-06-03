@@ -5,7 +5,7 @@ import {
     RECEIVE_ERRORS,
   } from '../actions/project_actions';
 
-const sessionErrorsReducer = (state = [], action) =>{
+const projectErrorsReducer = (state = [], action) =>{
     Object.freeze(state);
     let newState;
     switch (action.type) {

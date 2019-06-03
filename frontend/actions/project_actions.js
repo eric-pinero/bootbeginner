@@ -1,4 +1,4 @@
-import * as ReportAPIUtil from '../util/project_api_util';
+import * as APIUtil from '../util/project_api_util';
 
 export const RECEIVE_PROJECTS = 'RECEIVE_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
@@ -22,7 +22,7 @@ const receiveProject = (project) => {
 const removeProject = (projectId) => {
     return {
         type: REMOVE_PROJECT,
-        reportId,
+        projectId,
     };
 };
 
@@ -35,7 +35,7 @@ export const receiveErrors = (errors) => {
 
 export const requestProjects = () => {
     return (dispatch) => {
-        return ReportAPIUtil.fetchProjects().then(
+        return APIUtil.fetchProjects().then(
             (projects) => dispatch(receiveProjects(projects)),
             response => dispatch(receiveErrors(response))
         );
@@ -44,7 +44,7 @@ export const requestProjects = () => {
 
 export const requestProject = (projectId) => {
     return (dispatch) => {
-        return ReportAPIUtil.fetchProject(projectId).then(
+        return APIUtil.fetchProject(projectId).then(
             (project) => dispatch(receiveProject(project)),
             response => dispatch(receiveErrors(response))
         );
@@ -53,7 +53,7 @@ export const requestProject = (projectId) => {
 
 export const createProject = (project) => {
     return (dispatch) => {
-        return ReportAPIUtil.fetchProject(project).then(
+        return APIUtil.createProject(project).then(
             (newProject) => dispatch(receiveProject(newProject)),
             response => dispatch(receiveErrors(response))
         );
@@ -62,7 +62,7 @@ export const createProject = (project) => {
 
 export const updateProject = (project) => {
     return (dispatch) => {
-        return ReportAPIUtil.updateProject(project).then(
+        return APIUtil.updateProject(project).then(
             (updatedProject) => dispatch(receiveProject(updatedProject)),
             response => dispatch(receiveErrors(response))
         );
@@ -71,7 +71,7 @@ export const updateProject = (project) => {
 
 export const deleteProject = (projectId) => {
     return (dispatch) => {
-        return ReportAPIUtil.Project(project).then(
+        return APIUtil.deleteProject(projectId).then(
             (removedProject) => dispatch(removeProject(removedProject))
         );
     };

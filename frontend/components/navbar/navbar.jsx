@@ -9,12 +9,6 @@ class Navbar extends React.Component{
     }
 
     render() {
-        const logoutButton = this.props.loggedIn ? 
-            <button onClick={this.displayDropdown} id="dropbtn">Dropdown</button>
-            :
-            null
-        ;
-
         const signIn = !this.props.loggedIn ?
             <Link className="nav-link" to="/login">Sign in</Link>
             :
@@ -31,7 +25,7 @@ class Navbar extends React.Component{
             <nav className="nav-main">
                 <div className="nav-left">
                     <Link className="nav-link" to="/">Explore</Link>
-                    <Link className="nav-link" to="/project-learn">Start a project</Link>
+                    <Link className="nav-link" to="/projects/learn">Start a project</Link>
                 </div>
 
                 <h1><Link to="/">Bootbeginner</Link></h1>

@@ -5,7 +5,7 @@ const ProjectLearn = () => {
     return(
     <content className="start-project">
         <h1>Bring your creative project to life</h1>
-        <Link to="./project-start">Start a Project</Link>
+        <Link to="/projects/start">Start a Project</Link>
 
         <section className="start img-top">
             <div className="start img-left">
@@ -152,7 +152,7 @@ const ProjectLearn = () => {
                         Click start and get sketching. See how it looks. 
                         Then share it with your friends
                     </p>
-                    <Link to="./project-start"></Link> 
+                    <Link to="/projects/start"></Link> 
                 </div>
 
             </section>
@@ -168,7 +168,7 @@ const ProjectLearn = () => {
         <section className="closing">
             <h1>"Every shoe has a tongue that cannot be silenced"</h1>
             <span>- Brian Shoeman, a successful Bootbeginner project creator</span>
-            <Link to="./project-start"></Link> 
+            <Link to="/projects/start"></Link> 
         </section>
     </content>
     )
