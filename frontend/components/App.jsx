@@ -8,6 +8,9 @@ import Navbar from "./navbar/navbar_container";
 import ProjectLearn from "./project_create/project_learn";
 import ProjectFormContainer from "./project_create/project_form_container";
 import EditProjectFormContainer from "./project_create/edit_project_form_container";
+import ProjectBasics from "./project_create/edit_form_sections/project_basics";
+import ProjectRewards from "./project_create/edit_form_sections/project_rewards";
+import ProjectStory from "./project_create/edit_form_sections/project_story";
 
 const App = () => (
     <div>
@@ -19,8 +22,11 @@ const App = () => (
                 <AuthRoute path="/login" component={LoginFormContainer} />
                 <Route path="/projects/learn" component={ProjectLearn}/>
                 <Route path="/projects/start" component={ProjectFormContainer}/>
-                <Route path="/projects/:projectId/edit" component={EditProjectFormContainer}/>
-                <ProtRoute/>
+                <Route exact path="/projects/:projectId/edit" component={EditProjectFormContainer}/>
+                <Route path="/projects/:projectId/edit/basics" component={ProjectBasics}/>
+                <Route path="/projects/:projectId/edit/rewards" component={ProjectRewards}/>
+                <Route path="/projects/:projectId/edit/story" component={ProjectStory}/>
+                {/* <ProtRoute/> */}
             </Switch>
         </header>
     </div>

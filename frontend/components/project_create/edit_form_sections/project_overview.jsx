@@ -16,16 +16,16 @@ class ProjectOverview extends React.Component{
         `${project.category_id} Project`
         // figure out how to pull the category name
     ;
-
+        debugger
         const creatorName= project.creator_id;    
         //figure out how to pull username
-
+        const editPath = `projects/${project.id}/edit/`;
         return(
             <content>
                 <header>
                     <h1>{title}</h1>
                     <span>{creatorName}</span>
-                    <Link to="/">Preview</Link>
+                    <Link to={`projects/${project.id}`}>Preview</Link>
                 </header>
                 <section>
                     <h3>Project Status</h3>
@@ -35,7 +35,6 @@ class ProjectOverview extends React.Component{
                             <li><h2>Take a moment to review our rules</h2></li>
                             <li><span>Here are five rules every Bootbeginner project must follow.</span></li>
                         </ul>
-
 
                         <ol>
                             <li>Projects must <span className="bold">create something to share</span> with others.</li>                            
@@ -54,23 +53,23 @@ class ProjectOverview extends React.Component{
                     <h3>Project overview</h3>
                     <ul>
                         <li className="project-section">
-                            <Link project={this.props.project} to="/">Basics</Link>
+                            <Link project={project} to={`edit/basics`}>Basics</Link>
                             <span>Name your project, upload an image or video, and establish your campaign details.</span>
                         </li>
                         <li className="project-section">
-                            <Link to="/">Rewards</Link>
+                            <Link project={project} to={`edit/rewards`}>Rewards</Link>
                             <span>Set your rewards and shipping costs.</span>
                         </li>
                         <li className="project-section">
-                           <Link to="/">Story</Link>
+                           <Link project={project} to={`edit/story`}>Story</Link>
                            <span>Add a detailed project description and convey your Risks and Challenges.</span>
                         </li>
                         <li className="project-section">
-                            <Link to="/">People</Link>
+                            <Link project={project} to={`edit/people`}>People</Link>
                             <span>Edit your Bootbeginner profile and add collaborators.</span>
                         </li>
                         <li className="project-section">
-                            <Link to="/">Payment</Link>
+                            <Link project={project} to={`edit/payment`}>Payment</Link>
                             <span>Confirm your identity and link a bank account.</span>
                         </li>
                     </ul>
