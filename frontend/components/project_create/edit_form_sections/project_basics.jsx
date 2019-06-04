@@ -4,12 +4,41 @@ import {Link} from 'react-router-dom';
 class ProjectBasics extends React.Component{
     constructor(props){
         super(props);
+        this.state = this.props.props.project;
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+    }
 
+    handleSubmit(){
+        const project = Object.assign({}, this.state)
+        this.props.props.updateProject(project);
+    }
+
+    handleChange(field){
+        return (e) => {
+            this.setState({[field]: e.target.value });
+        }
     }
 
     render(){
+        const projectId = this.state.id;
         return(
             <content>
+                <nav>
+                    <h1>Bootbeginner</h1>   
+                    <ul>
+                        <li><Link to={`/projects/${projectId}/edit/basics`}>Basics</Link></li>
+                        <img/>
+                        <li><Link to={`/projects/${projectId}/edit/rewards`}>Rewards</Link></li>
+                        <img/>
+                        <li><Link to={`/projects/${projectId}/edit/story`}>Story</Link></li>
+                        <img/>
+                        <li><Link to={`/projects/${projectId}/edit/people`}>People</Link></li>
+                    </ul>
+                    <Link to={`/projects/${projectId}/edit/overview`}>Exit to Project Overview</Link>
+                </nav>
+
+                {/* <ProjectEditHeader project={this.props.project}/> */}
                 <header>
                     <h1>Start with the basics</h1>
                     <h2>Make it easy for people to learn about your project</h2>
@@ -29,12 +58,12 @@ class ProjectBasics extends React.Component{
                     <div className="fields">
                         <div>
                             <span>Title</span>
-                            <input type="text"/>
+                            <input onChange={this.handleChange('title')} value={this.state.title} type="text"/>
                         </div>
 
                         <div>
                             <span>Subtitle</span>
-                            <input type="text"/>
+                            <input type="text" onChange={this.handleChange('subtitle')} value={this.state.subtitle}/>
                         </div>
                     </div>
                 </section>
@@ -55,9 +84,14 @@ class ProjectBasics extends React.Component{
                         </p>
                     </div>
                     <div className="fields">
-                        <select className="category">
-
-                        </select>
+                        <select className="category" onChange={this.handleChange('category')} value={this.state.category} >
+                            <option value="sneakers">Sneakers</option>
+                            <option value="boots">Boots</option>
+                            <option value="clogs">Clogs</option>
+                            <option value="flats">Flats</option>
+                            <option value="heels">Heels</option>
+                            <option value="loafers">Loafers</option>
+                            </select>
                         <select className="subcategory">
 
                         </select>
@@ -70,7 +104,7 @@ class ProjectBasics extends React.Component{
                         <p>Enter the location that best describes where<br/> your project is based.</p>
                     </div>
                     <div className="fields">
-                        <input type="text"/>
+                        <input type="text" onChange={this.handleChange('location')} value={this.state.location}/>
                     </div>
                 </section>
 
@@ -116,7 +150,7 @@ class ProjectBasics extends React.Component{
                         <span>Goal amount</span>
                         <div className="goal-value">
                             <span>$</span>
-                            <input type="number" min="0"/>
+                            <input type="number" min="0" onChange={this.handleChange('goal')} value={this.state.goal}/>
                         </div>
                     </div>
 
@@ -129,7 +163,14 @@ class ProjectBasics extends React.Component{
                         be able to change this after you launch.
                     </p>
                     </div>
+                    <input type="number" onChange={this.handleChange('length')} value={this.state.length}/>
+                    {/* split into a radio button to choose between days and end date/time. */}
                 </section>
+                <footer>
+                    <Link>Preview</Link>
+                    {/* connect to show page once it is functional */}
+                    <Link onClick={this.handleSubmit} to={`/projects/${projectId}/edit/${this.props.next}`}>Next:{this.props.next[0].toUpperCase() + this.props.next.slice(1)}</Link>
+                </footer>
             </content>
         )
     };

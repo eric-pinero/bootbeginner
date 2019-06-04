@@ -22,10 +22,7 @@ const App = () => (
                 <AuthRoute path="/login" component={LoginFormContainer} />
                 <Route path="/projects/learn" component={ProjectLearn}/>
                 <Route path="/projects/start" component={ProjectFormContainer}/>
-                <Route exact path="/projects/:projectId/edit" component={EditProjectFormContainer}/>
-                <Route path="/projects/:projectId/edit/basics" component={ProjectBasics}/>
-                <Route path="/projects/:projectId/edit/rewards" component={ProjectRewards}/>
-                <Route path="/projects/:projectId/edit/story" component={ProjectStory}/>
+                <Route path="/projects/:projectId/edit" component={EditProjectFormContainer}/>
                 {/* <ProtRoute/> */}
             </Switch>
         </header>

@@ -18,7 +18,7 @@ class Dropdown extends React.Component{
     render() {
         const dropdown = this.state.display ? 
             <>
-            <div className="dropdown-menu">
+            <div onBlur={this.toggleDropdown} className="dropdown-menu" tabIndex="0">
                 <content>
                 <div className="dropdown-section">
                     <h2>YOUR ACCOUNT</h2>

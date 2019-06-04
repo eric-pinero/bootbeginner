@@ -16,10 +16,11 @@ class Api::ProjectsController < ApplicationController
     end
 
     def show
-        @project = selected_project
+        @project = Project.find(params[:id])
     end
 
     def update
+        @project = Project.find(params[:id])
         if @project.update(project_params)
             render :show
         else
@@ -38,6 +39,11 @@ class Api::ProjectsController < ApplicationController
     end
 
     def project_params
-        params.require(:project).permit(:categoryName, :subtitle, :location, :page)
+        params.require(:project).permit(
+            :categoryName, :subtitle, :location, 
+            :page, :category_id, :creator_id, 
+            :title, :description, :subcategory_id, 
+            :risks, :faqs, :length, :amount_received, :goal
+        )
     end
 end

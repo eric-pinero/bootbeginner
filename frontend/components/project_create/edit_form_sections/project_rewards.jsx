@@ -8,9 +8,22 @@ class ProjectRewards extends React.Component{
     }
 
     render(){
-
+        const projectId = this.props.props.project.id;
         return(
             <content>
+                <nav>
+                    <h1>Bootbeginner</h1>   
+                    <ul>
+                        <li><Link to={`/projects/${projectId}/edit/basics`}>Basics</Link></li>
+                        <img/>
+                        <li><Link to={`/projects/${projectId}/edit/rewards`}>Rewards</Link></li>
+                        <img/>
+                        <li><Link to={`/projects/${projectId}/edit/story`}>Story</Link></li>
+                        <img/>
+                        <li><Link>People</Link></li>
+                    </ul>
+                    <Link to={`/projects/${projectId}/edit/overview`}>Exit to Project Overview</Link>
+                </nav>
                 <header>
                     <h1>Add your rewards</h1>
                     <p>
@@ -34,6 +47,11 @@ class ProjectRewards extends React.Component{
                         <li>example</li>
                     </ul>
                 </section>
+                <footer>
+                    <Link>Preview</Link>
+                    {/* connect to show page once it is functional */}
+                    <Link to={`/projects/${projectId}/edit/${this.props.next}`}>Next:{this.props.next[0].toUpperCase() + this.props.next.slice(1)}</Link>
+                </footer>
             </content>
         )
     }

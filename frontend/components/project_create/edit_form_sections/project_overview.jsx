@@ -4,22 +4,20 @@ import { Link } from 'react-router-dom';
 class ProjectOverview extends React.Component{
     constructor(props){
         super(props);
-
     }
-
     render(){
-        const project = this.props.project;
-
+        const project = this.props.props.project;
+        const projectId = project.id
         const title = project.title ?
         project.title
         :
         `${project.category_id} Project`
         // figure out how to pull the category name
     ;
-        debugger
         const creatorName= project.creator_id;    
         //figure out how to pull username
         const editPath = `projects/${project.id}/edit/`;
+        
         return(
             <content>
                 <header>
@@ -53,24 +51,20 @@ class ProjectOverview extends React.Component{
                     <h3>Project overview</h3>
                     <ul>
                         <li className="project-section">
-                            <Link project={project} to={`edit/basics`}>Basics</Link>
+                            <Link to={`/projects/${projectId}/edit/basics`}>Basics</Link>
                             <span>Name your project, upload an image or video, and establish your campaign details.</span>
                         </li>
                         <li className="project-section">
-                            <Link project={project} to={`edit/rewards`}>Rewards</Link>
+                            <Link to={`/projects/${projectId}/edit/rewards`}>Rewards</Link>
                             <span>Set your rewards and shipping costs.</span>
                         </li>
                         <li className="project-section">
-                           <Link project={project} to={`edit/story`}>Story</Link>
+                           <Link to={`/projects/${projectId}/edit/story`}>Story</Link>
                            <span>Add a detailed project description and convey your Risks and Challenges.</span>
                         </li>
                         <li className="project-section">
-                            <Link project={project} to={`edit/people`}>People</Link>
-                            <span>Edit your Bootbeginner profile and add collaborators.</span>
-                        </li>
-                        <li className="project-section">
-                            <Link project={project} to={`edit/payment`}>Payment</Link>
-                            <span>Confirm your identity and link a bank account.</span>
+                            <Link to={`/projects/${projectId}/edit/people`}>People</Link>
+                            <span>Edit your Bootbeginner profile.</span>
                         </li>
                     </ul>
                 </section>

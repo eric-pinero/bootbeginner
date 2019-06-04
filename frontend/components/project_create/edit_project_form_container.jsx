@@ -24,9 +24,11 @@ const msp = (state, ownProps) => {
     ;
 
     const currentUserId = state.session.id;
+    const creator = state.entities.users[project.creator_id]
     return {
         project,
         currentUserId,
+        creator,
     };
 };
 

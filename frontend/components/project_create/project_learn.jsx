@@ -3,20 +3,24 @@ import {Link} from "react-router-dom";
 
 const ProjectLearn = () => {
     return(
-    <content className="start-project">
-        <h1>Bring your creative project to life</h1>
-        <Link to="/projects/start">Start a Project</Link>
-
-        <section className="start img-top">
-            <div className="start img-left">
-                <img></img>
+    <content className="learn-project">
+        <div className="padded">
+            <div className="learn-top">
+                <h1>Bring your creative project to life.</h1>
+                <Link to="/projects/start">Start a Project</Link>
             </div>
 
-            <div className="start img-right">
-                <img></img>
-                <img></img>
-            </div>
-        </section>
+            <section className="learn img-top">
+                <div className="learn img-left">
+                    <img></img>
+                </div>
+
+                <div className="learn img-right">
+                    <img></img>
+                    <img></img>
+                </div>
+            </section>
+        </div>
 
         <section className="green">
             <h2>
@@ -27,7 +31,7 @@ const ProjectLearn = () => {
             <span>- DE LA SOLE</span>
         </section>
 
-        <section className="start-faqs">
+        <section className="learn-faqs">
             <ul className="questions-answers">
                 <li>
                     <h3>What can I use Bootbeginner to fund?</h3>
