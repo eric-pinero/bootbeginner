@@ -1,181 +1,261 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-const ProjectLearn = () => {
-    return(
-    <content className="learn-project">
-        <div className="padded">
-            <div className="learn-top">
-                <h1>Bring your creative project to life.</h1>
-                <Link to="/projects/start">Start a Project</Link>
-            </div>
+class ProjectLearn extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            selectedCategory: "sneakers"
+        }
 
-            <section className="learn img-top">
-                <div className="learn img-left">
-                    <img></img>
-                </div>
+        this.changeCategory = this.changeCategory.bind(this)
+    }
 
-                <div className="learn img-right">
-                    <img></img>
-                    <img></img>
-                </div>
-            </section>
-        </div>
+    changeCategory(categoryName){
+        this.setState({selectedCategory: categoryName})
+    }
 
-        <section className="green">
-            <h2>
-                We see Bootbeginner as a home for creative minds and a 
-                wonderful platform; where people who believe, respect and 
-                see the beauty of footwear can support an idea and make it a reality
-            </h2>
-            <span>- DE LA SOLE</span>
-        </section>
-
-        <section className="learn-faqs">
-            <ul className="questions-answers">
-                <li>
-                    <h3>What can I use Bootbeginner to fund?</h3>
-                    <p>
-                        Bootbeginner is specifically for creative footwear projects in the 
-                        following categories: Sneakers, Boots, Clogs, Flats, Heels, and Loafers.
-                    </p>
-                </li>
-
-                <li>
-                    <h3>Who can I get pledges from?</h3>
-                    <p>
-                        Many of people visit Bootbeginner every week, but support always 
-                        begins with people you know. Friends, fans, and the communities 
-                        you’re a part of  will likely be some of your earliest supporters, 
-                        not to mention your biggest resources for spreading the 
-                        word about your project.
-                    </p>
-                </li>
-
-                <li>
-                    <h3>How much work is it to run a project?</h3>
-                    <p>
-                        Every Bootbeginner project has its share of exhilarating and 
-                        challenging moments, but the amount of work generally depends on the 
-                        size and complexity of the project.
-                        <br/>
-                        Expect the first few days after launch to be very busy as you 
-                        spread the word to your community, answer questions from potential 
-                        backers, and more. You may need to spend the last few days 
-                        rallying your social networks in order to reach your funding goal.
-                        <br/>
-                        Projects sometimes take on a life of their own, and in that case 
-                        you should expect to spend more time creating and fulfilling rewards.
-                    </p>
-                </li>
-
-                <li>
-                    <h3>How do I get in touch with questions?</h3>
-                    <p>
-                        You can reach out with your questions via messenger pigeon, 
-                        smoke signal, or Pony Express. 
-                    </p>
-                </li>
-
-                <div className="promo">
-                    <video></video>
-                </div>
-
-                <h2>Why Bootbeginner?</h2>
-            
-                <li>
-                    <span>1</span>
-                    <h3>Bootbeginner is just for footwear projects.</h3>
-                    <p>
-                        There are many options for crowdfunding, but Bootbeginner's 
-                        focus and dedication
-                    </p>
-                </li>
-
-                <li>
-                    <span>2</span>
-                    <h3>Bootbeginner offers both technical and arch support</h3>
-                    <p>
-                        We want you to succeed and we know that's not possible if you
-                        worry about your crowdfunding site not functioning or if your 
-                        shoes don't offer you adequate support.
-                    </p>
-                </li>
-
-                <li>
-                    <span>3</span>
-                    <h3>Bootbeginner is the premiere platform in its space</h3>
-                    <p>
-                        Bootbeginner has the largest community of any footwear based
-                        crowdfunding site, beating out Indiegogoboots and Platformeon.
-                    </p>
-                </li>
-            </ul>
-
-        </section>
-
-        <section className="categories">
-            <h2>Create a project in any of the following categories</h2>
-
-            <ul>
-                <li id="sneakers">Sneakers</li>
-                <li id="boots">Boots</li>
-                <li id="clogs">Clogs</li>
-                <li id="flats">Flats</li>
-                <li id="heels">Heels</li>
-                <li id="loafers">Loafers</li>
-            </ul>
-
-            <section className="mid-categories">
-                <div className="category-description">
+    render(){
+        let displayedCategory;
+        switch (this.state.selectedCategory) {
+            case "sneakers":
+                displayedCategory =
                     <p id="sneakers-description">
                         Comfortable, versatile, and stylish. Who doesn't love a good sneaker?
-                    </p>
-                    <p id="boots-description" hidden>
+                    </p>      
+                break;
+            case "boots":
+                debugger
+                displayedCategory =
+                    <p id="boots-description">
                         Boots are incredibly diverse. You can find them on a hiking trail or on a catwalk.
                     </p>
-                    <p id="clogs-description" hidden>
+                break;
+
+            case "clogs":
+                displayedCategory =
+                    <p id="clogs-description">
                         Beautiful, sturdy, mysterious. They greatly resemble the trees that gave them life.
                     </p>
-                    <p id="flats-description" hidden>
+                break
+            case "flats":
+                displayedCategory =
+                    <p id="flats-description">
                         Flats sit firmly at the intersection of form and function. 
                         Providing fashion without compromising an ounce of utility.
                     </p>
-                    <p id="heels-description" hidden>
+                break;       
+            case "heels":
+                debugger
+                displayedCategory =
+                    <p id="heels-description">
                         For those who not only want to stand out, but to stand above.
                     </p>
-                    <p id="loafers-description" hidden>
-                        Don't let the name fool you, this daring footwear 
-                        is just as at home in a lounge as it is in a workplace.
+                break;
+            case "loafers":
+                debugger
+                displayedCategory =    
+                <p id="loafers-description">
+                    Don't let the name fool you, this daring footwear 
+                    is just as at home in a lounge as it is in a workplace.
+                </p>
+                break
+            default:
+                debugger
+                    displayedCategory =
+                    <p id="sneakers-description">
+                        Comfortable, versatile, and stylish. Who doesn't love a good sneaker?
                     </p>
+                break;
+        }
+
+
+        debugger
+        return(
+        <content className="learn-project">
+            <div className="padded">
+                <div className="learn-top">
+                    <h1>Bring your creative project to life.</h1>
+                    <Link to="/projects/start">Start a Project</Link>
                 </div>
 
+                <section className="learn img-top">
+                    <div className="learn img-left">
+                        <img></img>
+                    </div>
+
+                    <div className="learn img-right">
+                        <img></img>
+                        <img></img>
+                    </div>
+                </section>
+            </div>
+
+            <section className="green">
                 <div>
-                    <h3>Interested?</h3>
-                    <p>
-                        Click start and get sketching. See how it looks. 
-                        Then share it with your friends
-                    </p>
-                    <Link to="/projects/start"></Link> 
+                    <p>"</p>
+                    <div className="quote">
+                        <h1>We see Bootbeginner as a home for creative minds and a 
+                        wonderful platform; where people who believe, respect and 
+                        see the beauty of footwear can support an idea and make it a reality
+                        </h1>
+                        <p>- DE LA SOLE</p>
+                    </div>
                 </div>
+            </section>
+
+            <section className="learn-faqs">
+                <h1>
+                    A Bootbeginner project does more than raise <br/> money. 
+                    It builds community around your work.
+                </h1>
+                <ul className="questions-answers">
+                    <li className="q-a">
+                        <h3 className="question">What can I use Bootbeginner to fund?</h3>
+                        <p className="answer">
+                            Bootbeginner is specifically for creative footwear projects in the 
+                            following categories: Sneakers, Boots, Clogs, Flats, Heels, and Loafers.
+                            However, there is still a lot of room to be creative with Bootbeginner.
+                            Projects have ranged from footwear accessories, to statuary resembling footwear.
+                            The only limit is your imagination.
+                        </p>
+                    </li>
+
+                    <li className="q-a">
+                        <h3 className="question">Who can I get pledges from?</h3>
+                        <p className="answer">
+                            Many of people visit Bootbeginner every week, but support always 
+                            begins with people you know. Friends, fans, and the communities 
+                            you’re a part of  will likely be some of your earliest supporters, 
+                            not to mention your biggest resources for spreading the 
+                            word about your project.
+                        </p>
+                    </li>
+
+                    <li className="q-a">
+                        <h3 className="question">How much work is it to run a project?</h3>
+                        <div>
+                            <p className="answer-part">
+                                Every Bootbeginner project has its share of exhilarating and 
+                                challenging moments, but the amount of work generally depends on the 
+                                size and complexity of the project.
+                            </p>
+                            <p className="answer-part">
+                                Expect the first few days after launch to be very busy as you 
+                                spread the word to your community, answer questions from potential 
+                                backers, and more. You may need to spend the last few days 
+                                rallying your social networks in order to reach your funding goal.
+                            </p>
+                            <p className="answer-part">
+                                Projects sometimes take on a life of their own, and in that case 
+                                you should expect to spend more time creating and fulfilling rewards.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li className="q-a">
+                        <h3 className="question">How do I get in touch with questions?</h3>
+                        <p className="answer">
+                            You can reach out with your questions via messenger pigeon, 
+                            smoke signal, or Pony Express. 
+                        </p>
+                    </li>
+                </ul>
+            </section>
+
+            <div className="promo">
+                <video></video>
+            </div>
+
+            <section className="learn-faqs bottom">
+
+                <ul className="questions-answers">
+                <h2 className="left-header">Why Bootbeginner?</h2>
+                    <li className="q-a">
+                        <div className= "q-count">
+                            <p>1</p>
+                            <h3 className="question num">Bootbeginner is just for footwear projects.</h3>
+                        </div>
+                        <p className="answer num">
+                            There are many options for crowdfunding, but Bootbeginner's 
+                            focus and dedication
+                        </p>
+                    </li>
+
+                    <li className="q-a">
+                        <div className= "q-count">
+                            <p>2</p>
+                            <h3 className="question num">Bootbeginner offers both technical and arch support</h3>
+                        </div>
+                        <p className="answer num">
+                            We want you to succeed and we know that's not possible if you
+                            worry about your crowdfunding site not functioning or if your 
+                            shoes don't offer you adequate support.
+                        </p>
+                    </li>
+
+                    <li className="q-a">
+                        <div className= "q-count">
+                            <p>3</p>
+                            <h3 className="question num">Bootbeginner is the premiere platform in its space</h3>
+                        </div>
+                        <p className="answer num">
+                            Bootbeginner has the largest community of any footwear based
+                            crowdfunding site, beating out Indiegogoboots and Platformeon.
+                        </p>
+                    </li>
+            </ul>
 
             </section>
-            <div className="category-images">
-                <img></img>
-                <img></img>
-                <img></img>
-                <img></img>
-            </div>
-            
-        </section>
 
-        <section className="closing">
-            <h1>"Every shoe has a tongue that cannot be silenced"</h1>
-            <span>- Brian Shoeman, a successful Bootbeginner project creator</span>
-            <Link to="/projects/start"></Link> 
-        </section>
-    </content>
-    )
+            <section className="categories">
+                <h2 className="left-header">
+                    Create a project in any of the following categories
+                </h2>
+
+                <ul>
+                    <li onClick={() => this.changeCategory("sneakers")} id="sneakers">Sneakers</li>
+                    <li onClick={() => this.changeCategory("boots")} id="boots">Boots</li>
+                    <li onClick={() => this.changeCategory(id)} id="clogs">Clogs</li>
+                    <li onClick={() => this.changeCategory(id)} id="flats">Flats</li>
+                    <li onClick={() => this.changeCategory(id)} id="heels">Heels</li>
+                    <li onClick={() => this.changeCategory(id)} id="loafers">Loafers</li>
+                </ul>
+
+                <section className="mid-categories">
+                    <div className="category-description">
+                        {displayedCategory}
+                    </div>
+
+                    <div>
+                        <h3>Interested?</h3>
+                        <p>
+                            Click start and get sketching. See how it looks. 
+                            Then share it with your friends
+                        </p>
+                        <Link to="/projects/start"></Link> 
+                    </div>
+
+                </section>
+                <div className="category-images">
+                    <img></img>
+                    <img></img>
+                    <img></img>
+                    <img></img>
+                </div>
+                
+            </section>
+
+            <section className="closing">
+                <div className="quote">
+                    <h1>"Every shoe has a tongue that cannot be silenced."</h1>
+                    <p>- Brian Shoeman, a successful Bootbeginner project creator</p>
+                    <Link to="/projects/start">Start a Project</Link> 
+                </div>
+            </section>
+        </content>
+        )
+    }
 }
 
 export default ProjectLearn;

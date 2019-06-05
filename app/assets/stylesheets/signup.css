@@ -17,7 +17,7 @@
     margin: 0 auto;
 }
 
-h3 {
+.signup-frame > h3 {
     background-color: rgba(241,238,234,0.2);
     width: 100%;
     text-align: center;
@@ -29,11 +29,14 @@ h3 {
 }
 
 .session-link{
-    color: #2752ff;}
-.session-link:visited{
-    color: #2752ff;}
+    color: #2752ff;
+}
 
-h1 {
+.session-link:visited{
+    color: #2752ff;
+}
+
+.singnup-frame > h1 {
     font: inherit;
     font-size: 28px;
     color: #282828;
@@ -171,8 +174,10 @@ h1 {
     transition: background-color 300ms ease-in;
     cursor: pointer;
 }
+
 .submit-button:hover{
     background-color: #037362;
     transition: background-color 300ms ease-in;
     cursor: pointer;
 }
+

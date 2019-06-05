@@ -3,14 +3,34 @@ import { requestProject, updateProject, receiveErrors } from "../../actions/proj
 import ShowProject from "./show_project";
 
 const msp = (state, ownProps) => {
+    debugger
     const projectId = ownProps.match.params.projectId;
-    const project = state.entities.projects[projectId]
-    const creator = state.entities.users[project.creator_id]
+    const project = state.entities.projects[projectId] ?
+        state.entities.projects[projectId]
+        :
+        {
+            id: "",
+            title: "",
+            subtitle: "",
+            creator_id: "",
+            category_id: "",
+            subcategory_id: "",
+            description: "",
+            risks: "",
+            faqs: "",
+            length: "",
+            amount_received: "",
+            goal: "",        
+        }
+    ;
 
+    const currentUserId = state.session.id;
+    const creator = state.entities.users[project.creator_id]
     return {
         project,
+        currentUserId,
         creator,
-    }
+    };
 }
 
 const mdp = (dispatch) => {
