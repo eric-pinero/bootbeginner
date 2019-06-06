@@ -17,9 +17,60 @@ categories = Category.create(
     ]
 )
 
+users = User.create(
+    [
+         {
+  id: 22,
+  title: nil,
+  subtitle: "Test",
+  creator_id: 2,
+  category_id: 1,
+  subcategory_id: nil,
+  description: nil,
+  risks: nil,
+  faqs: nil,
+  length: nil,
+  amount_received: nil,
+  goal: nil,
+  launched?: false,
+  location: "Belgium"},
+ {
+  id: 23,
+  title: nil,
+  subtitle: "Test",
+  creator_id: 2,
+  category_id: 1,
+  subcategory_id: nil,
+  description: nil,
+  risks: nil,
+  faqs: nil,
+  length: nil,
+  amount_received: nil,
+  goal: nil,
+  launched?: false,
+  location: "Belgium"},
+ {
+  id: 25,
+  title: "Shoes",
+  subtitle: "Another Test",
+  creator_id: 2,
+  category_id: 4,
+  subcategory_id: nil,
+  description: "",
+  risks: "",
+  faqs: "",
+  length: nil,
+  amount_received: nil,
+  goal: nil,
+  created_at: Wed, 05 Jun 2019 20:07:31 UTC +00:00,
+  launched?: false,
+  location: "france"},
+
+    ]
+)
 
 
-projects = Project.create([
+projects {
     {title: nil,
     subtitle: "test",
     creator_id: 2,
