@@ -20,63 +20,63 @@ class ProjectLearn extends React.Component {
         switch (this.state.selectedCategory) {
             case "sneakers":
                 displayedCategory =
-                    <p id="sneakers-description">
+                    <p >
                         Comfortable, versatile, and stylish. Who doesn't love a good sneaker?
                     </p>      
                 break;
             case "boots":
-                debugger
+
                 displayedCategory =
-                    <p id="boots-description">
+                    <p >
                         Boots are incredibly diverse. You can find them on a hiking trail or on a catwalk.
                     </p>
                 break;
 
             case "clogs":
                 displayedCategory =
-                    <p id="clogs-description">
+                    <p >
                         Beautiful, sturdy, mysterious. They greatly resemble the trees that gave them life.
                     </p>
                 break
             case "flats":
                 displayedCategory =
-                    <p id="flats-description">
+                    <p >
                         Flats sit firmly at the intersection of form and function. 
-                        Providing fashion without compromising an ounce of utility.
+                        Provide function without compromising an ounce of utility.
                     </p>
                 break;       
             case "heels":
-                debugger
+                
                 displayedCategory =
-                    <p id="heels-description">
+                    <p >
                         For those who not only want to stand out, but to stand above.
                     </p>
                 break;
             case "loafers":
-                debugger
+                
                 displayedCategory =    
-                <p id="loafers-description">
+                <p >
                     Don't let the name fool you, this daring footwear 
                     is just as at home in a lounge as it is in a workplace.
                 </p>
                 break
             default:
-                debugger
+                
                     displayedCategory =
-                    <p id="sneakers-description">
+                    <p >
                         Comfortable, versatile, and stylish. Who doesn't love a good sneaker?
                     </p>
                 break;
         }
 
 
-        debugger
+        
         return(
         <content className="learn-project">
             <div className="padded">
                 <div className="learn-top">
                     <h1>Bring your creative project to life.</h1>
-                    <Link to="/projects/start">Start a Project</Link>
+                    <Link className="start-project" to="/projects/start">Start a Project</Link>
                 </div>
 
                 <section className="learn img-top">
@@ -208,18 +208,18 @@ class ProjectLearn extends React.Component {
 
             </section>
 
-            <section className="categories">
+            <section className="learn-categories">
                 <h2 className="left-header">
                     Create a project in any of the following categories
                 </h2>
 
                 <ul>
-                    <li onClick={() => this.changeCategory("sneakers")} id="sneakers">Sneakers</li>
-                    <li onClick={() => this.changeCategory("boots")} id="boots">Boots</li>
-                    <li onClick={() => this.changeCategory(id)} id="clogs">Clogs</li>
-                    <li onClick={() => this.changeCategory(id)} id="flats">Flats</li>
-                    <li onClick={() => this.changeCategory(id)} id="heels">Heels</li>
-                    <li onClick={() => this.changeCategory(id)} id="loafers">Loafers</li>
+                    <li className="category-option" onClick={() => this.changeCategory("sneakers")} id="sneakers">Sneakers</li>
+                    <li className="category-option" onClick={() => this.changeCategory("boots")} id="boots">Boots</li>
+                    <li className="category-option" onClick={() => this.changeCategory("clogs")} id="clogs">Clogs</li>
+                    <li className="category-option" onClick={() => this.changeCategory("flats")} id="flats">Flats</li>
+                    <li className="category-option" onClick={() => this.changeCategory("heels")} id="heels">Heels</li>
+                    <li className="category-option" onClick={() => this.changeCategory("loafers")} id="loafers">Loafers</li>
                 </ul>
 
                 <section className="mid-categories">
@@ -227,13 +227,13 @@ class ProjectLearn extends React.Component {
                         {displayedCategory}
                     </div>
 
-                    <div>
+                    <div className="interested">
                         <h3>Interested?</h3>
                         <p>
                             Click start and get sketching. See how it looks. 
                             Then share it with your friends
                         </p>
-                        <Link to="/projects/start"></Link> 
+                        <Link className="start-project" to="/projects/start">Start a Project</Link> 
                     </div>
 
                 </section>
@@ -250,7 +250,7 @@ class ProjectLearn extends React.Component {
                 <div className="quote">
                     <h1>"Every shoe has a tongue that cannot be silenced."</h1>
                     <p>- Brian Shoeman, a successful Bootbeginner project creator</p>
-                    <Link to="/projects/start">Start a Project</Link> 
+                    <Link className="start-project" to="/projects/start">Start a Project</Link> 
                 </div>
             </section>
         </content>

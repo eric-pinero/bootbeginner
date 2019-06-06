@@ -19,10 +19,9 @@ const App = () => (
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
                 <AuthRoute path="/login" component={LoginFormContainer} />
                 <Route path="/projects/learn" component={ProjectLearn}/>
-                <Route path="/projects/start" component={ProjectFormContainer}/>
-                <Route exact path="/projects/:projectId/edit" component={EditProjectFormContainer}/>
-                <Route path="/projects/:projectId" component={ShowProjectContainer}/>
-                {/* <ProtRoute/> */}
+                <ProtRoute path="/projects/start" component={ProjectFormContainer}/>
+                <ProtRoute path="/projects/:projectId/edit" component={EditProjectFormContainer}/>
+                <Route exact path="/projects/:projectId" component={ShowProjectContainer}/>
             </Switch>
         </header>
     </div>

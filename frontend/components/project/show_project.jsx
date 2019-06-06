@@ -14,13 +14,11 @@ class ShowProject extends React.Component {
     }
 
     componentDidMount(){
-        debugger
         this.props.requestProject(this.props.match.params.projectId);
     }
 
 
     render(){
-        debugger
         const {title, subtitle, goal, amount, location, length, description, risks, faqs,} = this.props.project;
         
         

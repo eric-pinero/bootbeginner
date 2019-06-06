@@ -12,10 +12,12 @@ const receiveProjects = (projects) => {
     };
 };
 
-const receiveProject = (project) => {
+const receiveProject = ({project, creator, category}) => {
     return {
         type: RECEIVE_PROJECT,
         project,
+        creator,
+        category,
     };
 };
 
@@ -45,7 +47,7 @@ export const requestProjects = () => {
 export const requestProject = (projectId) => {
     return (dispatch) => {
         return APIUtil.fetchProject(projectId).then(
-            (project) => dispatch(receiveProject(project)),
+            (payload) => dispatch(receiveProject(payload)),
             response => dispatch(receiveErrors(response))
         );
     };

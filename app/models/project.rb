@@ -27,6 +27,10 @@ class Project < ApplicationRecord
         errors.add("cannot launch project until all required fields are complete")
         # need to write a custom validation that checks if all non-optional fields are complete before launch
     end
+
+    def category_name
+        category.name
+    end
     
     belongs_to :creator,
     primary_key: :id,

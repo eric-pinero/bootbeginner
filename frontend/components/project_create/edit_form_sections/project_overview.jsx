@@ -4,52 +4,74 @@ import { Link } from 'react-router-dom';
 class ProjectOverview extends React.Component{
     constructor(props){
         super(props);
+
+        this.state = {
+            rules: true,
+        }
+
+        this.closeRules = this.closeRules.bind(this);
     }
+
+    closeRules(){
+        this.setState({rules: false})
+    }
+
     render(){
         const project = this.props.props.project;
         const projectId = project.id
         const title = project.title ?
-        project.title
-        :
-        `${project.category_id} Project`
-        // figure out how to pull the category name
-    ;
-        const creatorName= project.creator_id;    
+            project.title
+            :
+            `${project.category_name} Project`
+            // figure out how to pull the category name
+        ;
+        
+        const creatorName= this.props.props.creator.username;    
         //figure out how to pull username
         const editPath = `projects/${project.id}/edit/`;
-        
+            
+
+        let rulebox = this.state.rules ?
+            <section className="project-status">
+                <h3>Project Status</h3>
+                <div className="rules">
+                    <ul>
+                        <li className="rule-head"><img></img></li>
+                        <li className="rule-head"><h2>Take a moment to review our rules</h2></li>
+                        <li className="rule-head"><p>Here are five rules every Bootbeginner project must follow.</p></li>
+                    </ul>
+
+                    <ol>
+                        <li className="rule">Projects must <span className="bold">&nbsp;create something to share&nbsp;</span> with others.</li>                            
+                        <li className="rule">Projects must be <span className="bold">&nbsp;honest and clearly presented</span>.</li>                            
+                        <li className="rule">Projects can't fundraise for charity.</li>                            
+                        <li className="rule">Projects can't offer equity.</li>                            
+                        <li className="rule">Projects must involve footwear.</li>                            
+                    </ol>
+
+                    <button onClick={this.closeRules} className="green-button">Got it</button>
+                </div>
+            </section>
+            :
+            null
+        ;
+
+
         return(
-            <content>
-                <header>
+            
+            <content className="overview">
+                <header className="overview-header">
                     <h1>{title}</h1>
-                    <span>{creatorName}</span>
+                    <p>by {creatorName}</p>
                     <Link to={`projects/${project.id}`}>Preview</Link>
                 </header>
-                <section>
-                    <h3>Project Status</h3>
-                    <div className="rules">
-                        <ul>
-                            <li><img></img></li>
-                            <li><h2>Take a moment to review our rules</h2></li>
-                            <li><span>Here are five rules every Bootbeginner project must follow.</span></li>
-                        </ul>
 
-                        <ol>
-                            <li>Projects must <span className="bold">create something to share</span> with others.</li>                            
-                            <li>Projects must be <span className="bold">honest and clearly presented</span>.</li>                            
-                            <li>Projects can't fundraise for charity.</li>                            
-                            <li>Projects can't offer equity.</li>                            
-                            <li>Projects must involve footwear.</li>                            
-                        </ol>
+                <div className="set-margin">
 
-                        <button>Got it</button>
-                    </div>
-
-                </section>
-
-                <section>
+                {rulebox}
+                <section className="project-status">
                     <h3>Project overview</h3>
-                    <ul>
+                    <ul className="project-sections">
                         <li className="project-section">
                             <Link to={`/projects/${projectId}/edit/basics`}>Basics</Link>
                             <span>Name your project, upload an image or video, and establish your campaign details.</span>
@@ -68,6 +90,9 @@ class ProjectOverview extends React.Component{
                         </li>
                     </ul>
                 </section>
+
+            </div>
+
             </content>
 
         );

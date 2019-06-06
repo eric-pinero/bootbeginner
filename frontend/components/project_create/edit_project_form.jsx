@@ -4,7 +4,7 @@ import ProjectOverview from "./edit_form_sections/project_overview";
 import ProjectBasics from './edit_form_sections/project_basics';
 import ProjectRewards from './edit_form_sections/project_rewards';
 import ProjectStory from './edit_form_sections/project_story';
-import ProjectEditHeader from './edit_form_sections/project_edit_header'
+import ProjectPeople from './edit_form_sections/project_people'
 
 class EditProjectForm extends React.Component{
     constructor(props){
@@ -13,6 +13,7 @@ class EditProjectForm extends React.Component{
 
     componentDidMount(){
         this.props.requestProject(this.props.match.params.projectId);
+        this.props.requestUser(this.props.creator);
     }
 
     render(){

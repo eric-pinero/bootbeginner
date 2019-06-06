@@ -3,7 +3,7 @@ import { requestProject, updateProject, receiveErrors } from "../../actions/proj
 import ShowProject from "./show_project";
 
 const msp = (state, ownProps) => {
-    debugger
+
     const projectId = ownProps.match.params.projectId;
     const project = state.entities.projects[projectId] ?
         state.entities.projects[projectId]

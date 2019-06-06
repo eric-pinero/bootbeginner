@@ -1,0 +1,134 @@
+.overview{
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+    margin: 0 60px;
+    width: 75%;
+}
+
+.overview-header {
+    display: flex;
+    flex-direction: column;
+    padding: 48px 60px 36px 60px;
+}
+
+.overview-header > h1{
+    font-size: 28px;
+}
+
+.overview > p{
+    margin-bottom: 42px;
+}
+
+.set-margin {
+    margin: 0 60px;
+}
+
+.project-status > h3 {
+    font-size: 21px;
+    margin-bottom: 24px;
+}
+
+.rules {
+    width: 100%;
+    height: fit-content;
+    padding: 66px 30px;
+    background-color: #FBFBFA;
+    border: 1px solid #DCDEDD;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    margin-bottom: 96px;
+}
+
+.rules > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.rule-head > h2{
+    font-size: 24px;
+    margin: 24px 0 20px 0;
+}
+
+.rule-head > p{
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.rules > ol{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    counter-reset: rules-counter;
+}
+
+.rules > ol > li {
+    counter-increment: rules-counter;
+}
+.rules > ol > li::before {
+    content: counter(rules-counter);
+    color: #E8E8E8;
+    font-size: 28px;
+    padding-right: 60px;
+
+}
+
+.rule {
+    width: 470px;
+    height: 48px;
+    padding: 24px 0;
+    border-bottom: 1px solid #DCDEDD;
+    display: flex;
+    align-items: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.green-button {
+    color: #ffffff;
+    background-color: #009E74;
+    width: fit-content;
+    box-sizing: border-box;
+    font: 15px "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+    padding: 15px 60px;
+    margin-top: 20px;
+}
+
+.project-sections {
+    box-sizing: border-box;
+    width: 100%;
+    height: fit-content;
+    background-color: #FFFFFF;
+    border: 1px solid #DCDEDD;
+
+}
+
+.project-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    border-bottom: 1px solid #DCDEDD;
+    padding-left: 70px;
+}
+
+.project-section:hover{
+    background-color: #FBFBFA;
+    transition: background-color 100ms ease-in;
+}
+
+.project-section > a{
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.project-section > span {
+   color: #95959E;
+   font-size: 14px;
+}

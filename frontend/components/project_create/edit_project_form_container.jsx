@@ -1,10 +1,12 @@
 import { connect } from "react-redux";
 import { requestProject, updateProject, receiveErrors } from "../../actions/project_actions";
+import { requestUser } from "../../actions/user_actions"
 import EditProjectForm from "./edit_project_form";
 
 const msp = (state, ownProps) => {
     const projectId = ownProps.match.params.projectId;
     const project = state.entities.projects[projectId] ?
+    
         state.entities.projects[projectId]
         :
         {
@@ -22,9 +24,15 @@ const msp = (state, ownProps) => {
             goal: "",        
         }
     ;
-
     const currentUserId = state.session.id;
-    const creator = state.entities.users[project.creator_id]
+    const creator = state.entities.users[project.creator_id] ?
+        state.entities.users[project.creator_id]
+        :
+        {
+            id: "",
+            username: "",
+            email: "",
+        }
     return {
         project,
         currentUserId,
@@ -34,6 +42,7 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch) => {
     return {
+        requestUser: () => dispatch(requestUser()),
         requestProject: (id) => dispatch(requestProject(id)),
         updateProject: (project) => dispatch(updateProject(project)),
         receiveErrors: (errors) => dispatch(receiveErrors(errors)),

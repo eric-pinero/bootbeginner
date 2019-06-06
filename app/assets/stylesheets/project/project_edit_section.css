@@ -1,0 +1,214 @@
+.project-edit-section{
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+}
+
+.project-edit-section > nav{
+    display: flex;
+    width: 100%;
+    padding: 24px;
+    justify-content: space-between;
+    
+}
+
+.grey-bottom {
+    border-bottom: 1px solid #F1EEEA;
+}
+
+.edit-nav-left {
+    display: flex;
+}
+
+.edit-nav-left > h1 {
+    font: 24px 'Fredoka One', cursive;
+    color: #034752;
+}
+
+.edit-nav-left> ul {
+    display: flex;
+    margin-left: 18px;
+    width: 400px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.edit-nav {
+    margin-right: 30px;
+}
+
+.basic-section-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 204px;
+    line-height: 24px;
+}
+
+.basic-section-header > h1 {
+    font-size: 24px;
+}
+
+.basic-section-header > h2 {
+    color: #656969;
+    margin-top: 12px;
+    font-size: 18px;
+    width: 750px;
+    text-align: center;
+}
+
+/* .basic-section-body {
+    padding: 0 60px;
+} */
+
+.basic-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 42px 72px;
+}
+
+.instructions {
+    width: 350px;
+}
+
+.instructions > h3 {
+    font-size: 18px;
+    color: #282828
+}
+
+.instructions > p {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #656969;
+    line-height: 24px;
+}
+
+.fields {
+    width: 60%;
+}
+
+.fields > div > span {
+    font-size: 14px;
+    color: #282828;
+    margin-bottom: 8px;
+}
+
+.basic-input {
+    margin-bottom: 30px;
+    height: 16px;
+    padding: 12px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.stack{
+    display: flex;
+    flex-direction: column;
+}
+
+.fields > .categories{
+    padding: 8px;
+    box-shadow: none;
+    border-radius: 0;
+    border: 1px solid #F1EEEA;
+
+
+}
+
+.goal-value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.goal-value > p {
+    align-content: center;
+    height: 30px;
+    width: 30px;
+    padding: 8px;
+    border-bottom: 1px solid #F1EEEA;
+    border-top: 1px solid #F1EEEA;
+    border-left: 1px solid #F1EEEA;
+}
+.goal-value > .basic-input{
+
+}
+
+.footer-offset{
+    margin-bottom: 88px;
+}
+
+.basic-footer {
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #FBFBFA;
+    border-top: 1px solid #F1EEEA;
+    height: 42px;
+    padding: 24px;
+    padding-right:40px;
+}
+
+.basic-footer > .green-button {
+    margin: 0;
+    margin-left: 20px;
+    margin-right: 40px;
+    padding: 12px 66px;
+    background-color: #034752;
+    color: white;
+
+}
+
+.basic-footer > .grey-button {
+    margin: 0;
+    margin-left: 20px;
+    padding: 12px 50px;
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid #F1EEEA;
+
+}
+
+.rewards-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 120px;
+    margin-bottom: 16px;
+    width: 75%;
+}
+
+.rewards > h3 {
+    margin-top: 12px;
+    font-size: 21px;
+}
+
+.rewards > p {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #656969;
+}
+
+.row > button {
+    color: white;
+    background-color: black;
+    margin-top: 18px;
+    margin-left: 125px;
+    padding: 15px 35px;
+    font-size: 14px;
+
+}
+
+textarea.basic-input {
+    height: 42px;
+}

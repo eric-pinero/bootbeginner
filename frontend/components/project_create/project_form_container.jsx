@@ -3,9 +3,19 @@ import { createProject, receiveErrors } from "../../actions/project_actions";
 import ProjectForm from "./project_form";
 
 const msp = (state) => {
-    const loggedIn = !!state.session;
+    const loggedIn = !!state.session.id;
+    let errors;
+
+    if (Array.isArray(state.errors.session)){
+        errors = state.errors.session;
+    } else {
+        
+        errors = state.errors.session.responseJSON;
+    }
+
     return {
         loggedIn,
+        errors,
     };
 };
 
