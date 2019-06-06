@@ -24,14 +24,12 @@ class ProjectOverview extends React.Component{
             project.title
             :
             `${project.category_name} Project`
-            // figure out how to pull the category name
         ;
         
         const creatorName= this.props.props.creator.username;    
-        //figure out how to pull username
+
         const editPath = `projects/${project.id}/edit/`;
             
-
         let rulebox = this.state.rules ?
             <section className="project-status">
                 <h3>Project Status</h3>

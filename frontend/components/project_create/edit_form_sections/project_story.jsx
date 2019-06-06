@@ -60,8 +60,8 @@ class ProjectStory extends React.Component{
                     <div className="fields">
                         <textarea
                             className="basic-input"
-                            onChange={this.handleChange('risks')} 
-                            value={this.state.risks}
+                            onChange={this.handleChange('description')} 
+                            value={this.state.description}
                             placeholder="Write about your project like you're explaining it to a friend"
                         />
                     </div>

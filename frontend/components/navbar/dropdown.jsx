@@ -16,6 +16,9 @@ class Dropdown extends React.Component{
 
 
     render() {
+        const projectCount = this.props.projects.length;
+        const recentProjects = this.props.projects.slice(projectCount - 5, projectCount);
+        
         const dropdown = this.state.display ? 
             <>
             <div onBlur={this.toggleDropdown} className="dropdown-menu" tabIndex="0">
@@ -45,8 +48,10 @@ class Dropdown extends React.Component{
 
                 <div className="dropdown-section">
                     <h2>CREATED PROJECTS</h2>
-                    <ul>
-                        <li className="link">Project 1</li>
+                    <ul className="created-projects">
+                        {recentProjects.map(
+                            project => <li key={project.id}><Link to={`/projects/${project.id}/edit/overview`}>{project.subtitle}</Link></li>)
+                            }
                     </ul>
                 </div>
                 </content>
