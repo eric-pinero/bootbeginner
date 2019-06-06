@@ -437,6 +437,25 @@ projects = Project.create([
     amount_received: nil,
     goal: nil,
     launched?: false,
-    location: "france",}
+    location: "france",},
+
+    {
+    title: "Put your Boot in your Mouth",
+    subtitle: "Edible boots for the modern worker",
+    creator_id: User.first.id,
+    category_id: Category.first.id,
+    subcategory_id: nil,
+    description:
+     "For too long, people have had to choose between wearing their shoes and eating them. We aim to change all of that.",
+    risks: "Some people may not be able to digest shoe leather",
+    faqs: "",
+    length: 30,
+    amount_received: nil,
+    goal: 50000,
+    created_at: Wed, 05 Jun 2019 20:06:45 UTC +00:00,
+    updated_at: Thu, 06 Jun 2019 17:47:10 UTC +00:00,
+    launched?: false,
+    location: "USA"}
+  
     ]
 )
