@@ -18,59 +18,58 @@ categories = Category.create(
 )
 
 users = User.create(
-    [
-         {
-  id: 22,
-  title: nil,
-  subtitle: "Test",
-  creator_id: 2,
-  category_id: 1,
-  subcategory_id: nil,
-  description: nil,
-  risks: nil,
-  faqs: nil,
-  length: nil,
-  amount_received: nil,
-  goal: nil,
-  launched?: false,
-  location: "Belgium"},
- {
-  id: 23,
-  title: nil,
-  subtitle: "Test",
-  creator_id: 2,
-  category_id: 1,
-  subcategory_id: nil,
-  description: nil,
-  risks: nil,
-  faqs: nil,
-  length: nil,
-  amount_received: nil,
-  goal: nil,
-  launched?: false,
-  location: "Belgium"},
- {
-  id: 25,
-  title: "Shoes",
-  subtitle: "Another Test",
-  creator_id: 2,
-  category_id: 4,
-  subcategory_id: nil,
-  description: "",
-  risks: "",
-  faqs: "",
-  length: nil,
-  amount_received: nil,
-  goal: nil,
-  created_at: Wed, 05 Jun 2019 20:07:31 UTC +00:00,
-  launched?: false,
-  location: "france"},
+[
+    {username: "test",
+     email: "test123@test.com",
+     password_digest: "$2a$10$RIG9PuQw3m7MHPF9fZi9euxke2SCewkewxCz0unMRb2HJg11MheVa",
+     session_token: "8ej_uCQsYwo6bBhx_QnHzg"
+    },
 
-    ]
+ {username: "test123",
+  email: "test@test.com",
+  password_digest: "$2a$10$9V976FZJRWaGYfcT.28E4uIgAQxxVIiuCPHqpgaGN2rw8J2rrPwIK",
+  session_token: "KaFNP86SNOPkDBKzoPCQkg"
+},
+
+ {username: "t",
+  email: "test2@test.com",
+  password_digest: "$2a$10$RKW.oUjJxb0Lah6MwO22PuwBLrp8DhZ8R29Xm8SMGqSpfz8YTo7ZW",
+  session_token: "B5-ed2r2BkLgXbmFhQRudg"
+},
+
+ {username: "t",
+  email: "1@1.com",
+  password_digest: "$2a$10$xDtT73MJ6rqaAgtS0UFSaO6go8W9OJMWaJlKqlqeNk4q5qcyaRBPq",
+  session_token: "ZMGfKXKhiFXZs02fVvla8w"
+},
+
+ {username: "t",
+  email: "2@1.com",
+  password_digest: "$2a$10$oBJ0Lonkqr4J9hh5jAjyTOQJb8GPdnlkzu6fzvVZ5xapqFe7AxBaG",
+  session_token: "TYMTdsHuxgZyds-QB6qHLw"
+},
+
+ {username: "t",
+  email: "3@1.com",
+  password_digest: "$2a$10$9GQs/7/0Wg0SkkuohOB10u48Amj5bE8gGKWhMjP76GQlhvJk7D9rS",
+  session_token: "b8rG5cQ9O411S7v2n63vhA"
+},
+ 
+  {username: "Bootsy Collins",
+  email: "bootsonboots@bootjack.com",
+  password_digest: "$2a$10$FUKCwIjyqHVAV8EtYKGrzu95/EXn4o3XiteRiIcjQEkqLQc70usPm",
+  session_token: "qNqlR0ZcM2PAqYUiifKEMw"},
+ 
+  {username: "Jared Djared",
+  email: "jdjdjd@jared.jared",
+  password_digest: "$2a$10$eeBibq9EON68iOIYdh0yse8B57GBBoJYgGqnQQEW7bH8Pry/STL2i",
+  session_token: "vS7uNiccxkb82BRoZlb-Qg"}
+]
+
 )
 
 
-projects {
+projects = Project.create([
     {title: nil,
     subtitle: "test",
     creator_id: 2,
@@ -115,8 +114,6 @@ projects {
     launched?: false,
     location: "Denmark",
     },
-
-
 
     {title: nil,
     subtitle: "test",
@@ -420,8 +417,6 @@ projects {
     launched?: false,
     location: "Belgium",
     },
-
-
     
     {title: "Shoes",
     subtitle: "Another Test",
@@ -436,7 +431,5 @@ projects {
     goal: nil,
     launched?: false,
     location: "france",}
-
-
     ]
 )
