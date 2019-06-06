@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+Category.destroy_all
+User.destroy_all
+Category.destroy_all
+
 categories = Category.create(
     [
         {name: "sneakers" },
@@ -19,6 +24,12 @@ categories = Category.create(
 
 users = User.create(
 [
+
+    {username: "Bootsy Collins",
+    email: "bootsonboots@bootjack.com",
+    password_digest: "$2a$10$FUKCwIjyqHVAV8EtYKGrzu95/EXn4o3XiteRiIcjQEkqLQc70usPm",
+    session_token: "qNqlR0ZcM2PAqYUiifKEMw"},
+
     {username: "test",
      email: "test123@test.com",
      password_digest: "$2a$10$RIG9PuQw3m7MHPF9fZi9euxke2SCewkewxCz0unMRb2HJg11MheVa",
@@ -44,7 +55,7 @@ users = User.create(
 },
 
  {username: "t",
-  email: "2@1.com",
+  email: "1@1.com",
   password_digest: "$2a$10$oBJ0Lonkqr4J9hh5jAjyTOQJb8GPdnlkzu6fzvVZ5xapqFe7AxBaG",
   session_token: "TYMTdsHuxgZyds-QB6qHLw"
 },
@@ -55,10 +66,6 @@ users = User.create(
   session_token: "b8rG5cQ9O411S7v2n63vhA"
 },
  
-  {username: "Bootsy Collins",
-  email: "bootsonboots@bootjack.com",
-  password_digest: "$2a$10$FUKCwIjyqHVAV8EtYKGrzu95/EXn4o3XiteRiIcjQEkqLQc70usPm",
-  session_token: "qNqlR0ZcM2PAqYUiifKEMw"},
  
   {username: "Jared Djared",
   email: "jdjdjd@jared.jared",
@@ -72,8 +79,8 @@ users = User.create(
 projects = Project.create([
     {title: nil,
     subtitle: "test",
-    creator_id: 2,
-    category_id: 2,
+    creator_id: User.first.id,
+    category_id: 1,
     subcategory_id: nil,
     description: nil,
     risks: nil,
@@ -87,8 +94,8 @@ projects = Project.create([
 
     {title: nil,
     subtitle: "test",
-    creator_id: 2,
-    category_id: 2,
+    creator_id: User.first.id,
+    category_id: 1,
     subcategory_id: nil,
     description: nil,
     risks: nil,
@@ -102,8 +109,8 @@ projects = Project.create([
 
     {title: nil,
     subtitle: "test",
-    creator_id: 2,
-    category_id: 2,
+    creator_id: User.first.id,
+    category_id: 1,
     subcategory_id: nil,
     description: nil,
     risks: nil,
@@ -117,8 +124,8 @@ projects = Project.create([
 
     {title: nil,
     subtitle: "test",
-    creator_id: 2,
-    category_id: 2,
+    creator_id: User.first.id,
+    category_id: 1,
     subcategory_id: nil,
     description: nil,
     risks: nil,
@@ -132,8 +139,8 @@ projects = Project.create([
 
     {title: nil,
     subtitle: "test",
-    creator_id: 2,
-    category_id: 2,
+    creator_id: User.first.id,
+    category_id: 1,
     subcategory_id: nil,
     description: nil,
     risks: nil,
@@ -147,7 +154,7 @@ projects = Project.create([
 
     {  title: nil,
     subtitle: "test",
-    creator_id: 2,
+    creator_id: User.first.id,
     category_id: 4,
     subcategory_id: nil,
     description: nil,
@@ -162,7 +169,7 @@ projects = Project.create([
 
     {  title: nil,
     subtitle: "test",
-    creator_id: 2,
+    creator_id: User.first.id,
     category_id: 4,
     subcategory_id: nil,
     description: nil,
@@ -177,7 +184,7 @@ projects = Project.create([
 
     { title: nil,
     subtitle: "test",
-    creator_id: 2,
+    creator_id: User.first.id,
     category_id: 3,
     subcategory_id: nil,
     description: nil,
@@ -192,7 +199,7 @@ projects = Project.create([
 
     {  title: nil,
     subtitle: "test",
-    creator_id: 2,
+    creator_id: User.first.id,
     category_id: 3,
     subcategory_id: nil,
     description: nil,
@@ -207,8 +214,8 @@ projects = Project.create([
     
     { title: nil,
     subtitle: "test",
-    creator_id: 2,
-    category_id: 2,
+    creator_id: User.first.id,
+    category_id: 1,
     subcategory_id: nil,
     description: nil,
     risks: nil,
@@ -222,8 +229,8 @@ projects = Project.create([
     
     {  title: nil,
     subtitle: "test",
-    creator_id: 2,
-    category_id: 2,
+    creator_id: User.first.id,
+    category_id: 1,
     subcategory_id: nil,
     description: nil,
     risks: nil,
@@ -237,7 +244,7 @@ projects = Project.create([
     
     {  title: nil,
     subtitle: "test",
-    creator_id: 2,
+    creator_id: User.first.id,
     category_id: 3,
     subcategory_id: nil,
     description: nil,
@@ -252,7 +259,7 @@ projects = Project.create([
     
     {  title: nil,
     subtitle: "test",
-    creator_id: 2,
+    creator_id: User.first.id,
     category_id: 3,
     subcategory_id: nil,
     description: nil,
@@ -267,7 +274,7 @@ projects = Project.create([
     
     {  title: nil,
     subtitle: "Test",
-    creator_id: 2,
+    creator_id: User.first.id,
     category_id: 3,
     subcategory_id: nil,
     description: nil,
@@ -282,7 +289,7 @@ projects = Project.create([
     
     {title: nil,
     subtitle: "test",
-    creator_id: 2,
+    creator_id: User.first.id,
     category_id: 1,
     subcategory_id: nil,
     description: nil,
@@ -297,7 +304,7 @@ projects = Project.create([
 
     {title: nil,
     subtitle: "test",
-    creator_id: 2,
+    creator_id: User.first.id,
     category_id: 1,
     subcategory_id: nil,
     description: nil,
@@ -313,8 +320,8 @@ projects = Project.create([
 
     {title: nil,
     subtitle: "test",
-    creator_id: 2,
-    category_id: 2,
+    creator_id: User.first.id,
+    category_id: 1,
     subcategory_id: nil,
     description: nil,
     risks: nil,
@@ -329,7 +336,7 @@ projects = Project.create([
 
     {title: nil,
     subtitle: "test13",
-    creator_id: 2,
+    creator_id: User.first.id,
     category_id: 3,
     subcategory_id: nil,
     description: nil,
@@ -344,7 +351,7 @@ projects = Project.create([
 
     {title: nil,
     subtitle: "Test",
-    creator_id: 2,
+    creator_id: User.first.id,
     category_id: 1,
     subcategory_id: nil,
     description: nil,
@@ -360,7 +367,7 @@ projects = Project.create([
 
     {title: nil,
     subtitle: "Test",
-    creator_id: 2,
+    creator_id: User.first.id,
     category_id: 1,
     subcategory_id: nil,
     description: nil,
@@ -375,7 +382,7 @@ projects = Project.create([
 
     {title: nil,
     subtitle: "Test",
-    creator_id: 2,
+    creator_id: User.first.id,
     category_id: 1,
     subcategory_id: nil,
     description: nil,
@@ -390,7 +397,7 @@ projects = Project.create([
 
     { title: nil,
     subtitle: "Test",
-    creator_id: 2,
+    creator_id: User.first.id,
     category_id: 1,
     subcategory_id: nil,
     description: nil,
@@ -405,7 +412,7 @@ projects = Project.create([
     
     {title: nil,
     subtitle: "Test",
-    creator_id: 2,
+    creator_id: User.first.id,
     category_id: 1,
     subcategory_id: nil,
     description: nil,
@@ -420,7 +427,7 @@ projects = Project.create([
     
     {title: "Shoes",
     subtitle: "Another Test",
-    creator_id: 2,
+    creator_id: User.first.id,
     category_id: 4,
     subcategory_id: nil,
     description: "",
