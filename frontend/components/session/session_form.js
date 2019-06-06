@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from '../navbar/navbar_container';
 
 class SessionForm extends React.Component{
     constructor(props){
@@ -140,6 +141,8 @@ class SessionForm extends React.Component{
         ;
         
             return (
+            <>
+            <Navbar/>
             <div className="session-form">
                 <div className="signup-frame">
                     {signupHeader}
@@ -192,6 +195,7 @@ class SessionForm extends React.Component{
                     </form>
                 </div>
             </div>
+            </>
             )
 
     }

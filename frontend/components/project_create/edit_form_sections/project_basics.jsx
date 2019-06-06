@@ -81,7 +81,7 @@ class ProjectBasics extends React.Component{
                             </p>
                         </div>
                         <div className="fields">
-                            <select className="categories basic-input stack" onChange={this.handleChange('category')} value={this.state.category} >
+                            <select className="categories basic-input" onChange={this.handleChange('category')} value={this.state.category} >
                                 <option value="sneakers">Sneakers</option>
                                 <option value="boots">Boots</option>
                                 <option value="clogs">Clogs</option>
@@ -146,8 +146,9 @@ class ProjectBasics extends React.Component{
                         <div className="fields">
                             <span>Goal amount</span>
                             <div className="goal-value">
-                                <p>$</p>
-                                <input className="basic-input" type="number" min="0" onChange={this.handleChange('goal')} value={this.state.goal}/>
+                                <label><span className="dollars">$</span>
+                                    <input className="basic-input" type="number" min="0" onChange={this.handleChange('goal')} value={this.state.goal}/>
+                                </label>
                             </div>
                         </div>
 

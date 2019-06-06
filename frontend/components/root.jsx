@@ -2,6 +2,8 @@ import React from "react";
 import {Provider} from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 import App from "./App";
+import Navbar from "./navbar/navbar_container";
+
 
 const Root = ({store}) => {
     return (

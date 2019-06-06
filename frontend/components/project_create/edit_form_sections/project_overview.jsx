@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from '../../navbar/navbar_container'
 
 class ProjectOverview extends React.Component{
     constructor(props){
@@ -58,7 +59,8 @@ class ProjectOverview extends React.Component{
 
 
         return(
-            
+            <>
+            <Navbar/>
             <content className="overview">
                 <header className="overview-header">
                     <h1>{title}</h1>
@@ -94,7 +96,7 @@ class ProjectOverview extends React.Component{
             </div>
 
             </content>
-
+            </>
         );
     }
 };

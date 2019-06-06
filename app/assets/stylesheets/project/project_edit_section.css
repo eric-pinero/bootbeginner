@@ -4,7 +4,6 @@
 
 .project-edit-section > nav{
     display: flex;
-    width: 100%;
     padding: 24px;
     justify-content: space-between;
     
@@ -110,11 +109,27 @@
     box-shadow: none;
     border-radius: 0;
     border: 1px solid #F1EEEA;
-
-
 }
 
-.goal-value {
+.categories > option {
+    padding-top: 10px;
+}
+
+.goal-value > label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dollars {
+    position: relative;
+    width: 70px;
+    height: 42px;
+    bottom: 15px;
+    left: 0px;
+    border-bottom: 1px solid #DFDFDF;
+    border-top: 1px solid #DFDFDF;
+    border-left: 1px solid #DFDFDF;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,12 +140,6 @@
     height: 30px;
     width: 30px;
     padding: 8px;
-    border-bottom: 1px solid #F1EEEA;
-    border-top: 1px solid #F1EEEA;
-    border-left: 1px solid #F1EEEA;
-}
-.goal-value > .basic-input{
-
 }
 
 .footer-offset{

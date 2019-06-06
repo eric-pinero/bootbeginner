@@ -1,4 +1,6 @@
 import React from "react";
+import Dropdown from "../navbar/dropdown_container";
+import { Link } from "react-router-dom"
 
 class ProjectForm extends React.Component{
     constructor(props){
@@ -6,7 +8,7 @@ class ProjectForm extends React.Component{
         this.state = {
             categoryName: "default",
             subtitle: "",
-            location: "",
+            location: "default",
             page: 1,
             active: false
         };
@@ -176,7 +178,14 @@ class ProjectForm extends React.Component{
 
         return(
         <content className="project-create-form">
-            <span>{this.state.page} of 3</span>
+            <header>
+                <nav className="create-nav grey-bottom">
+                    <h1><Link to="/">Bootbeginner</Link></h1>
+                    <Dropdown/>
+                </nav>
+                <p>{this.state.page} of 3</p>
+            </header>
+            
             {errors}
             {formPage}
         </content>

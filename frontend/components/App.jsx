@@ -4,18 +4,17 @@ import SignupFormContainer from "./session/signup_form_container";
 import LoginFormContainer from "./session/login_form_container";
 import { logout } from "../actions/session_actions";
 import {AuthRoute, ProtRoute} from "../util/route_util";
-import Navbar from "./navbar/navbar_container";
 import ProjectLearn from "./project_create/project_learn";
 import ProjectFormContainer from "./project_create/project_form_container";
 import EditProjectFormContainer from "./project_create/edit_project_form_container";
 import ShowProjectContainer from "./project/show_project_container"
+import Index from "./index";
 
 const App = () => (
     <div>
         <header>
-            <Navbar/>
             <Switch>
-                <Route exact path="/" />
+                <Route exact path="/" component={Index}/>
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
                 <AuthRoute path="/login" component={LoginFormContainer} />
                 <Route path="/projects/learn" component={ProjectLearn}/>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
-import Dropdown from "./dropdown"
+import Dropdown from "./dropdown_container"
 
 class Navbar extends React.Component{
     

@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import Navbar from "../navbar/navbar_container";
 
 class ProjectLearn extends React.Component {
     constructor(props){
@@ -72,6 +73,8 @@ class ProjectLearn extends React.Component {
 
         
         return(
+        <>
+        <Navbar/>
         <content className="learn-project">
             <div className="padded">
                 <div className="learn-top">
@@ -165,6 +168,7 @@ class ProjectLearn extends React.Component {
 
             <div className="promo">
                 <video></video>
+                <img src={window.hopeShoe}></img>
             </div>
 
             <section className="learn-faqs bottom">
@@ -254,6 +258,7 @@ class ProjectLearn extends React.Component {
                 </div>
             </section>
         </content>
+        </>
         )
     }
 }

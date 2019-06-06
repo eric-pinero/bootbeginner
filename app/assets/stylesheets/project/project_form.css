@@ -8,6 +8,32 @@
     margin-left: 40px;
 }
 
+.project-create-form > header {
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 1250px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+}
+
+.create-nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #F1EEEA;
+}
+
+.create-nav > h1{
+    font: 24px 'Fredoka One', cursive;
+    color: #034752;
+    margin-right: 40%;
+}
+
+.project-create-form > header > p{
+    padding-top: 5px;
+}
+
 .create-form{
     margin: 50px auto 0 auto;
     width: 625px;
@@ -81,7 +107,7 @@
 
 .inactive{
     cursor: not-allowed;
-    background-color: #bebebe;
+    background-color: #D3D3D3;
 }
 
 .prev-button {
