@@ -452,8 +452,6 @@ projects = Project.create([
     length: 30,
     amount_received: nil,
     goal: 50000,
-    created_at: Wed, 05 Jun 2019 20:06:45 UTC +00:00,
-    updated_at: Thu, 06 Jun 2019 17:47:10 UTC +00:00,
     launched?: false,
     location: "USA"}
   
