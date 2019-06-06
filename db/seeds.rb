@@ -9,7 +9,7 @@
 
 Category.destroy_all
 User.destroy_all
-Category.destroy_all
+Project.destroy_all
 
 categories = Category.create(
     [
