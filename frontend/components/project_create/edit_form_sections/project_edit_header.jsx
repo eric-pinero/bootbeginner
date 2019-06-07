@@ -18,9 +18,9 @@ import { Link } from  'react-router-dom';
                     <img></img>
                     <Link to={`/projects/${this.props.project.id}/edit/story`}>Story</Link>
                     <img></img>
-                    <Link to={`/projects/${this.props.project.id}/edit/people`}>People</Link>
-                    <img></img>
-                    <Link to={`/projects/${this.props.project.id}/edit/payment`}>Payment</Link>
+                    {/* <Link to={`/projects/${this.props.project.id}/edit/people`}>People</Link>
+                    <img></img> */}
+                    {/* <Link to={`/projects/${this.props.project.id}/edit/payment`}>Payment</Link> */}
                 </nav>
                 <Link>Exit to Project Overview</Link>
             </header>

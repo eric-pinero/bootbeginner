@@ -84,10 +84,10 @@ class ProjectOverview extends React.Component{
                            <Link to={`/projects/${projectId}/edit/story`}>Story</Link>
                            <span>Add a detailed project description and convey your Risks and Challenges.</span>
                         </li>
-                        <li className="project-section">
+                        {/* <li className="project-section">
                             <Link to={`/projects/${projectId}/edit/people`}>People</Link>
                             <span>Edit your Bootbeginner profile.</span>
-                        </li>
+                        </li> */}
                     </ul>
                 </section>
 

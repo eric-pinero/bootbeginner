@@ -21,7 +21,7 @@ class ProjectRewards extends React.Component{
                             <img/>
                             <li><Link to={`/projects/${projectId}/edit/story`}>Story</Link></li>
                             <img/>
-                            <li><Link to={`/projects/${projectId}/edit/people`}>People</Link></li>
+                            {/* <li><Link to={`/projects/${projectId}/edit/people`}>People</Link></li> */}
                         </ul>
                     </div>
                     <Link to={`/projects/${projectId}/edit/overview`}>Exit to Project Overview</Link>
