@@ -12,12 +12,12 @@ const msp = (state) => {
 }
 
 
-const mdp = (dispatch) => {
-    return {
-        requestUser: (userId) => dispatch(requestUser(userId)),
-        receiveErrors: (errors) => dispatch(receiveErrors(errors)),
-    };
-};
+// const mdp = (dispatch) => {
+//     return {
+//         requestUser: (userId) => dispatch(requestUser(userId)),
+//         receiveErrors: (errors) => dispatch(receiveErrors(errors)),
+//     };
+// };
 
 
-export default connect(msp, mdp)(Dropdown);
+export default connect(msp)(Dropdown);
