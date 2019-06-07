@@ -63,7 +63,7 @@ class ProjectOverview extends React.Component{
                 <header className="overview-header">
                     <h1>{title}</h1>
                     <p>by {creatorName}</p>
-                    <Link to={`projects/${project.id}`}>Preview</Link>
+                    <Link to={`/projects/${project.id}`}>Preview</Link>
                 </header>
 
                 <div className="set-margin">
