@@ -13,7 +13,7 @@ class EditProjectForm extends React.Component{
 
     componentDidMount(){
         this.props.requestProject(this.props.match.params.projectId);
-        this.props.requestUser(this.props.creator);
+        this.props.requestUser(this.props.creator.id);
     }
 
     render(){
