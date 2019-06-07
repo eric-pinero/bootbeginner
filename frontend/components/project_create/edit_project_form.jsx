@@ -20,6 +20,7 @@ class EditProjectForm extends React.Component{
         if (this.props.project.id && this.props.currentUserId !== this.props.project.creator_id){
             return <Redirect to="/"/>;
         }
+        
         return (
             <content>
                 <Route path="/projects/:projectId/edit/overview" component={() => <ProjectOverview props={this.props}/>}/>

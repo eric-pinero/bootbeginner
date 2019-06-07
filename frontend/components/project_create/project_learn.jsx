@@ -100,7 +100,7 @@ class ProjectLearn extends React.Component {
                     <div className="quote">
                         <h1>We see Bootbeginner as a home for creative minds and a 
                         wonderful platform; where people who believe, respect and 
-                        see the beauty of footwear can support an idea and make it a reality
+                        see the beauty of footwear, can support an idea and make it a reality
                         </h1>
                         <p>- DE LA SOLE</p>
                     </div>
@@ -182,7 +182,7 @@ class ProjectLearn extends React.Component {
                         </div>
                         <p className="answer num">
                             There are many options for crowdfunding, but Bootbeginner's 
-                            focus and dedication
+                            focus and dedication to footwear sets it apart in a crowded marketplace.
                         </p>
                     </li>
 
@@ -205,7 +205,7 @@ class ProjectLearn extends React.Component {
                         </div>
                         <p className="answer num">
                             Bootbeginner has the largest community of any footwear based
-                            crowdfunding site, beating out Indiegogoboots and Platformeon.
+                            crowdfunding site, with over twice the market share of ßIndiegogoboots.
                         </p>
                     </li>
             </ul>
