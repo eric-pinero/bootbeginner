@@ -42,7 +42,7 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch) => {
     return {
-        requestUser: () => dispatch(requestUser()),
+        requestUser: (id) => dispatch(requestUser(id)),
         requestProject: (id) => dispatch(requestProject(id)),
         updateProject: (project) => dispatch(updateProject(project)),
         receiveErrors: (errors) => dispatch(receiveErrors(errors)),
