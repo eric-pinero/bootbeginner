@@ -13,7 +13,6 @@ class EditProjectForm extends React.Component{
 
     componentDidMount(){
         this.props.requestProject(this.props.match.params.projectId).then((response) => console.log(response));
-        debugger
         // this.props.requestUser(this.props.creator.id);
     }
 
