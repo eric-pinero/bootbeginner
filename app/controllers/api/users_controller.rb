@@ -15,7 +15,6 @@ class Api::UsersController < ApplicationController
 
     private
     def selected_user
-        # debugger
         User.find(params[:id])
     end
     def user_params

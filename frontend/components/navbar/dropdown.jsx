@@ -14,11 +14,6 @@ class Dropdown extends React.Component{
         this.setState({display: !(this.state.display)})
     }
 
-    // componentDidMount(){
-    //     debugger
-    //     this.props.requestUser(this.props.currentUser.id);
-    // }
-
     render() {
         const projectCount = this.props.projects.length;
         const recentProjects = this.props.projects.slice(projectCount - 5, projectCount);
