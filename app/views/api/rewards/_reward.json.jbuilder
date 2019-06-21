@@ -1,0 +1,1 @@
+json.extract! reward, :id, :project_id, :title, :description, :items, :minimum_value, :quantity, :start_time, :end_time

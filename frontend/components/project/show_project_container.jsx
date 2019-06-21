@@ -25,20 +25,21 @@ const msp = (state, ownProps) => {
     ;
 
     const currentUserId = state.session.id;
-    const creator = state.entities.users[project.creator_id]
+    const creator = state.entities.users[project.creator_id];
+
     return {
         project,
         currentUserId,
         creator,
     };
-}
+};
 
 const mdp = (dispatch) => {
     return {
         requestProject: (id) => dispatch(requestProject(id)),
         receiveErrors: (errors) => dispatch(receiveErrors(errors)),
-        // will need dispatch for reward updates
+        // will need dispatch for project updates
     };
 };
 
-export default connect(msp, mdp)(ShowProject)
+export default connect(msp, mdp)(ShowProject);

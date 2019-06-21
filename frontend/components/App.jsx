@@ -8,13 +8,13 @@ import ProjectLearn from "./project_create/project_learn";
 import ProjectFormContainer from "./project_create/project_form_container";
 import EditProjectFormContainer from "./project_create/edit_project_form_container";
 import ShowProjectContainer from "./project/show_project_container"
-import Index from "./index";
+import ProjectIndexContainer from "./index/project_index_container";
 
 const App = () => (
     <div>
         <header>
             <Switch>
-                <Route exact path="/" component={Index}/>
+                <Route exact path="/" component={ProjectIndexContainer}/>
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
                 <AuthRoute path="/login" component={LoginFormContainer} />
                 <Route path="/projects/learn" component={ProjectLearn}/>

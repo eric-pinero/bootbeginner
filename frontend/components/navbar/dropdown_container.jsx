@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Dropdown from './dropdown'
+import Dropdown from './dropdown';
 
 const msp = (state) => {
     const currentUserId = state.session.id;

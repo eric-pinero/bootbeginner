@@ -41,7 +41,7 @@ export const deleteProject = (id) => {
     return (
         $.ajax({
             method: 'DELETE',
-            url: `api/reports/${id}`
+            url: `api/projects/${id}`
         })
     );
 };
