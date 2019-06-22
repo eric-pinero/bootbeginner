@@ -1,3 +1,3 @@
 json.reward do
-    json.partial! 'api/projects/project/reward', reward: @reward
+    json.partial! 'api/rewards/reward', reward: @reward
 end

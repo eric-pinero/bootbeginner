@@ -10,10 +10,11 @@ class Api::RewardsController < ApplicationController
         @reward.title = reward_params["title"]
         @reward.description = reward_params["description"]
         @reward.minimum_value = reward_params["minimum_value"]
-        @reward.project = Project.find_by(reward_params[project_id])
+        @reward.project_id = reward_params["project_id"]
+        @reward.project = Project.find(reward_params["project_id"])
 
         if @reward.save
-            render json: @reward
+            render :show
         else
             render json: @reward.errors.full_messages, status: 401 
         end

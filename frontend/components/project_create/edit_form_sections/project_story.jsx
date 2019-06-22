@@ -10,14 +10,14 @@ class ProjectStory extends React.Component{
     }
 
     handleSubmit(){
-        const project = Object.assign({}, this.state)
+        const project = Object.assign({}, this.state);
         this.props.props.updateProject(project);
     }
 
     handleChange(field){
         return (e) => {
-            this.setState({[field]: e.target.value });
-        }
+            this.setState({ [field]: e.target.value });
+        };
     }
 
     render(){

@@ -13,6 +13,7 @@ import {
         return newState;
   
       case RECEIVE_REWARD:
+        debugger
         newState = merge({}, state, {[action.reward.id]: action.reward});
         return newState;
   

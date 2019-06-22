@@ -1,3 +1,5 @@
+import * as APIUtil from '../util/reward_api_util';
+
 export const RECEIVE_REWARDS = 'RECEIVE_REWARDS';
 export const RECEIVE_REWARD = 'RECEIVE_REWARD';
 export const REMOVE_REWARD = 'REMOVE_REWARD';
