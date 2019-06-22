@@ -13,7 +13,7 @@ class Api::RewardsController < ApplicationController
         @reward.project = Project.find_by(reward_params[project_id])
 
         if @reward.save
-            render :show
+            render json: @reward
         else
             render json: @reward.errors.full_messages, status: 401 
         end

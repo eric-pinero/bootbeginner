@@ -21,7 +21,7 @@ class ProjectRewards extends React.Component{
             {/* connect to show page once it is functional */}
             <Link className="green-button" onClick={this.handleSubmit} to={`/projects/${projectId}/edit/${this.props.next}`}>Next: {this.props.next[0].toUpperCase() + this.props.next.slice(1)}</Link>
             </>
-            
+            debugger
         // const reward1 = this.props.props.project.rewards[0] ?
         //     <p>First Reward here</p>
         //     :
@@ -89,7 +89,7 @@ class ProjectRewards extends React.Component{
                                 
                                 <h3>Pledge amount</h3>
                                 <p>Set a minimum pledge amount for this reward.</p>
-                                <input type="number"><div>$</div></input>
+                                <div>$<input type="number"/></div>
 
                                 <h3>Description</h3>
                                 <p>Describe this reward in more detail.</p>
@@ -102,8 +102,8 @@ class ProjectRewards extends React.Component{
                                     time-consuming, or not scalable.
                                 </p>
                                 <div className="radio-box">
-                                    <input type="radio">Unlimited</input>
-                                    <input type="radio">Limit availability</input>
+                                    <input type="radio"/>Unlimited
+                                    <input type="radio"/>Limit availability
                                     <div className="hidden">
                                         <h3>Maximum number available</h3>
                                         <input type="number"></input>
@@ -117,8 +117,8 @@ class ProjectRewards extends React.Component{
                                     or special offerings.
                                 </p>
                                 <div className="radio-box">
-                                    <input type="radio">No time limit</input>
-                                    <input type="radio">Start/end on specific dates and times</input>
+                                    <input type="radio"/>No time limit
+                                    <input type="radio"/>Start/end on specific dates and times
                                     <input type="number" className="hidden quantity"></input>
                                 </div>
 
