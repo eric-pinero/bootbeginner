@@ -12,6 +12,7 @@
 #
 
 class Pledge < ApplicationRecord
+    validates :pledged_amount, presence: true
 
     belongs_to: :user
     belongs_to: :project
