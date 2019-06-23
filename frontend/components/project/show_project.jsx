@@ -10,7 +10,7 @@ class ShowProject extends React.Component {
     }
 
     changeTab(tabName){
-        this.setState({selectedTab: tabName})
+        this.setState({selectedTab: tabName});
     }
 
     componentDidMount(){
@@ -26,7 +26,6 @@ class ShowProject extends React.Component {
         let createdProjects;
         
         if (this.props.creator){
-            
             username = this.props.creator.username;
             projects = this.props.creator.user_projects;
             createdProjects = projects.length;

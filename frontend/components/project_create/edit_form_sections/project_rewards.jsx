@@ -24,7 +24,7 @@ class ProjectRewards extends React.Component{
         const {
             title, description, items, project_id, minimum_value,
             quantity, start_time, end_time,
-        } = this.state
+        } = this.state;
         const reward = Object.assign({}, { title, description, items, project_id, minimum_value,
             quantity, start_time, end_time });
         this.props.props.createReward(reward);
@@ -38,7 +38,10 @@ class ProjectRewards extends React.Component{
     }
 
     render(){
-        const projectId = this.props.props.project.id;
+        const project = this.props.props.project;
+        const projectId = project.id;
+        debugger
+        const rewards = project.project_rewards;
         const footer = this.state.rewardMenu ?
             <>
             <button 
@@ -134,14 +137,34 @@ class ProjectRewards extends React.Component{
         ;
 
 
-        
-        // const reward1 = this.props.props.project.rewards[0] ?
-        //     <p>First Reward here</p>
-        //     :
-        //     <li className="sample reward-item grey-bg border dashed dark-grey-font">
-        //         <span>+ Example: a copy of what you're making</span>
-        //     </li>
-        // ;
+        const reward1 = rewards[0] ?
+            <>
+            <div>
+                <span>PLEDGE AMOUNT</span>
+                <span>DETAILS</span>
+                <span>INCLUDES</span>
+            </div>
+
+            <li className="reward-item solid dashed dark-grey-font">
+                <div className="pledge">
+                    <div class="column">
+                       <span> ${rewards[0.minimum_value]}</span>
+                    </div>
+                    <div class="column">
+                        <span> ${rewards[0.title]}</span>
+                    </div>
+                    <div class="column">
+                        
+                    </div>
+                </div>
+                <div></div>
+            </li>
+            </>
+            :
+            <li className="sample reward-item grey-bg border dashed dark-grey-font">
+                <span>+ Example: a copy of what you're making</span>
+            </li>
+        ;
 
         return(
             <content className="project-edit-section">

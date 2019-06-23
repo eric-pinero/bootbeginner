@@ -2,7 +2,7 @@ class Api::RewardsController < ApplicationController
     before_action :ensure_logged_in
 
     def index
-        @rewards = Reward.all
+        @rewards = Reward.find_by(project_id: reward_params["project_id"] })
     end
 
     def create

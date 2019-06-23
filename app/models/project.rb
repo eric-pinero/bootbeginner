@@ -23,14 +23,7 @@
 class Project < ApplicationRecord
     validates :subtitle, :location, presence: true, length: { minimum: 1}
 
-    def launch_ready?
-        errors.add("cannot launch project until all required fields are complete")
-        # need to write a custom validation that checks if all non-optional fields are complete before launch
-    end
-
-    def category_name
-        category.name
-    end
+    has_many :rewards
     
     belongs_to :creator,
     primary_key: :id,
@@ -40,5 +33,18 @@ class Project < ApplicationRecord
     belongs_to :category
 
     belongs_to :subcategory, optional: true
+
+    def launch_ready?
+        errors.add("cannot launch project until all required fields are complete")
+        # need to write a custom validation that checks if all non-optional fields are complete before launch
+    end
+
+    def category_name
+        category.name
+    end
+
+    def project_rewards
+        rewards.all
+    end
 
 end

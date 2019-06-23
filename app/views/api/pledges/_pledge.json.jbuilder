@@ -1,0 +1,1 @@
+json.extract! pledge, :id, :project_id, :user_id, :pledged_amount

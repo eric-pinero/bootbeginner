@@ -25,6 +25,7 @@ const msp = (state, ownProps) => {
             goal: "",        
         }
     ;
+
     const currentUserId = state.session.id;
     const creator = state.entities.users[project.creator_id] ?
         state.entities.users[project.creator_id]
@@ -34,6 +35,8 @@ const msp = (state, ownProps) => {
             username: "",
             email: "",
         }
+    ;
+
     return {
         project,
         currentUserId,
