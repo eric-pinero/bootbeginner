@@ -22,7 +22,7 @@ const msp = (state, ownProps) => {
             faqs: "",
             length: "",
             amount_received: "",
-            goal: "",        
+            goal: "",
         }
     ;
 

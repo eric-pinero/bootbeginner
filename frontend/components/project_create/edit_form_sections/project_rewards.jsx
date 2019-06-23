@@ -17,16 +17,18 @@ class ProjectRewards extends React.Component{
             start_time: null,
             end_time: null,
             rewardMenu: false,
+            estimated_month: "default",
+            estimated_year: "default",
         };
     }
 
     handleSubmit(){
         const {
             title, description, items, project_id, minimum_value,
-            quantity, start_time, end_time,
+            quantity, start_time, end_time, estimated_month, estimated_year
         } = this.state;
         const reward = Object.assign({}, { title, description, items, project_id, minimum_value,
-            quantity, start_time, end_time });
+            quantity, start_time, end_time, estimated_month, estimated_year });
         this.props.props.createReward(reward);
         this.setState({rewardMenu : false});
     }
@@ -40,8 +42,8 @@ class ProjectRewards extends React.Component{
     render(){
         const project = this.props.props.project;
         const projectId = project.id;
-        debugger
         const rewards = project.project_rewards;
+
         const footer = this.state.rewardMenu ?
             <>
             <button 
@@ -84,6 +86,41 @@ class ProjectRewards extends React.Component{
                     <h3>Description</h3>
                     <p>Describe this reward in more detail.</p>
                     <input type="text" onChange={this.handleChange('description')} />
+
+                    <h3>Estimated Delivery</h3>
+                    <p>Give yourself plenty of time. It's better to deliver to backers 
+                    ahead of schedule than behind.</p>
+                    <div className="month year">
+                        <select 
+                            value={this.state.estimated_month} 
+                            onChange={this.handleChange('estimated_month')}
+                        >
+                            <option value="default" disabled></option>
+                            <option value="january">January</option>
+                            <option value="february">February</option>
+                            <option value="march">March</option>
+                            <option value="april">April</option>
+                            <option value="may">May</option>
+                            <option value="june">June</option>
+                            <option value="july">July</option>
+                            <option value="august">August</option>
+                            <option value="september">September</option>
+                            <option value="november">November</option>
+                            <option value="december">December</option>
+                        </select>
+
+                        <select 
+                            value={this.state.estimated_year} 
+                            onChange={this.handleChange('estimated_year')}
+                        >
+                            <option value="default" disabled></option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                        </select>
+                    </div>
 
                     <h3>Reward quantity</h3>
                     <p>
@@ -136,8 +173,8 @@ class ProjectRewards extends React.Component{
             null
         ;
 
-
-        const reward1 = rewards[0] ?
+            debugger
+        const reward1 = rewards ?
             <>
             <div>
                 <span>PLEDGE AMOUNT</span>
@@ -148,13 +185,15 @@ class ProjectRewards extends React.Component{
             <li className="reward-item solid dashed dark-grey-font">
                 <div className="pledge">
                     <div class="column">
-                       <span> ${rewards[0.minimum_value]}</span>
+                       <span> ${rewards[0].minimum_value}</span>
                     </div>
                     <div class="column">
-                        <span> ${rewards[0.title]}</span>
+                        <span> ${rewards[0].title}</span>
+                        <span> 
+                            Estimated Delivery: {rewards[0].estimated_month} {rewards[0].estimated_year}
+                        </span>
                     </div>
                     <div class="column">
-                        
                     </div>
                 </div>
                 <div></div>
@@ -205,9 +244,10 @@ class ProjectRewards extends React.Component{
                         </button>
                     </div>
                     <ul className="reward-list width-100">
-                        <li className="sample reward-item grey-bg border dashed dark-grey-font">
+                        {reward1}
+                        {/* <li className="sample reward-item grey-bg border dashed dark-grey-font">
                             <span>+ Example: a copy of what you're making</span>
-                        </li>
+                        </li> */}
                         <li className="sample reward-item grey-bg border dashed dark-grey-font">
                             <span>+ Example: a behind-the-scenes peek in writing, photos, or video</span>
                         </li>
