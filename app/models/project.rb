@@ -24,6 +24,8 @@ class Project < ApplicationRecord
     validates :subtitle, :location, presence: true, length: { minimum: 1}
 
     has_many :rewards
+
+    has_many :pledges
     
     belongs_to :creator,
     primary_key: :id,
@@ -45,6 +47,10 @@ class Project < ApplicationRecord
 
     def project_rewards
         rewards.all
+    end
+
+    def project_pledges
+        pledges.all
     end
 
 end

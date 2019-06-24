@@ -22,11 +22,14 @@ class ShowProject extends React.Component {
 
 
     render(){
-        const {id, project_rewards, title, subtitle, goal, amount, location, length, description, risks, faqs,} = this.props.project;
+        const {id, project_pledges, project_rewards, title, subtitle, goal, amount, location, length, description, risks, faqs,} = this.props.project;
 
         let username;
         let projects;
         let createdProjects;
+
+        const backerCount = project_pledges ? project_pledges.length : null;
+        const backerS = backerCount === 1 ? "backer" : "backers";
         
         if (this.props.creator){
             username = this.props.creator.username;
@@ -44,7 +47,7 @@ class ShowProject extends React.Component {
             null
         ;
 
-
+            
         
 
 
@@ -63,7 +66,6 @@ class ShowProject extends React.Component {
                 </ul>
             </div>
         ;
-        
         return(
             <>
             <Navbar/>
@@ -87,8 +89,8 @@ class ShowProject extends React.Component {
                             </li>
 
                             <li>
-                                <p className="big">Backer Count**</p>
-                                <p className="small">backers</p>
+                                <p className="big">{backerCount}</p>
+                                <p className="small">{backerS}</p>
                             </li>
 
                             <li>

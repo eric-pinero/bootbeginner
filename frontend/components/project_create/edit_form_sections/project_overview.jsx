@@ -56,7 +56,6 @@ class ProjectOverview extends React.Component{
             null
         ;
 
-        debugger
         return(
             <>
             <Navbar/>

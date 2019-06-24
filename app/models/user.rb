@@ -23,6 +23,8 @@ class User < ApplicationRecord
     foreign_key: :creator_id,
     class_name: :Project
 
+    has_many :pledges
+
     def user_projects
         projects.all
     end
