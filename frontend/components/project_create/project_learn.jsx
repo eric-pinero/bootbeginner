@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import Navbar from "../navbar/navbar_container";
+import Footer from '../footer/footer';
 
 class ProjectLearn extends React.Component {
     constructor(props){
@@ -258,6 +259,7 @@ class ProjectLearn extends React.Component {
                 </div>
             </section>
         </content>
+        <Footer/>
         </>
         )
     }

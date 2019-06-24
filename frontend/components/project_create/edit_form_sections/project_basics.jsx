@@ -17,7 +17,7 @@ class ProjectBasics extends React.Component{
     handleChange(field){
         return (e) => {
             this.setState({[field]: e.target.value });
-        }
+        };
     }
 
     render(){

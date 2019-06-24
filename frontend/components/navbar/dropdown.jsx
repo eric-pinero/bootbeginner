@@ -65,7 +65,11 @@ class Dropdown extends React.Component{
 
         return(
         <div className="dropdown">
-            <h1 className="link" onClick={this.toggleDropdown}>Dropdown</h1>
+            <img 
+                className="link icon" 
+                onClick={this.toggleDropdown} 
+                src="https://img.icons8.com/ios/50/000000/left-shoe-filled.png"
+            />
             {dropdown}
         </div>
         )

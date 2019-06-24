@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../navbar/navbar_container';
 import ProjectIndexItem from './project_index_item';
+import Footer from '../footer/footer';
 
 class Index extends React.Component{
     componentDidMount(){
@@ -19,6 +20,7 @@ class Index extends React.Component{
                     {projects}
                 </ul>
             </div>
+            <Footer/>
             </>
         )
     }

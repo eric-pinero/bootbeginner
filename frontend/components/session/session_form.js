@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../navbar/navbar_container';
+import Footer from '../footer/footer';
 
 class SessionForm extends React.Component{
     constructor(props){
@@ -195,6 +196,7 @@ class SessionForm extends React.Component{
                     </form>
                 </div>
             </div>
+            <Footer/>
             </>
             )
 

@@ -21,8 +21,9 @@ const receiveProject = ({project, creator, category}) => {
     };
 };
 
-const removeProject = (projectId) => {
+const removeProject = (project) => {
     debugger
+    const projectId = project.id;
     return {
         type: REMOVE_PROJECT,
         projectId,

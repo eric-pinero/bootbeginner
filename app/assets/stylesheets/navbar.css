@@ -70,6 +70,10 @@ a:visited{
 }
   
   /* Dropdown Content (Hidden by Default) */
+  .icon {
+      height: 18px;
+      width: auto;
+  }
   .dropdown-menu {
     position: absolute;
     background-color: #ffffff;

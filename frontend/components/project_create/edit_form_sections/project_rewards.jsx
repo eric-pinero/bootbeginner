@@ -13,9 +13,9 @@ class ProjectRewards extends React.Component{
             items:"",
             project_id: this.props.props.match.params.projectId,
             minimum_value: 0,
-            quantity: null,
-            start_time: null,
-            end_time: null,
+            quantity: "",
+            start_time: "",
+            end_time: "",
             rewardMenu: false,
             estimated_month: "default",
             estimated_year: "default",
@@ -96,17 +96,17 @@ class ProjectRewards extends React.Component{
                             onChange={this.handleChange('estimated_month')}
                         >
                             <option value="default" disabled></option>
-                            <option value="january">January</option>
-                            <option value="february">February</option>
-                            <option value="march">March</option>
-                            <option value="april">April</option>
-                            <option value="may">May</option>
-                            <option value="june">June</option>
-                            <option value="july">July</option>
-                            <option value="august">August</option>
-                            <option value="september">September</option>
-                            <option value="november">November</option>
-                            <option value="december">December</option>
+                            <option value="Jan">Jan</option>
+                            <option value="Feb">Feb</option>
+                            <option value="Mar">Mar</option>
+                            <option value="Apr">Apr</option>
+                            <option value="May">May</option>
+                            <option value="Jun">Jun</option>
+                            <option value="Jul">Jul</option>
+                            <option value="Aug">Aug</option>
+                            <option value="Sep">Sep</option>
+                            <option value="Nov">Nov</option>
+                            <option value="Dec">Dec</option>
                         </select>
 
                         <select 
@@ -172,8 +172,7 @@ class ProjectRewards extends React.Component{
         :
             null
         ;
-
-        const reward1 = rewards ?
+        const reward1 = rewards && rewards[0] ?
             <>
             <div>
                 <span>PLEDGE AMOUNT</span>
@@ -183,16 +182,16 @@ class ProjectRewards extends React.Component{
 
             <li className="reward-item solid dashed dark-grey-font">
                 <div className="pledge">
-                    <div class="column">
+                    <div className="column">
                        <span> ${rewards[0].minimum_value}</span>
                     </div>
-                    <div class="column">
+                    <div className="column">
                         <span> {rewards[0].title}</span>
                         <span> 
                             Estimated Delivery: {rewards[0].estimated_month} {rewards[0].estimated_year}
                         </span>
                     </div>
-                    <div class="column">
+                    <div className="column">
                     </div>
                 </div>
                 <div></div>
@@ -204,7 +203,6 @@ class ProjectRewards extends React.Component{
             </li>
         ;
 
-
         const reward2 = rewards && rewards[1] ?
             <>
             <div>
@@ -215,16 +213,16 @@ class ProjectRewards extends React.Component{
 
             <li className="reward-item solid dashed dark-grey-font">
                 <div className="pledge">
-                    <div class="column">
+                    <div className="column">
                        <span> ${rewards[1].minimum_value}</span>
                     </div>
-                    <div class="column">
+                    <div className="column">
                         <span> {rewards[1].title}</span>
                         <span> 
                             Estimated Delivery: {rewards[1].estimated_month} {rewards[1].estimated_year}
                         </span>
                     </div>
-                    <div class="column">
+                    <div className="column">
                     </div>
                 </div>
                 <div></div>
@@ -232,7 +230,7 @@ class ProjectRewards extends React.Component{
             </>
             :
             <li className="sample reward-item grey-bg border dashed dark-grey-font">
-                <span>+ Example: a copy of what you're making</span>
+                <span>+ Example: a behind-the-scenes peek in writing, photos, or video</span>
             </li>
         ;
 
@@ -246,16 +244,16 @@ class ProjectRewards extends React.Component{
 
             <li className="reward-item solid dashed dark-grey-font">
                 <div className="pledge">
-                    <div class="column">
+                    <div className="column">
                        <span> ${rewards[2].minimum_value}</span>
                     </div>
-                    <div class="column">
+                    <div className="column">
                         <span> {rewards[2].title}</span>
                         <span> 
                             Estimated Delivery: {rewards[2].estimated_month} {rewards[2].estimated_year}
                         </span>
                     </div>
-                    <div class="column">
+                    <div className="column">
                     </div>
                 </div>
                 <div></div>
@@ -263,7 +261,7 @@ class ProjectRewards extends React.Component{
             </>
             :
             <li className="sample reward-item grey-bg border dashed dark-grey-font">
-                <span>+ Example: a copy of what you're making</span>
+                <span>+ Example: an exclusive experience or object</span>
             </li>
         ;
 
@@ -313,10 +311,10 @@ class ProjectRewards extends React.Component{
                     {rewardMenu}
                 </section>
 
-{                <footer className="basic-footer">
+                <footer className="basic-footer">
                     {footer}                        
                 </footer>
-}            </content>
+            </content>
         )
     }
 }

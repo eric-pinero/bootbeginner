@@ -18,7 +18,9 @@ import {
   
       case REMOVE_PROJECT:
         newState = merge({}, state);
+        debugger
         delete newState[action.projectId];
+        debugger
         return newState;
     
       default:

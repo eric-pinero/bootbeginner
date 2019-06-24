@@ -1,5 +1,8 @@
 import React from "react";
-import Navbar from "../navbar/navbar_container"
+import Navbar from "../navbar/navbar_container";
+import Footer from '../footer/footer';
+import RewardItem from '../reward/reward_item_container';
+
 class ShowProject extends React.Component {
     constructor(props){
         super(props)
@@ -19,7 +22,7 @@ class ShowProject extends React.Component {
 
 
     render(){
-        const {title, subtitle, goal, amount, location, length, description, risks, faqs,} = this.props.project;
+        const {id, project_rewards, title, subtitle, goal, amount, location, length, description, risks, faqs,} = this.props.project;
 
         let username;
         let projects;
@@ -33,8 +36,17 @@ class ShowProject extends React.Component {
             username = null;
             createdProjects = null;
         }
+        const rewards = project_rewards ? 
+            project_rewards.sort(function(a, b){return a.minimum_value-b.minimum_value}).map(reward => {
+                return <RewardItem userId={this.props.currentUserId} projectId={id} projectReward={reward} key={reward.id}/>
+            })
+        :
+            null
+        ;
+
 
         
+
 
         let activeTab = this.state.selectedTab === "Campaign" ?
             <div className="campaign-tab tab">
@@ -120,13 +132,14 @@ class ShowProject extends React.Component {
                                         <span>$</span>
                                         <input type="number"/>
                                     </div>
-                                    {/* Generate rewards by mapping project rewards onto list items */}
                                 </li>
+                                { rewards }
                             </ul>
                         </aside>
                     </section>
                 </div>
             </content>
+            <Footer/>
         </>
         )
     }

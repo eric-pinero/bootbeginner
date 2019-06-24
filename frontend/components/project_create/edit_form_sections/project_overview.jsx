@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../../navbar/navbar_container'
+import Navbar from '../../navbar/navbar_container';
+import Footer from '../../footer/footer';
 
 class ProjectOverview extends React.Component{
     constructor(props){
@@ -94,6 +95,7 @@ class ProjectOverview extends React.Component{
             </div>
                 <Link to="/" onClick={() => this.props.props.deleteProject(projectId)}>Delete</Link>
             </content>
+            <Footer/>
             </>
         );
     }
