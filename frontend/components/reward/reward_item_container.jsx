@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { requestReward, updateReward, receiveErrors } from "../../actions/reward_actions";
+import {createPledge} from "../../actions/pledge_actions";
 import RewardItem from "./reward_item";
 
 const msp = (state, ownProps) => {
@@ -16,6 +17,7 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch) => {
     return {
         requestReward: (id) => dispatch(requestReward(id)),
+        createPledge: (pledge) => dispatch(createPledge(pledge)),
         receiveErrors: (errors) => dispatch(receiveErrors(errors)),
         // will need dispatch for reward updates
     };
