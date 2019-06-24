@@ -18,7 +18,7 @@ import {
   
       case REMOVE_PROJECT:
         newState = merge({}, state);
-        delete newState[action.project];
+        delete newState[action.projectId];
         return newState;
     
       default:

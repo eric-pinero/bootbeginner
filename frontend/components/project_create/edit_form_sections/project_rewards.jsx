@@ -173,7 +173,6 @@ class ProjectRewards extends React.Component{
             null
         ;
 
-            debugger
         const reward1 = rewards ?
             <>
             <div>
@@ -188,9 +187,72 @@ class ProjectRewards extends React.Component{
                        <span> ${rewards[0].minimum_value}</span>
                     </div>
                     <div class="column">
-                        <span> ${rewards[0].title}</span>
+                        <span> {rewards[0].title}</span>
                         <span> 
                             Estimated Delivery: {rewards[0].estimated_month} {rewards[0].estimated_year}
+                        </span>
+                    </div>
+                    <div class="column">
+                    </div>
+                </div>
+                <div></div>
+            </li>
+            </>
+            :
+            <li className="sample reward-item grey-bg border dashed dark-grey-font">
+                <span>+ Example: a copy of what you're making</span>
+            </li>
+        ;
+
+
+        const reward2 = rewards && rewards[1] ?
+            <>
+            <div>
+                <span>PLEDGE AMOUNT</span>
+                <span>DETAILS</span>
+                <span>INCLUDES</span>
+            </div>
+
+            <li className="reward-item solid dashed dark-grey-font">
+                <div className="pledge">
+                    <div class="column">
+                       <span> ${rewards[1].minimum_value}</span>
+                    </div>
+                    <div class="column">
+                        <span> {rewards[1].title}</span>
+                        <span> 
+                            Estimated Delivery: {rewards[1].estimated_month} {rewards[1].estimated_year}
+                        </span>
+                    </div>
+                    <div class="column">
+                    </div>
+                </div>
+                <div></div>
+            </li>
+            </>
+            :
+            <li className="sample reward-item grey-bg border dashed dark-grey-font">
+                <span>+ Example: a copy of what you're making</span>
+            </li>
+        ;
+
+        const reward3 = rewards && rewards[2] ?
+            <>
+            <div>
+                <span>PLEDGE AMOUNT</span>
+                <span>DETAILS</span>
+                <span>INCLUDES</span>
+            </div>
+
+            <li className="reward-item solid dashed dark-grey-font">
+                <div className="pledge">
+                    <div class="column">
+                       <span> ${rewards[2].minimum_value}</span>
+                    </div>
+                    <div class="column">
+                        <span> {rewards[2].title}</span>
+                        <span> 
+                            Estimated Delivery: {rewards[2].estimated_month} {rewards[2].estimated_year}
                         </span>
                     </div>
                     <div class="column">
@@ -245,15 +307,8 @@ class ProjectRewards extends React.Component{
                     </div>
                     <ul className="reward-list width-100">
                         {reward1}
-                        {/* <li className="sample reward-item grey-bg border dashed dark-grey-font">
-                            <span>+ Example: a copy of what you're making</span>
-                        </li> */}
-                        <li className="sample reward-item grey-bg border dashed dark-grey-font">
-                            <span>+ Example: a behind-the-scenes peek in writing, photos, or video</span>
-                        </li>
-                        <li className="sample reward-item grey-bg border dashed dark-grey-font">
-                            <span>+ Example: an exclusive experience or object</span>
-                        </li>
+                        {reward2}
+                        {reward3}
                     </ul>
                     {rewardMenu}
                 </section>

@@ -8,18 +8,18 @@ class ProjectOverview extends React.Component{
 
         this.state = {
             rules: true,
-        }
+        };
 
         this.closeRules = this.closeRules.bind(this);
     }
 
     closeRules(){
-        this.setState({rules: false})
+        this.setState({rules: false});
     }
 
     render(){
         const project = this.props.props.project;
-        const projectId = project.id
+        const projectId = project.id;
         const title = project.title ?
             project.title
             :
@@ -55,7 +55,7 @@ class ProjectOverview extends React.Component{
             null
         ;
 
-
+        debugger
         return(
             <>
             <Navbar/>
@@ -92,7 +92,7 @@ class ProjectOverview extends React.Component{
                 </section>
 
             </div>
-
+                <Link to="/" onClick={() => this.props.props.deleteProject(projectId)}>Delete</Link>
             </content>
             </>
         );
