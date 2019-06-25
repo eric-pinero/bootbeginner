@@ -5,11 +5,11 @@ import RewardItem from '../reward/reward_item_container';
 
 class ShowProject extends React.Component {
     constructor(props){
-        super(props)
-        this.state ={
-            selectedTab: "Campaign"
-        }
-        this.changeTab = this.changeTab.bind(this)
+        super(props);
+        this.state = {
+            selectedTab: "Campaign",
+        };
+        this.changeTab = this.changeTab.bind(this);
     }
 
     changeTab(tabName){
@@ -20,9 +20,8 @@ class ShowProject extends React.Component {
         this.props.requestProject(this.props.match.params.projectId);
     }
 
-
     render(){
-        const {id, project_pledges, project_rewards, title, subtitle, goal, amount, location, length, description, risks, faqs,} = this.props.project;
+        const {id, project_pledges, project_rewards, title, subtitle, goal, location, length, description, risks, faqs,} = this.props.project;
 
         let username;
         let projects;
@@ -30,7 +29,13 @@ class ShowProject extends React.Component {
 
         const backerCount = project_pledges ? project_pledges.length : null;
         const backerS = backerCount === 1 ? "backer" : "backers";
-        
+        const pledgeTotal = project_pledges ? 
+            project_pledges.reduce((acc, curr) => acc + curr.pledged_amount, 0) 
+            : 
+            0
+        ;
+        debugger
+
         if (this.props.creator){
             username = this.props.creator.username;
             projects = this.props.creator.user_projects;
@@ -46,10 +51,6 @@ class ShowProject extends React.Component {
         :
             null
         ;
-
-            
-        
-
 
         let activeTab = this.state.selectedTab === "Campaign" ?
             <div className="campaign-tab tab">
@@ -84,7 +85,7 @@ class ShowProject extends React.Component {
                     <div className="campaign-details">
                         <ul>
                             <li>
-                                <p className="big green-text">${amount}</p>
+                                <p className="big green-text">${pledgeTotal}</p>
                                 <p className="small">pledged of ${goal} goal</p>
                             </li>
 
