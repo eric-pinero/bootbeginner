@@ -92,7 +92,7 @@ class SessionForm extends React.Component{
         let destination;
         let linkName;
         let submitName;
-        debugger
+
         const errors = !this.props.errors || this.props.errors.length == 0 ?
             null
             :

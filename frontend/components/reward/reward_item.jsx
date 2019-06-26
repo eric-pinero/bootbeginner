@@ -12,7 +12,6 @@ class RewardItem extends React.Component{
     }
 
     newPledge(){
-        debugger
         const pledge = {
             project_id : this.props.projectId,
             user_id : this.props.userId,

@@ -1,7 +1,20 @@
 .bottom-grey-border{
     border-bottom: solid 1px #E8E8E8;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
+}
+
+.left-grey-border{
+    border-left: solid 1px #E8E8E8;
+}
+
+.percent-60{
+    width: 60%;
+}
+.percent-40{
+    width: 40%;
+}
+
+.green-bg{
+    background-color: #034752;
 }
 
 .category-header{
@@ -13,4 +26,75 @@
 
 .category-header > li{
     margin: 0 18px;
+}
+
+.home {
+    padding: 0 6% 60px 6%;
+    font: 14px "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+}
+
+.featured {
+    margin-top: 24px;
+    padding: 30px 60px 0 0;
+}
+
+.featured > img{
+    max-width: 100%;
+    margin-top: 18px;
+}
+
+.featured > .green-bg {
+    width: 100%;
+    height: 12px;
+    position: relative;
+    top: -3px;
+}
+
+.featured > h2{
+    color: #282828;
+    font-size: 28px;
+    padding: 18px 0 12px 0;
+}
+
+.featured > p{
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-bottom: 18px;
+}
+
+.featured > span{
+    font-size: 12px;
+    color: #656969;
+}
+
+.recommended {
+    margin-top: 24px;
+    padding: 30px 0 0 60px;
+    font: 14px "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+}
+
+.recommended > li {
+    display: flex;
+    padding: 18px 0;
+}
+
+.recommended > li > img{
+    height: 90px;
+    width: 114px;
+}
+
+.featured > h3, .recommended > h3 {
+    font: 13px "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+    color: #656969;
+    font-weight: bold;
+}
+
+.rec-project {
+    padding-left: 24px;
+    line-height: 24px;
+}
+
+.rec-project > li > span{
+    font-size: 12px;
+    color: #656969;
 }

@@ -132,3 +132,12 @@
    color: #95959E;
    font-size: 14px;
 }
+
+.delete{
+    color: #655959;
+    padding-top: 48px;
+}
+
+.fa-trash{
+    margin: 0 6px 6px 0;
+}

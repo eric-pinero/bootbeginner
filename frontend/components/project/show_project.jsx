@@ -34,7 +34,6 @@ class ShowProject extends React.Component {
             : 
             0
         ;
-        debugger
 
         if (this.props.creator){
             username = this.props.creator.username;

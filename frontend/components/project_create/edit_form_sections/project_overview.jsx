@@ -90,9 +90,11 @@ class ProjectOverview extends React.Component{
                         </li> */}
                     </ul>
                 </section>
-
+                <div className="delete">
+                    <i class="fas fa-trash"></i>
+                    <Link to="/" onClick={() => this.props.props.deleteProject(projectId)}>Delete project</Link>
+                </div>
             </div>
-                <Link to="/" onClick={() => this.props.props.deleteProject(projectId)}>Delete</Link>
             </content>
             <Footer/>
             </>
