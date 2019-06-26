@@ -28,21 +28,21 @@ users = User.create(
   {username: "Bootsy Collins",
   email: "bootsonboots@bootjack.com",
   password_digest: "$2a$10$FUKCwIjyqHVAV8EtYKGrzu95/EXn4o3XiteRiIcjQEkqLQc70usPm",
-  session_token: "qNqlR0ZcM2PAqYUiifKEMw"}
+  session_token: "qNqlR0ZcM2PAqYUiifKEMw"},
 
   {
     username: "Franz Shoebert",
     email: "shoebert@shoe.com",
     password_digest: "$2a$10$RIG9PuQw3m7MHPF9fZi9euxke2SCewkewxCz0unMRb2HJg11MheVa",
     session_token: "8ej_uCQsYwo6bBhx_QnHzg"
-  }
+  },
 
   {
     username: "John Wilkes Boot",
     email: "feartheboot@boot.net",
     password_digest: "$2a$10$9V976FZJRWaGYfcT.28E4uIgAQxxVIiuCPHqpgaGN2rw8J2rrPwIK",
     session_token: "KaFNP86SNOPkDBKzoPCQkg"
-  }
+  },
 
   {
     username: "Heelers Without Borders",
@@ -134,14 +134,14 @@ rewards = Reward.create([
   }
 ])
 
-pledges = Pledge.create([
+pledges = Pledge.create(
   {
     user_id: User.first,
     project_id: Project.last,
     reward_id: nil,
     pledged_amount: 1,
   }
-])
+)
 
 
 
@@ -294,7 +294,7 @@ projects = Project.create([
     goal: nil,
     launched?: false,
     location: "Belgium",
-    } ,
+  },
     
     {  title: nil,
     subtitle: "test",
@@ -430,7 +430,8 @@ projects = Project.create([
     amount_received: nil,
     goal: nil,
     launched?: false,
-    location: "Belgium",},
+    location: "Belgium",
+  },
 
 
 
@@ -506,7 +507,8 @@ projects = Project.create([
     amount_received: nil,
     goal: nil,
     launched?: false,
-    location: "france"},
+    location: "france"
+  },
 
     {
     title: "Put your Boot in your Mouth",
@@ -525,5 +527,5 @@ projects = Project.create([
     location: "USA"
   }
   
-    ]
+]
 )
