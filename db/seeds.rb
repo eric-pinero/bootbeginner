@@ -140,6 +140,8 @@ rewards = Reward.create([
     estimated_year: 2022,
 
   },
+    
+  {
     title: "Healing Heel",
     description: "Our flagship product, the heel that saves",
     items: nil,
