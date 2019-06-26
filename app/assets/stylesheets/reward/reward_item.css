@@ -1,0 +1,41 @@
+.white-box {
+    background-color: #FFFFFF;
+    border: 1px solid #DCDEDD;
+    margin-bottom: 20px;
+    padding: 18px;
+}
+
+.reward > h2 {
+ font-size: 18px;
+ margin-bottom: 16px;
+}
+.reward > h3 {
+ font-size: 16px;
+ margin-bottom: 16px;
+}
+
+.reward > p {
+font-size: 13px;
+margin-bottom: 16px;
+}
+.reward > h4 {
+ font-size: 110px;
+ margin-bottom: 16px;
+}
+.reward > div > .hidden{
+    color: white;
+    position: relative;
+    top: 50%;
+    left: 50%;
+}
+.reward:hover{
+    background-color: rgba(0,158,116,0.9);
+}
+
+.reward:hover .opacity{
+    opacity: 0.25;
+} 
+
+.reward:hover .hidden{
+    display: inherit;
+}

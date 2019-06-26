@@ -14,6 +14,10 @@ class ProjectOverview extends React.Component{
         this.closeRules = this.closeRules.bind(this);
     }
 
+    componentWillUnmount(){
+        this.setState({errors: []});
+    }
+
     closeRules(){
         this.setState({rules: false});
     }
@@ -63,7 +67,7 @@ class ProjectOverview extends React.Component{
                 <header className="overview-header">
                     <h1>{title}</h1>
                     <p>by {creatorName}</p>
-                    <Link to={`/projects/${project.id}`}>Preview</Link>
+                    <Link className="grey-button" to={`/projects/${project.id}`}>Preview</Link>
                 </header>
 
                 <div className="set-margin">
@@ -91,7 +95,7 @@ class ProjectOverview extends React.Component{
                     </ul>
                 </section>
                 <div className="delete">
-                    <i class="fas fa-trash"></i>
+                    <i className="fas fa-trash"></i>
                     <Link to="/" onClick={() => this.props.props.deleteProject(projectId)}>Delete project</Link>
                 </div>
             </div>

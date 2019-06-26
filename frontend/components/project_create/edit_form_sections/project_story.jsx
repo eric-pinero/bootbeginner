@@ -20,6 +20,10 @@ class ProjectStory extends React.Component{
         };
     }
 
+    componentWillUnmount(){
+        this.setState({errors: []});
+    }
+
     render(){
         const projectId = this.state.id;
         return (
@@ -85,7 +89,7 @@ class ProjectStory extends React.Component{
                 </section>
 
                 <footer className="basic-footer">
-                    <Link className="grey-button">Preview</Link>
+                <Link className="grey-button" to={`/projects/${this.state.id}`}>Preview</Link>
                     {/* connect to show page once it is functional */}
                     <Link className="green-button" onClick={this.handleSubmit} to={`/projects/${projectId}/edit/${this.props.next}`}>Next: {this.props.next[0].toUpperCase() + this.props.next.slice(1)}</Link>
                 </footer>

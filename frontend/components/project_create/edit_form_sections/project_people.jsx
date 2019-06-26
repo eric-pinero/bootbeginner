@@ -19,8 +19,13 @@ class ProjectPeople extends React.Component{
     handleChange(field){
         return (e) => {
             this.setState({[field]: e.target.value });
-        }
+        };
     }
+
+    componentWillUnmount(){
+        this.setState({errors: []});
+    }
+
 
     render(){
         const projectId = this.state.id;
@@ -65,7 +70,7 @@ class ProjectPeople extends React.Component{
 
 
                 <footer>
-                    <Link>Preview</Link>
+                <Link className="grey-button" to={`/projects/${this.state.id}`}>Preview</Link>
                     {/* connect to show page once it is functional */}
                     <Link onClick={this.handleFinalSubmit} to={`/projects/${projectId}/edit/${this.props.next}`}>Next:{this.props.next[0].toUpperCase() + this.props.next.slice(1)}</Link>
                 </footer>

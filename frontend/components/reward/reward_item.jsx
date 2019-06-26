@@ -45,19 +45,22 @@ class RewardItem extends React.Component{
         ;
         return(
             <li 
-                className="reward-item"
+                className="reward white-box"
                 onClick={() => this.setState({menu : true})} 
             >
-                <h2>Pledge ${minimum_value} or more</h2>
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <section>
-                    <div>
-                        <h4>Estimated Delivery</h4>
-                        <span>{estimated_month} {estimated_year}</span>
-                    </div>
-                </section>
-                {pledgeMenu}
+                <p className="hidden" id="select-reward">Select this reward</p>
+                <div className="opacity">
+                    <h2>Pledge ${minimum_value} or more</h2>
+                    <h3>{title}</h3>
+                    <p className="dark-grey-font">{description}</p>
+                    <section>
+                        <div>
+                            <h4>Estimated Delivery</h4>
+                            <span>{estimated_month} {estimated_year}</span>
+                        </div>
+                    </section>
+                    {pledgeMenu}
+                </div>
             </li>
         );
     }

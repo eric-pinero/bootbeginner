@@ -51,6 +51,10 @@ class ProjectForm extends React.Component{
 
     }
 
+    componentWillUnmount(){
+        this.setState({errors: []});
+    }
+
     render(){
         const errors = (this.props.errors && this.props.errors.length === 0) ?
             null

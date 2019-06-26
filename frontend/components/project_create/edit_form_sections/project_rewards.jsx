@@ -39,6 +39,10 @@ class ProjectRewards extends React.Component{
         };
     }
 
+    componentWillUnmount(){
+        this.setState({errors: []});
+    }
+
     render(){
         const project = this.props.props.project;
         const projectId = project.id;
@@ -175,18 +179,18 @@ class ProjectRewards extends React.Component{
         const reward1 = rewards && rewards[0] ?
             <>
             <div>
-                <span>PLEDGE AMOUNT</span>
-                <span>DETAILS</span>
+                <span className="margin-right-20">PLEDGE AMOUNT</span>
+                <span className="margin-right-20">DETAILS</span>
                 <span>INCLUDES</span>
             </div>
 
             <li className="reward-item solid dashed dark-grey-font">
-                <div className="pledge">
+                <div className="pledge margin-bottom-20">
                     <div className="column">
                        <span> ${rewards[0].minimum_value}</span>
                     </div>
                     <div className="column">
-                        <span> {rewards[0].title}</span>
+                        <span className="margin-right-20"> {rewards[0].title}</span>
                         <span> 
                             Estimated Delivery: {rewards[0].estimated_month} {rewards[0].estimated_year}
                         </span>
@@ -206,18 +210,18 @@ class ProjectRewards extends React.Component{
         const reward2 = rewards && rewards[1] ?
             <>
             <div>
-                <span>PLEDGE AMOUNT</span>
-                <span>DETAILS</span>
+                <span className="margin-right-20">PLEDGE AMOUNT</span>
+                <span className="margin-right-20">DETAILS</span>
                 <span>INCLUDES</span>
             </div>
 
             <li className="reward-item solid dashed dark-grey-font">
-                <div className="pledge">
+                <div className="pledge margin-bottom-20">
                     <div className="column">
                        <span> ${rewards[1].minimum_value}</span>
                     </div>
                     <div className="column">
-                        <span> {rewards[1].title}</span>
+                        <span className="margin-right-20"> {rewards[1].title}</span>
                         <span> 
                             Estimated Delivery: {rewards[1].estimated_month} {rewards[1].estimated_year}
                         </span>
@@ -237,18 +241,18 @@ class ProjectRewards extends React.Component{
         const reward3 = rewards && rewards[2] ?
             <>
             <div>
-                <span>PLEDGE AMOUNT</span>
-                <span>DETAILS</span>
+                <span className="margin-right-20">PLEDGE AMOUNT</span>
+                <span className="margin-right-20">DETAILS</span>
                 <span>INCLUDES</span>
             </div>
 
             <li className="reward-item solid dashed dark-grey-font">
-                <div className="pledge">
+                <div className="pledge margin-bottom-20">
                     <div className="column">
                        <span> ${rewards[2].minimum_value}</span>
                     </div>
                     <div className="column">
-                        <span> {rewards[2].title}</span>
+                        <span className="margin-right-20"> {rewards[2].title}</span>
                         <span> 
                             Estimated Delivery: {rewards[2].estimated_month} {rewards[2].estimated_year}
                         </span>
