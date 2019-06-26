@@ -4,6 +4,7 @@ import { requestProjects} from '../../actions/project_actions';
 
 const msp = (state) => {
     const projects = Object.values(state.entities.projects);
+    const categories = Object.values(state.entities.projects);
     return {
         projects,
     };

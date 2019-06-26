@@ -1,0 +1,16 @@
+.bottom-grey-border{
+    border-bottom: solid 1px #E8E8E8;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+.category-header{
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    font: 14px "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+}
+
+.category-header > li{
+    margin: 0 18px;
+}
