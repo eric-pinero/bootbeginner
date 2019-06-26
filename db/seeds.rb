@@ -25,55 +25,33 @@ categories = Category.create(
 users = User.create(
 [
 
-    {username: "Bootsy Collins",
-    email: "bootsonboots@bootjack.com",
-    password_digest: "$2a$10$FUKCwIjyqHVAV8EtYKGrzu95/EXn4o3XiteRiIcjQEkqLQc70usPm",
-    session_token: "qNqlR0ZcM2PAqYUiifKEMw"},
+  {username: "Bootsy Collins",
+  email: "bootsonboots@bootjack.com",
+  password_digest: "$2a$10$FUKCwIjyqHVAV8EtYKGrzu95/EXn4o3XiteRiIcjQEkqLQc70usPm",
+  session_token: "qNqlR0ZcM2PAqYUiifKEMw"}
 
-    {username: "Franz Shoebert",
-     email: "shoebert@shoe.com",
-     password_digest: "$2a$10$RIG9PuQw3m7MHPF9fZi9euxke2SCewkewxCz0unMRb2HJg11MheVa",
-     session_token: "8ej_uCQsYwo6bBhx_QnHzg"
-    },
+  {
+    username: "Franz Shoebert",
+    email: "shoebert@shoe.com",
+    password_digest: "$2a$10$RIG9PuQw3m7MHPF9fZi9euxke2SCewkewxCz0unMRb2HJg11MheVa",
+    session_token: "8ej_uCQsYwo6bBhx_QnHzg"
+  }
 
- {username: "John Wilkes Boot",
-  email: "feartheboot@boot.net",
-  password_digest: "$2a$10$9V976FZJRWaGYfcT.28E4uIgAQxxVIiuCPHqpgaGN2rw8J2rrPwIK",
-  session_token: "KaFNP86SNOPkDBKzoPCQkg"
-},
+  {
+    username: "John Wilkes Boot",
+    email: "feartheboot@boot.net",
+    password_digest: "$2a$10$9V976FZJRWaGYfcT.28E4uIgAQxxVIiuCPHqpgaGN2rw8J2rrPwIK",
+    session_token: "KaFNP86SNOPkDBKzoPCQkg"
+  }
 
- {username: "Heelers Without Borders",
-  email: "test2@test.com",
-  password_digest: "$2a$10$RKW.oUjJxb0Lah6MwO22PuwBLrp8DhZ8R29Xm8SMGqSpfz8YTo7ZW",
-  session_token: "B5-ed2r2BkLgXbmFhQRudg"
-},
+  {
+    username: "Heelers Without Borders",
+    email: "test2@test.com",
+    password_digest: "$2a$10$RKW.oUjJxb0Lah6MwO22PuwBLrp8DhZ8R29Xm8SMGqSpfz8YTo7ZW",
+    session_token: "B5-ed2r2BkLgXbmFhQRudg"
+  }
 
- {username: "t",
-  email: "1@1.com",
-  password_digest: "$2a$10$xDtT73MJ6rqaAgtS0UFSaO6go8W9OJMWaJlKqlqeNk4q5qcyaRBPq",
-  session_token: "ZMGfKXKhiFXZs02fVvla8w"
-},
-
- {username: "t",
-  email: "1@1.com",
-  password_digest: "$2a$10$oBJ0Lonkqr4J9hh5jAjyTOQJb8GPdnlkzu6fzvVZ5xapqFe7AxBaG",
-  session_token: "TYMTdsHuxgZyds-QB6qHLw"
-},
-
- {username: "t",
-  email: "3@1.com",
-  password_digest: "$2a$10$9GQs/7/0Wg0SkkuohOB10u48Amj5bE8gGKWhMjP76GQlhvJk7D9rS",
-  session_token: "b8rG5cQ9O411S7v2n63vhA"
-},
- 
- 
-  {username: "Jared Djared",
-  email: "jdjdjd@jared.jared",
-  password_digest: "$2a$10$eeBibq9EON68iOIYdh0yse8B57GBBoJYgGqnQQEW7bH8Pry/STL2i",
-  session_token: "vS7uNiccxkb82BRoZlb-Qg"}
-]
-
-)
+])
 
 rewards = Reward.create([
   {
@@ -162,7 +140,7 @@ pledges = Pledge.create([
     project_id: Project.last,
     reward_id: nil,
     pledged_amount: 1,
-  },
+  }
 ])
 
 
@@ -528,7 +506,7 @@ projects = Project.create([
     amount_received: nil,
     goal: nil,
     launched?: false,
-    location: "france",},
+    location: "france"},
 
     {
     title: "Put your Boot in your Mouth",
@@ -544,7 +522,8 @@ projects = Project.create([
     amount_received: 0,
     goal: 50000,
     launched?: false,
-    location: "USA"}
+    location: "USA"
+  }
   
     ]
 )
