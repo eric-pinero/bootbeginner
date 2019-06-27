@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 class Dropdown extends React.Component{
     constructor(props){
@@ -55,7 +55,7 @@ class Dropdown extends React.Component{
                 </div>
                 </content>
             <div className="grey-line"/>
-            <button className="link" onClick={() => logout()}>Logout</button>
+            <button className="link" onClick={this.props.logout}>Logout</button>
             </div>
             </>
             :
