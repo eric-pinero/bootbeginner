@@ -28,7 +28,7 @@ margin-bottom: 16px;
     top: 50%;
     left: 50%;
 }
-.reward:hover{
+/* .reward:hover{
     background-color: rgba(0,158,116,0.9);
 }
 
@@ -38,4 +38,21 @@ margin-bottom: 16px;
 
 .reward:hover .hidden{
     display: inherit;
+} */
+.green-cover:hover:after
+{
+    position:absolute;
+    top: 0;
+    left: 0;
+    bottom:0;
+    width: 100%;
+
+    background-color: rgba(0,158,116,0.9);
+    color: white;
+    content: "Select this reward";
+    text-align: center;
+    padding-top: 16%;
+}
+.green-cover {
+    position: relative;
 }

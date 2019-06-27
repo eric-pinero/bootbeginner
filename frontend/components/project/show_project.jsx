@@ -128,7 +128,7 @@ class ShowProject extends React.Component {
                             </div>
                             <h2>Support</h2>
                             <ul>
-                                <li className="reward white-box">
+                                <li className="white-box">
                                     <h3>Make a pledge without a reward</h3>
                                     <div className="dollar-input">
                                         <span>$</span>

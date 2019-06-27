@@ -9,6 +9,7 @@ class RewardItem extends React.Component{
         };
         this.newPledge = this.newPledge.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.menuDisplay = this.menuDisplay.bind(this);
     }
 
     newPledge(){
@@ -28,6 +29,17 @@ class RewardItem extends React.Component{
         };
     }
 
+    menuDisplay(){
+        var elements = document.getElementsByClassName("green-cover");
+
+        for (let i = 0; i < elements.length; i++) {
+            const element = elements[i];
+            element.classList.remove("green-cover");
+        }
+
+        this.setState({menu : true});
+    }
+
 
 
     render(){
@@ -45,10 +57,9 @@ class RewardItem extends React.Component{
         ;
         return(
             <li 
-                className="reward white-box"
-                onClick={() => this.setState({menu : true})} 
+                className="green-cover reward white-box"
+                onClick={this.menuDisplay} 
             >
-                <p className="hidden" id="select-reward">Select this reward</p>
                 <div className="opacity">
                     <h2>Pledge ${minimum_value} or more</h2>
                     <h3>{title}</h3>
