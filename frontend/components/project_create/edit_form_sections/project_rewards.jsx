@@ -194,23 +194,23 @@ class ProjectRewards extends React.Component{
         const reward1 = rewards && rewards[0] ?
             <>
             <div>
-                <span className="margin-right-20">PLEDGE AMOUNT</span>
-                <span className="margin-right-20">DETAILS</span>
-                <span>INCLUDES</span>
+                <span className="margin-right-70 font-12">PLEDGE AMOUNT</span>
+                <span className="margin-right-180 font-12">DETAILS</span>
+                <span className="font-12">INCLUDES</span>
             </div>
 
-            <li className="reward-item solid dashed dark-grey-font">
-                <div className="pledge margin-bottom-20">
-                    <div className="column">
+            <li className="white-box reward-item solid dashed dark-grey-font">
+                <div className="pledge flex margin-bottom-20">
+                    <div className="flex-column est-date">
                        <span> ${rewards[0].minimum_value}</span>
                     </div>
-                    <div className="column">
+                    <div className="flex-column">
                         <span className="margin-right-20"> {rewards[0].title}</span>
                         <span> 
                             Estimated Delivery: {rewards[0].estimated_month} {rewards[0].estimated_year}
                         </span>
                     </div>
-                    <div className="column">
+                    <div className="flex-column">
                     </div>
                 </div>
                 <div></div>
@@ -225,23 +225,23 @@ class ProjectRewards extends React.Component{
         const reward2 = rewards && rewards[1] ?
             <>
             <div>
-                <span className="margin-right-20">PLEDGE AMOUNT</span>
-                <span className="margin-right-20">DETAILS</span>
-                <span>INCLUDES</span>
+                <span className="margin-right-70 font-12">PLEDGE AMOUNT</span>
+                <span className="margin-right-180 font-12">DETAILS</span>
+                <span className="font-12">INCLUDES</span>
             </div>
 
-            <li className="reward-item solid dashed dark-grey-font">
-                <div className="pledge margin-bottom-20">
-                    <div className="column">
+            <li className="white-box reward-item solid dashed dark-grey-font">
+                <div className="pledge flex margin-bottom-20">
+                    <div className="flex-column est-date">
                        <span> ${rewards[1].minimum_value}</span>
                     </div>
-                    <div className="column">
+                    <div className="flex-column">
                         <span className="margin-right-20"> {rewards[1].title}</span>
                         <span> 
                             Estimated Delivery: {rewards[1].estimated_month} {rewards[1].estimated_year}
                         </span>
                     </div>
-                    <div className="column">
+                    <div className="flex-column">
                     </div>
                 </div>
                 <div></div>
@@ -256,23 +256,23 @@ class ProjectRewards extends React.Component{
         const reward3 = rewards && rewards[2] ?
             <>
             <div>
-                <span className="margin-right-20">PLEDGE AMOUNT</span>
-                <span className="margin-right-20">DETAILS</span>
-                <span>INCLUDES</span>
+                <span className="margin-right-70 font-12">PLEDGE AMOUNT</span>
+                <span className="margin-right-180 font-12">DETAILS</span>
+                <span className="font-12">INCLUDES</span>
             </div>
 
-            <li className="reward-item solid dashed dark-grey-font">
-                <div className="pledge margin-bottom-20">
-                    <div className="column">
+            <li className="white-box reward-item solid dashed dark-grey-font">
+                <div className="pledge flex margin-bottom-20">
+                    <div className="flex-column est-date">
                        <span> ${rewards[2].minimum_value}</span>
                     </div>
-                    <div className="column">
+                    <div className="flex-column">
                         <span className="margin-right-20"> {rewards[2].title}</span>
                         <span> 
                             Estimated Delivery: {rewards[2].estimated_month} {rewards[2].estimated_year}
                         </span>
                     </div>
-                    <div className="column">
+                    <div className="flex-column">
                     </div>
                 </div>
                 <div></div>

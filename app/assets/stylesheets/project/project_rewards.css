@@ -1,3 +1,8 @@
+input:focus{
+    outline: none;
+    border: 1px solid rgba(0,158,116,0.9);
+}
+
 .hidden{
     display: none;
 }
@@ -19,12 +24,33 @@
     margin-top: 24px;
 }
 
+.margin-right-20{
+    margin-right: 20px;
+}
+
+.margin-right-70{
+    margin-right: 70px;
+}
+
+.margin-right-180{
+    margin-right: 180px;
+}
+
+.margin-bottom-20{
+    margin-bottom: 20px;
+}
+
+
 .line-height-24{
     line-height: 24px;
 }
 
 .height-72{
     height:72px;
+}
+
+.font-12{
+    font-size: 12px;
 }
 
 .grey-bg {
@@ -47,13 +73,6 @@
     width: 100%;
 }
 
-.margin-right-20{
-    margin-right: 20px;
-}
-
-.margin-bottom-20{
-    margin-bottom: 20px;
-}
 
 .dashed{
     border-style: dashed;
@@ -106,4 +125,8 @@
     justify-content: center;
     margin-bottom: 15px;
     font-size: 18px;
+}
+
+.est-date{
+    width: 153px;
 }
