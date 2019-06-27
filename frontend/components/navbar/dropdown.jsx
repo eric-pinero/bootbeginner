@@ -55,7 +55,7 @@ class Dropdown extends React.Component{
                 </div>
                 </content>
             <div className="grey-line"/>
-            <button className="link" onClick={() => dispatch(logout())}>Logout</button>
+            <button className="link" onClick={() => logout()}>Logout</button>
             </div>
             </>
             :

@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import Dropdown from './dropdown';
+import {logout} from '../../actions/session_actions';
 
 const msp = (state) => {
     const currentUserId = state.session.id;
@@ -12,12 +13,11 @@ const msp = (state) => {
 };
 
 
-// const mdp = (dispatch) => {
-//     return {
-//         requestUser: (userId) => dispatch(requestUser(userId)),
-//         receiveErrors: (errors) => dispatch(receiveErrors(errors)),
-//     };
-// };
+const mdp = (dispatch) => {
+    return {
+        logout: (user) => dispatch(logout(user)),
+    };
+};
 
 
-export default connect(msp)(Dropdown);
+export default connect(msp, mdp)(Dropdown);
