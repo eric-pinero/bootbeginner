@@ -67,93 +67,108 @@ class ProjectRewards extends React.Component{
 
         const rewardMenu = this.state.rewardMenu ?
             <div>
-            <h3>Add a reward</h3>
-            <p>Offer tangible or intangible things that bring backers closer to your project.</p>
+                <div className="flex-column margin-bottom-72 margin-top-24">
+                    <h3>Add a reward</h3>
+                    <p>Offer tangible or intangible things that bring backers closer to your project.</p>
+                </div>
             <div className="reward-form">
                 <form>
-                    <h3>Title</h3>
-                    <p>Briefly describe this reward</p>
-                    <input 
-                        type="text"
-                        onChange={this.handleChange('title')}
-                    />
+                    <div className="line-height-24 padding-bottom-72 flex-column grey-bottom margin-top-24">
                     
-                    <h3>Pledge amount</h3>
-                    <p>Set a minimum pledge amount for this reward.</p>
-                    <div>$
+                        <h3>Title</h3>
+                        <p className="dark-grey-font">Briefly describe this reward</p>
                         <input 
-                            type="number"
-                            onChange={this.handleChange('minimum_value')} 
+                        type="text"
+                            onChange={this.handleChange('title')}
                         />
                     </div>
 
-                    <h3>Description</h3>
-                    <p>Describe this reward in more detail.</p>
-                    <input type="text" onChange={this.handleChange('description')} />
-
-                    <h3>Estimated Delivery</h3>
-                    <p>Give yourself plenty of time. It's better to deliver to backers 
-                    ahead of schedule than behind.</p>
-                    <div className="month year">
-                        <select 
-                            value={this.state.estimated_month} 
-                            onChange={this.handleChange('estimated_month')}
-                        >
-                            <option value="default" disabled></option>
-                            <option value="Jan">Jan</option>
-                            <option value="Feb">Feb</option>
-                            <option value="Mar">Mar</option>
-                            <option value="Apr">Apr</option>
-                            <option value="May">May</option>
-                            <option value="Jun">Jun</option>
-                            <option value="Jul">Jul</option>
-                            <option value="Aug">Aug</option>
-                            <option value="Sep">Sep</option>
-                            <option value="Nov">Nov</option>
-                            <option value="Dec">Dec</option>
-                        </select>
-
-                        <select 
-                            value={this.state.estimated_year} 
-                            onChange={this.handleChange('estimated_year')}
-                        >
-                            <option value="default" disabled></option>
-                            <option value="2019">2019</option>
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                        </select>
-                    </div>
-
-                    <h3>Reward quantity</h3>
-                    <p>
-                        You may want to limit the quantity of this reward 
-                        available to backers if production or shipping is difficult, 
-                        time-consuming, or not scalable.
-                    </p>
-                    <div className="radio-box">
-                        <input type="radio"/>Unlimited
-                        <input type="radio"/>Limit availability
-                        <div className="hidden">
-                            <h3>Maximum number available</h3>
+                    <div className="line-height-24 padding-bottom-72 flex-column grey-bottom margin-top-24">
+                        <h3>Pledge amount</h3>
+                        <p className="dark-grey-font">Set a minimum pledge amount for this reward.</p>
+                        <div>$
                             <input 
                                 type="number"
-                                onChange={this.handleChange('quantity')} 
+                                onChange={this.handleChange('minimum_value')} 
                             />
                         </div>
                     </div>
 
-                    <h3>Time Limit</h3>
-                    <p>
-                        Schedule the timing of this reward if you would 
-                        like to garner excitement about limited editions 
-                        or special offerings.
-                    </p>
-                    <div className="radio-box">
-                        <input type="radio"/>No time limit
-                        <input type="radio"/>Start/end on specific dates and times
-                        <input type="number" className="hidden quantity"></input>
+                    <div className="line-height-24 padding-bottom-72 flex-column grey-bottom margin-top-24">
+                        <h3>Description</h3>
+                        <p className="dark-grey-font">Describe this reward in more detail.</p>
+                        <input className="height-72" type="text" onChange={this.handleChange('description')} />
+                    </div>
+
+                    <div className="line-height-24 padding-bottom-72 flex-column grey-bottom margin-top-24">
+                        <h3>Estimated Delivery</h3>
+                        <p className="dark-grey-font">Give yourself plenty of time. It's better to deliver to backers 
+                        ahead of schedule than behind.</p>
+                        <div className="month year">
+                            <select 
+                                value={this.state.estimated_month} 
+                                onChange={this.handleChange('estimated_month')}
+                            >
+                                <option value="default" disabled></option>
+                                <option value="Jan">Jan</option>
+                                <option value="Feb">Feb</option>
+                                <option value="Mar">Mar</option>
+                                <option value="Apr">Apr</option>
+                                <option value="May">May</option>
+                                <option value="Jun">Jun</option>
+                                <option value="Jul">Jul</option>
+                                <option value="Aug">Aug</option>
+                                <option value="Sep">Sep</option>
+                                <option value="Nov">Nov</option>
+                                <option value="Dec">Dec</option>
+                            </select>
+
+                            <select 
+                                value={this.state.estimated_year} 
+                                onChange={this.handleChange('estimated_year')}
+                            >
+                                <option value="default" disabled></option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div className="line-height-24 padding-bottom-72 flex-column grey-bottom margin-top-24">
+                        <h3>Reward quantity</h3>
+                        <p className="dark-grey-font">
+                            You may want to limit the quantity of this reward 
+                            available to backers if production or shipping is difficult, 
+                            time-consuming, or not scalable.
+                        </p>
+                        <div className="radio-box">
+                            <input type="radio"/>Unlimited
+                            <input type="radio"/>Limit availability
+                            <div className="hidden">
+                                <h3>Maximum number available</h3>
+                                <input 
+                                    type="number"
+                                    onChange={this.handleChange('quantity')} 
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="line-height-24 padding-bottom-72 flex-column grey-bottom margin-top-24">
+                        <h3>Time Limit</h3>
+                        <p className="dark-grey-font">
+                            Schedule the timing of this reward if you would 
+                            like to garner excitement about limited editions 
+                            or special offerings.
+                        </p>
+                        <div className="radio-box">
+                            <input type="radio"/>No time limit
+                            <input type="radio"/>Start/end on specific dates and times
+                            <input type="number" className="hidden quantity"></input>
+                        </div>
                     </div>
 
                     <label>

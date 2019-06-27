@@ -2,6 +2,31 @@
     display: none;
 }
 
+.flex-column{
+    display: flex;
+    flex-direction: column
+}
+
+.margin-bottom-72{
+    margin-bottom: 72px;
+}
+
+.padding-bottom-72{
+    padding-bottom: 72px;
+}
+
+.margin-top-24{
+    margin-top: 24px;
+}
+
+.line-height-24{
+    line-height: 24px;
+}
+
+.height-72{
+    height:72px;
+}
+
 .grey-bg {
     background-color: #FBFBFA;
 }

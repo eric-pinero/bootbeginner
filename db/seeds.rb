@@ -56,99 +56,6 @@ users = User.create(
 
 ])
 
-rewards = Reward.create([
-  {
-    title: "Lace Snack",
-    description: "A set of edible laces you can boil and eat",
-    items: nil,
-    project_id: Project.last,
-    minimum_value: 1,
-    quantity: nil,
-    start_time: nil,
-    end_time: nil,
-    estimated_month: "Mar",
-    estimated_year: 2020,
-
-  },
-  {
-    title: "Tasty Shoe",
-    description: "A sneaker created with the most flavorful cloth available",
-    items: nil,
-    project_id: Project.last,
-    minimum_value: 20,
-    quantity: nil,
-    start_time: nil,
-    end_time: nil,
-    estimated_month: "Apr",
-    estimated_year: 2020,
-
-  },
-  {
-    title: "Royal Boot",
-    description: "A boot made from the most delectable leathers",
-    items: nil,
-    project_id: Project.last,
-    minimum_value: 300,
-    quantity: nil,
-    start_time: nil,
-    end_time: nil,
-    estimated_month: "May",
-    estimated_year: 2020,
-
-  },
-  {
-    title: "Moon Boots",
-    description: "A set of boots worn by an actual astronaut",
-    items: nil,
-    project_id: Project.first,
-    minimum_value: 50000,
-    quantity: nil,
-    start_time: nil,
-    end_time: nil,
-    estimated_month: "Jan",
-    estimated_year: 2021,
-
-  },
-    
-  {
-    title: "Bagel",
-    description: "A bagel to put boots on",
-    items: nil,
-    project_id: Project.second,
-    minimum_value: 2,
-    quantity: nil,
-    start_time: nil,
-    end_time: nil,
-    estimated_month: "Dec",
-    estimated_year: 2022,
-
-  },
-    
-  {
-    title: "Healing Heel",
-    description: "Our flagship product, the heel that saves",
-    items: nil,
-    project_id: Project.third,
-    minimum_value: 100,
-    quantity: nil,
-    start_time: nil,
-    end_time: nil,
-    estimated_month: "Dec",
-    estimated_year: 2019,
-
-  }
-])
-
-pledges = Pledge.create(
-  {
-    user_id: User.first,
-    project_id: Project.last,
-    reward_id: nil,
-    pledged_amount: 1,
-  }
-)
-
-
 
 projects = Project.create([
     {title: "Moon Boots",
@@ -215,3 +122,97 @@ projects = Project.create([
   
 ]
 )
+
+
+rewards = Reward.create!([
+  {
+    title: "Lace Snack",
+    description: "A set of edible laces you can boil and eat",
+    items: nil,
+    project_id: Project.last.id,
+    minimum_value: 1,
+    quantity: nil,
+    start_time: nil,
+    end_time: nil,
+    estimated_month: "Mar",
+    estimated_year: 2020,
+
+  },
+  {
+    title: "Tasty Shoe",
+    description: "A sneaker created with the most flavorful cloth available",
+    items: nil,
+    project_id: Project.last.id,
+    minimum_value: 20,
+    quantity: nil,
+    start_time: nil,
+    end_time: nil,
+    estimated_month: "Apr",
+    estimated_year: 2020,
+
+  },
+  {
+    title: "Royal Boot",
+    description: "A boot made from the most delectable leathers",
+    items: nil,
+    project_id: Project.last.id,
+    minimum_value: 300,
+    quantity: nil,
+    start_time: nil,
+    end_time: nil,
+    estimated_month: "May",
+    estimated_year: 2020,
+
+  },
+  {
+    title: "Moon Boots",
+    description: "A set of boots worn by an actual astronaut",
+    items: nil,
+    project_id: Project.first.id,
+    minimum_value: 50000,
+    quantity: nil,
+    start_time: nil,
+    end_time: nil,
+    estimated_month: "Jan",
+    estimated_year: 2021,
+
+  },
+    
+  {
+    title: "Bagel",
+    description: "A bagel to put boots on",
+    items: nil,
+    project_id: Project.second.id,
+    minimum_value: 2,
+    quantity: nil,
+    start_time: nil,
+    end_time: nil,
+    estimated_month: "Dec",
+    estimated_year: 2022,
+
+  },
+    
+  {
+    title: "Healing Heel",
+    description: "Our flagship product, the heel that saves",
+    items: nil,
+    project_id: Project.third.id,
+    minimum_value: 100,
+    quantity: nil,
+    start_time: nil,
+    end_time: nil,
+    estimated_month: "Dec",
+    estimated_year: 2019,
+
+  }
+])
+
+pledges = Pledge.create!(
+  {
+    user: User.first,
+    project: Project.last,
+    reward_id: nil,
+    pledged_amount: 1,
+  }
+)
+
