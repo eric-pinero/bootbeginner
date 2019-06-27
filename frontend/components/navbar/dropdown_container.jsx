@@ -12,8 +12,7 @@ const msp = (state) => {
     };
 };
 
-
-const mdp = (dispatch) => {
+const mdp = dispatch => {
     return {
         logout: (user) => dispatch(logout(user)),
     };
@@ -21,3 +20,4 @@ const mdp = (dispatch) => {
 
 
 export default connect(msp, mdp)(Dropdown);
+
