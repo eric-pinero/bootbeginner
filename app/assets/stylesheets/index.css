@@ -73,12 +73,12 @@
     font: 14px "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
 }
 
-.recommended > li {
+.recommended > a > li {
     display: flex;
     padding: 18px 0;
 }
 
-.recommended > li > img{
+.rec-img{
     height: 90px;
     width: 114px;
 }
