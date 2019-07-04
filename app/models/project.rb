@@ -26,6 +26,8 @@ class Project < ApplicationRecord
     has_many :rewards
 
     has_many :pledges
+
+    has_one_attached :image
     
     belongs_to :creator,
     primary_key: :id,

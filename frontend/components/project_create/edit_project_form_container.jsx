@@ -7,7 +7,6 @@ import EditProjectForm from "./edit_project_form";
 const msp = (state, ownProps) => {
     const projectId = ownProps.match.params.projectId;
     const project = state.entities.projects[projectId] ?
-    
         state.entities.projects[projectId]
         :
         {
@@ -23,6 +22,8 @@ const msp = (state, ownProps) => {
             length: "",
             amount_received: "",
             goal: "",
+            imageFile: null,
+            imageUrl: null,
         }
     ;
 
@@ -48,7 +49,7 @@ const mdp = (dispatch) => {
     return {
         requestUser: (id) => dispatch(requestUser(id)),
         requestProject: (id) => dispatch(requestProject(id)),
-        updateProject: (project) => dispatch(updateProject(project)),
+        updateProject: (project, id) => dispatch(updateProject(project, id)),
         deleteProject: (projectId) => dispatch(deleteProject(projectId)),
         createReward: (reward) => dispatch(createReward(reward)),
         deleteReward: (rewardId) => dispatch(deleteReward(reward)),

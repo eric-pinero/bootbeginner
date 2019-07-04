@@ -26,12 +26,15 @@ export const createProject = (project) => {
     );
 };
 
-export const updateProject = (project) => {
+export const updateProject = (formData, id) => {
+    debugger
     return( 
         $.ajax({
             method: 'PATCH',
-            url:`/api/projects/${project.id}`,
-            data: {project}
+            url:`/api/projects/${id}`,
+            data: formData,
+            processData: false,
+            contentType: false,
 
         })
     );
