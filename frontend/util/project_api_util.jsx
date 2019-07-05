@@ -27,7 +27,6 @@ export const createProject = (project) => {
 };
 
 export const updateProject = (formData, id) => {
-    debugger
     return( 
         $.ajax({
             method: 'PATCH',

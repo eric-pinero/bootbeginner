@@ -64,7 +64,6 @@ export const createProject = (project) => {
 };
 
 export const updateProject = (formData, id) => {
-    debugger
     return (dispatch) => {
         return APIUtil.updateProject(formData, id).then(
             (updatedProject) => dispatch(receiveProject(updatedProject)),

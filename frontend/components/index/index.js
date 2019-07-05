@@ -21,8 +21,6 @@ class Index extends React.Component{
         const route3 = projectRoutes[1] ? projectRoutes[1] : "";
         const route4 = projectRoutes[2] ? projectRoutes[2] : "";
         
-        debugger
-        
         return (
             <>
             <Navbar/>

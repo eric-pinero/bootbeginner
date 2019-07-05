@@ -27,7 +27,6 @@ class ProjectBasics extends React.Component{
         if (this.state.imageFile){
             formData.append('project[image]', this.state.imageFile);
         }
-        debugger
         const id = this.state.id;
         this.props.props.updateProject(formData, id);
 
