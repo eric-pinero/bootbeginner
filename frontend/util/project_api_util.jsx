@@ -26,17 +26,27 @@ export const createProject = (project) => {
     );
 };
 
-export const updateProject = (formData, id) => {
-    return( 
-        $.ajax({
-            method: 'PATCH',
-            url:`/api/projects/${id}`,
-            data: formData,
-            processData: false,
-            contentType: false,
+export const updateProject = (project, id) => {
+    if (project instanceof FormData) {
+        return( 
+            $.ajax({
+                method: 'PATCH',
+                url:`/api/projects/${id}`,
+                data: project,
+                processData: false,
+                contentType: false,
 
-        })
-    );
+            })
+        );
+    } else {
+        return(
+            $.ajax({
+                method: 'PATCH',
+                url:`/api/projects/${id}`,
+                data: {project},
+            })
+        );
+    }
 };
 
 export const deleteProject = (id) => {

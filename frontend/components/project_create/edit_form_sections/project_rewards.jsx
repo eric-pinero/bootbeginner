@@ -6,6 +6,7 @@ class ProjectRewards extends React.Component{
         super(props);
         this.editing = false;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleRewardSubmit = this.handleRewardSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.state = {
             title: "",
@@ -23,6 +24,12 @@ class ProjectRewards extends React.Component{
     }
 
     handleSubmit(){
+        const project = this.props.props.project;
+        this.props.props.updateProject(project, project.id);
+    }
+
+
+    handleRewardSubmit(){
         const {
             title, description, items, project_id, minimum_value,
             quantity, start_time, end_time, estimated_month, estimated_year
@@ -55,54 +62,60 @@ class ProjectRewards extends React.Component{
                 onClick={() => this.setState({rewardMenu : false})}>
                     Cancel
             </button>
-            <button className="green-button" onClick={this.handleSubmit}>Save</button>
+            <button className="green-button" onClick={this.handleRewardSubmit}>Save</button>
             </>
             :
             <>
             <Link to={`/projects/${projectId}`} className="grey-button">Preview</Link>
             {/* connect to show page once it is functional */}
-            <Link className="green-button" onClick={this.handleSubmit} to={`/projects/${projectId}/edit/${this.props.next}`}>Next: {this.props.next[0].toUpperCase() + this.props.next.slice(1)}</Link>
+            <Link className="green-button" to={`/projects/${projectId}/edit/${this.props.next}`}>Next: {this.props.next[0].toUpperCase() + this.props.next.slice(1)}</Link>
             </>
         ;
 
         const rewardMenu = this.state.rewardMenu ?
             <div>
-                <div className="flex-column margin-bottom-72 margin-top-24">
-                    <h3>Add a reward</h3>
-                    <p>Offer tangible or intangible things that bring backers closer to your project.</p>
+                <div className="flex-column margin-bottom-72 margin-top-24 line-height-16">
+                    <h3 className="near-black-font font-18 line-height-16">Add a reward</h3>
+                    <p className="dark-grey-font font-14 line-height-16">
+                        Offer tangible or intangible things that bring backers closer to your project.
+                    </p>
                 </div>
             <div className="reward-form">
                 <form>
                     <div className="line-height-24 padding-bottom-72 flex-column grey-bottom margin-top-24">
                     
                         <h3>Title</h3>
-                        <p className="dark-grey-font">Briefly describe this reward</p>
+                        <p className="dark-grey-font font-14 margin-bottom-12">Briefly describe this reward</p>
                         <input 
-                        type="text"
+                            type="text"
                             onChange={this.handleChange('title')}
+                            placeholder="Signed Limited Edition"
+                            className="padding-12 font-14"
                         />
                     </div>
 
                     <div className="line-height-24 padding-bottom-72 flex-column grey-bottom margin-top-24">
                         <h3>Pledge amount</h3>
-                        <p className="dark-grey-font">Set a minimum pledge amount for this reward.</p>
-                        <div>$
+                        <p className="dark-grey-font margin-bottom-12">Set a minimum pledge amount for this reward.</p>
+                        <div className="dollar-input padding-12">
+                            <span>$</span>
                             <input 
                                 type="number"
                                 onChange={this.handleChange('minimum_value')} 
+                                className="border padding-12"
                             />
                         </div>
                     </div>
 
                     <div className="line-height-24 padding-bottom-72 flex-column grey-bottom margin-top-24">
                         <h3>Description</h3>
-                        <p className="dark-grey-font">Describe this reward in more detail.</p>
+                        <p className="dark-grey-font margin-bottom-12">Describe this reward in more detail.</p>
                         <input className="height-72" type="text" onChange={this.handleChange('description')} />
                     </div>
 
                     <div className="line-height-24 padding-bottom-72 flex-column grey-bottom margin-top-24">
                         <h3>Estimated Delivery</h3>
-                        <p className="dark-grey-font">Give yourself plenty of time. It's better to deliver to backers 
+                        <p className="dark-grey-font margin-bottom-12">Give yourself plenty of time. It's better to deliver to backers 
                         ahead of schedule than behind.</p>
                         <div className="month year">
                             <select 
@@ -139,14 +152,20 @@ class ProjectRewards extends React.Component{
 
                     <div className="line-height-24 padding-bottom-72 flex-column grey-bottom margin-top-24">
                         <h3>Reward quantity</h3>
-                        <p className="dark-grey-font">
+                        <p className="dark-grey-font margin-bottom-12">
                             You may want to limit the quantity of this reward 
                             available to backers if production or shipping is difficult, 
                             time-consuming, or not scalable.
                         </p>
                         <div className="radio-box">
-                            <input type="radio"/>Unlimited
-                            <input type="radio"/>Limit availability
+                            <ul className="box-list">
+                                <li className="border padding-18 margin-bottom-6">
+                                    <input name="quantity" type="radio"/> Unlimited
+                                </li>
+                                <li className="border padding-18">
+                                    <input name="quantity" type="radio"/> Limit availability
+                                </li>
+                            </ul>
                             <div className="hidden">
                                 <h3>Maximum number available</h3>
                                 <input 
@@ -159,27 +178,23 @@ class ProjectRewards extends React.Component{
 
                     <div className="line-height-24 padding-bottom-72 flex-column grey-bottom margin-top-24">
                         <h3>Time Limit</h3>
-                        <p className="dark-grey-font">
+                        <p className="dark-grey-font margin-bottom-6">
                             Schedule the timing of this reward if you would 
                             like to garner excitement about limited editions 
                             or special offerings.
                         </p>
                         <div className="radio-box">
-                            <input type="radio"/>No time limit
-                            <input type="radio"/>Start/end on specific dates and times
+                            <ul>
+                                <li className="border padding-18 margin-bottom-6">
+                                    <input type="radio"/>No time limit
+                                </li>
+                                <li className="border padding-18">
+                                    <input type="radio"/>Start/end on specific dates and times
+                                </li>
+                            </ul>
                             <input type="number" className="hidden quantity"></input>
                         </div>
                     </div>
-
-                    <label>
-                    <input></input>
-                    </label>
-                    <label>
-                    <input></input>
-                    </label>
-                    <label>
-                    <input></input>
-                    </label>
                 </form>
 
                 <aside className="preview">
@@ -193,7 +208,7 @@ class ProjectRewards extends React.Component{
         ;
         const reward1 = rewards && rewards[0] ?
             <>
-            <div>
+            <div className="margin-bottom-6">
                 <span className="margin-right-70 font-12">PLEDGE AMOUNT</span>
                 <span className="margin-right-180 font-12">DETAILS</span>
                 <span className="font-12">INCLUDES</span>
@@ -224,7 +239,7 @@ class ProjectRewards extends React.Component{
 
         const reward2 = rewards && rewards[1] ?
             <>
-            <div>
+            <div className="margin-bottom-6">
                 <span className="margin-right-70 font-12">PLEDGE AMOUNT</span>
                 <span className="margin-right-180 font-12">DETAILS</span>
                 <span className="font-12">INCLUDES</span>
@@ -255,7 +270,7 @@ class ProjectRewards extends React.Component{
 
         const reward3 = rewards && rewards[2] ?
             <>
-            <div>
+            <div className="margin-bottom-6">
                 <span className="margin-right-70 font-12">PLEDGE AMOUNT</span>
                 <span className="margin-right-180 font-12">DETAILS</span>
                 <span className="font-12">INCLUDES</span>

@@ -10,7 +10,6 @@ class Api::RewardsController < ApplicationController
         @reward.estimated_month = reward_params["estimated_month"]
         @reward.estimated_year = reward_params["estimated_year"]
         @reward.project = Project.find(reward_params["project_id"])
-
         if @reward.save
             render :show
         else
@@ -24,7 +23,6 @@ class Api::RewardsController < ApplicationController
 
     def update
         @reward = Reward.find(params[:id])
-        debugger
         if @reward.update(reward_params)
             render :show
         else

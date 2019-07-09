@@ -11,7 +11,6 @@ class ProjectStory extends React.Component{
 
     handleSubmit(){
         const project = Object.assign({}, this.state);
-        debugger
         this.props.props.updateProject(project, project.id);
     }
 
