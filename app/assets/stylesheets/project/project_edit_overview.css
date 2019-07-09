@@ -18,6 +18,14 @@
     margin-bottom: 42px;
 }
 
+.preview {
+    margin-top: 30px;
+}
+
+.preview > i {
+    margin-right: 5px;
+}
+
 .set-margin {
     margin: 0 60px;
 }

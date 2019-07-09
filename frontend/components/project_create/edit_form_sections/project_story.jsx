@@ -11,7 +11,8 @@ class ProjectStory extends React.Component{
 
     handleSubmit(){
         const project = Object.assign({}, this.state);
-        this.props.props.updateProject(project);
+        debugger
+        this.props.props.updateProject(project, project.id);
     }
 
     handleChange(field){
@@ -91,7 +92,7 @@ class ProjectStory extends React.Component{
                 <footer className="basic-footer">
                 <Link className="grey-button" to={`/projects/${this.state.id}`}>Preview</Link>
                     {/* connect to show page once it is functional */}
-                    <Link className="green-button" onClick={this.handleSubmit} to={`/projects/${projectId}/edit/${this.props.next}`}>Next: {this.props.next[0].toUpperCase() + this.props.next.slice(1)}</Link>
+                    <Link className="green-button" onClick={this.handleSubmit} to={`/projects/${projectId}/edit/overview`}>Save</Link>
                 </footer>
             </content>
             

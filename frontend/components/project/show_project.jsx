@@ -21,7 +21,8 @@ class ShowProject extends React.Component {
     }
 
     render(){
-        const {id, project_pledges, project_rewards, title, subtitle, goal, location, length, description, risks, faqs,} = this.props.project;
+        const {id, project_pledges, project_rewards, title, subtitle,
+             goal, location, length, description, risks, faqs, imageUrl} = this.props.project;
 
         let username;
         let projects;
@@ -78,7 +79,9 @@ class ShowProject extends React.Component {
 
                 <section className="main-project">
                     <div className="stack">
-                        <div className="img-holder"><img src={window.eatShoe}/></div>
+                        <div className="img-holder">
+                            <img src={imageUrl}/>
+                        </div>
                         <span>{location}</span>
                     </div>
                     <div className="campaign-details">

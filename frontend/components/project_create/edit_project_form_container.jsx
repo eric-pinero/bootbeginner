@@ -49,10 +49,10 @@ const mdp = (dispatch) => {
     return {
         requestUser: (id) => dispatch(requestUser(id)),
         requestProject: (id) => dispatch(requestProject(id)),
-        updateProject: (project, id) => dispatch(updateProject(project, id)),
+        updateProject: (project, projectId) => dispatch(updateProject(project, projectId)),
         deleteProject: (projectId) => dispatch(deleteProject(projectId)),
         createReward: (reward) => dispatch(createReward(reward)),
-        deleteReward: (rewardId) => dispatch(deleteReward(reward)),
+        deleteReward: (rewardId) => dispatch(deleteReward(rewardId)),
         receiveErrors: (errors) => dispatch(receiveErrors(errors)),
     };
 };

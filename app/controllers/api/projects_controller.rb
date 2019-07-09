@@ -25,6 +25,7 @@ class Api::ProjectsController < ApplicationController
 
     def update
         @project = Project.find(params[:id])
+        debugger
         if @project.update(project_params)
             render :show
         else
@@ -48,6 +49,7 @@ class Api::ProjectsController < ApplicationController
     end
 
     def project_params
+        debugger
         params.require(:project).permit(
             :categoryName, :subtitle, :location, 
             :page, :category_id, :creator_id, 

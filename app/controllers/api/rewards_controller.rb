@@ -24,6 +24,7 @@ class Api::RewardsController < ApplicationController
 
     def update
         @reward = Reward.find(params[:id])
+        debugger
         if @reward.update(reward_params)
             render :show
         else

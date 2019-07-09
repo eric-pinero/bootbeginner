@@ -67,7 +67,10 @@ class ProjectOverview extends React.Component{
                 <header className="overview-header">
                     <h1>{title}</h1>
                     <p>by {creatorName}</p>
-                    <Link className="grey-button" to={`/projects/${project.id}`}>Preview</Link>
+                    <Link className="grey-button preview" to={`/projects/${project.id}`}>
+                        <i className="fas fa-eye dark-grey-font"></i>
+                        <span className="dark-grey-font">Preview</span>
+                    </Link>
                 </header>
 
                 <div className="set-margin">
