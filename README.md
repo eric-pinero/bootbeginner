@@ -3,11 +3,12 @@
 ### Architecture and Technologies
 Bootbeginner was built using:
 * JavaScript 9
-* JSX
+* AWS S3
 * React 16.8.6
 * Redux 4.0.1
 * Ruby on Rails 5.2.3
 * PostgreSQL 2.2.2
+* webpack 4.32.2
 
 ### Background and Overview
  Bootbeginner is a Kickstarter inspired crowdfunding single page web app aimed exclusively at footwear based projects. It was the final project for the App Academy software engineering bootcamp.
@@ -60,5 +61,7 @@ class Dropdown extends React.Component{
         const projectCount = this.props.projects.length;
         const recentProjects = this.props.projects.slice(projectCount - 5, projectCount);
         
-        const dropdown = this.state.display ? 
+        const dropdown = this.state.display ? dropdownmenu : null;
+    }
+}
 ```
