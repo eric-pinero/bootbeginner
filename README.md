@@ -16,7 +16,11 @@ Bootbeginner was built using:
 [Live Site](https://bootbeginner.herokuapp.com/#/)
 
 ![](./app/assets/images/learn.gif)
-<img width="1440" alt="Screen Shot 2019-07-03 at 11 53 33 AM" src="https://user-images.githubusercontent.com/34456998/60606777-f059ad00-9d89-11e9-852c-304814a650fa.png">
+
+#### Authorization:
+Bootbeginner has backend auth and persistent user state. A user will remain logged in even if they leave the site through the use of cookies. Their email address is saved to the backend where database and model level auth ensure its uniqueness. The user's password is not saved to the database, instead it is hashed using BCrypt to ensure security. In the event that the email address and/or password are not valid, the user will receive an error message.
+
+![](./app/assets/images/login.gif)
 
 
 #### Projects:
