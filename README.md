@@ -13,8 +13,9 @@ Bootbeginner was built using:
 ### Background and Overview
  Bootbeginner is a Kickstarter inspired crowdfunding single page web app aimed exclusively at footwear based projects. It was the final project for the App Academy software engineering bootcamp.
 
-https://bootbeginner.herokuapp.com/#/
+[Live Site](https://bootbeginner.herokuapp.com/#/)
 
+![](./app/assets/images/learn.gif)
 <img width="1440" alt="Screen Shot 2019-07-03 at 11 53 33 AM" src="https://user-images.githubusercontent.com/34456998/60606777-f059ad00-9d89-11e9-852c-304814a650fa.png">
 
 
