@@ -1,10 +1,16 @@
 # Bootbeginner
 
 ### Architecture and Technologies
-Bootbeginner was built using JavaScript, JSX, React, and Redux for the front end. The back end was built using Ruby on Rails, PostgreSQL.
+Bootbeginner was built using:
+* JavaScript 9
+* JSX
+* React 16.8.6
+* Redux 4.0.1
+* Ruby on Rails 5.2.3
+* PostgreSQL 2.2.2
 
 ### Background and Overview
- Bootbeginner is a Kickstarter inspired crowdfunding single page web app aimed exclusively at footwear based projects.
+ Bootbeginner is a Kickstarter inspired crowdfunding single page web app aimed exclusively at footwear based projects. It was the final project for the App Academy software engineering bootcamp.
 
 https://bootbeginner.herokuapp.com/#/
 
