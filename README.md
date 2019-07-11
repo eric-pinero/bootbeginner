@@ -34,7 +34,7 @@ Whenever the user navigates to the next section of this form, the data they've e
 
 At that point the user is free to edit and add additional information
 
-<img width="1440" alt="Screen Shot 2019-07-03 at 12 00 48 PM" src="https://user-images.githubusercontent.com/34456998/60607034-70801280-9d8a-11e9-9977-dc7ef1dea1c7.png">
+![](./app/assets/images/form-nav.gif)
 
 * Rewards - What backers will receive for backing the project
 * Title - The main title of the project
@@ -100,6 +100,8 @@ This ensures a re-render of the field as every change to the the field and local
 All fields must be complete before a project can be launched.
 
 The creator can use the preview button to see how their project page will appear to users after it has launched.
+
+Every part of a project's edit form is protected by auth routes, ensuring that only the creator can view or edit the incomplete form.
 
 #### Dropdown:
 Once a user has logged in, they can use the dropdown menu to view their five most recent projects. Selecting a project through the dropdown will bring the user to that project's edit page. The dropdown menu is also how users log out.
