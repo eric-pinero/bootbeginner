@@ -22,7 +22,6 @@ Bootbeginner has backend auth and persistent user state. A user will remain logg
 
 ![](./app/assets/images/login.gif)
 
-
 #### Projects:
 
 Every project must have a minimum of the following to be created
@@ -97,14 +96,12 @@ This ensures a re-render of the field as every change to the the field and local
 
 ![](./app/assets/images/form-nav.gif)
 
-All fields must be complete before a project can be launched.
-
 The creator can use the preview button to see how their project page will appear to users after it has launched.
 
-Every part of a project's edit form is protected by auth routes, ensuring that only the creator can view or edit the incomplete form.
+Every part of a project's edit form is protected by auth routes, ensuring that only the creator can view or edit the incomplete form. If a user attempts to manually enter the url for a project's edit page that they do not own, they will be redirected to the home page.
 
 #### Dropdown:
-Once a user has logged in, they can use the dropdown menu to view their five most recent projects. Selecting a project through the dropdown will bring the user to that project's edit page. The dropdown menu is also how users log out.
+Once a user has logged in, they can use the dropdown menu to view their five most recent projects. The dropdown menu's display is tied to the component state "display". The button in the top right corner has an onClick listener that fires the toggleDropdown function, which sets the toggles the display value between true and false. The dropdown variable is defined by a ternary, tied to the display value. 
 
 ```javascript
 class Dropdown extends React.Component{
@@ -128,3 +125,5 @@ class Dropdown extends React.Component{
     }
 }
 ```
+
+Selecting a project through the dropdown will bring the user to that project's edit page. The dropdown menu also contains the logout button which destroy's the current user's session.
