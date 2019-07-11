@@ -17,16 +17,16 @@ Bootbeginner was built using:
 
 ![](./app/assets/images/learn.gif)
 
-#### Authorization:
+### Authorization:
 Bootbeginner has backend auth and persistent user state. A user will remain logged in even if they leave the site through the use of cookies. Their email address is saved to the backend where database and model level auth ensure its uniqueness. The user's password is hashed and the resulting digest is saved to the database. In the event that the email address and/or password are not valid, the user will receive an error message.
 
 ![](./app/assets/images/login.gif)
 
-#### AWS S3:
+### AWS S3:
 
 By integrating Amazon Web Services S3 load time is minimized and storage space is not a concern. The Rails credentials are integrated with the AWS credentials, allowing the app to access AWS. The bucket policy permissions then allow the storage of data in S3.
 
-#### Projects:
+### Projects:
 
 Every project must have a minimum of the following to be created
 * Category - The type of footwear to which the project is related
@@ -104,10 +104,10 @@ Users can upload an image for their project. These uploads are handled through t
 
 Every part of a project's edit form is protected by auth routes, ensuring that only the creator can view or edit the incomplete form. If a user attempts to manually enter the url for a project's edit page that they do not own, they will be redirected to the home page.
 
-#### Rewards:
+### Rewards:
 Every project can have many rewards, which are added as part of project creation, which have a value that must be pledged to receive them. Every user can have many rewards, based on the the pledges they've made to projects. The relationship between a user, a pledge, and a project is tracked in the joins table "pledges", which ties the user id, project id, reward id, and the pledged amount. The sum of pledges in this table determine how much backing a project has received. The association with the users tracks how many rewards will be given and to who.
 
-#### Dropdown:
+### Dropdown:
 Once a user has logged in, they can use the dropdown menu to view their five most recent projects. The dropdown menu's display is tied to the component state "display". The button in the top right corner has an onClick listener that fires the toggleDropdown function, which sets the toggles the display value between true and false. The dropdown variable is defined by a ternary, tied to the display value. 
 
 ```javascript
