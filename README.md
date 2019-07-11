@@ -22,6 +22,10 @@ Bootbeginner has backend auth and persistent user state. A user will remain logg
 
 ![](./app/assets/images/login.gif)
 
+#### AWS S3:
+
+By integrating Amazon Web Services S3 load time is minimized and storage space is not a concern. The Rails credentials are integrated with the AWS credentials, allowing the app to access AWS. The bucket policy permissions then allow the storage of data in S3.
+
 #### Projects:
 
 Every project must have a minimum of the following to be created
@@ -96,7 +100,7 @@ This ensures a re-render of the field as every change to the the field and compo
 
 ![](./app/assets/images/form-nav.gif)
 
-Users can upload an image for their project. By integrating Amazon Web Services S3 load time is minimized and storage space is not a concern.
+Users can upload an image for their project. These uploads are handled through the AWS S3 connection. Storing images in S3 reduces load time for the app.
 
 Every part of a project's edit form is protected by auth routes, ensuring that only the creator can view or edit the incomplete form. If a user attempts to manually enter the url for a project's edit page that they do not own, they will be redirected to the home page.
 
