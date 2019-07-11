@@ -18,7 +18,7 @@ Bootbeginner was built using:
 ![](./app/assets/images/learn.gif)
 
 ### Authorization:
-Bootbeginner has backend auth and persistent user state. A user will remain logged in even if they leave the site through the use of cookies. Their email address is saved to the backend where database and model level auth ensure its uniqueness. The user's password is hashed and the resulting digest is saved to the database. In the event that the email address and/or password are not valid, the user will receive an error message.
+Bootbeginner has backend auth and persistent user state. A user will remain logged in even if they leave the site through the use of cookies. Their email address is saved to the backend where database and model level auth ensure its uniqueness. The user's password is hashed using BCrypt and the resulting digest is saved to the database. In the event that the email address and/or password are not valid, the user will receive an error message.
 
 ![](./app/assets/images/login.gif)
 
@@ -45,6 +45,8 @@ At that point the user is free to edit and add additional information
 * Risks and Challenges - Potential issues that the project may encounter after launching that could affect the ability to deliver
 
 Similar to the project creation form, there are onChange event listeners on each field of each section of the form that set the value of a key in component state that corresponds to the field being changed. 
+
+![](./app/assets/images/form-nav.gif)
 
 ```JavaScript
 class ProjectBasics extends React.Component{
@@ -97,8 +99,6 @@ class ProjectBasics extends React.Component{
 ```
 
 This ensures a re-render of the field as every change to the the field and component state occurs. Every field's value is equal to the corresponding key-value pair in component state. Navigating to the next section of the form triggers an update action to be fired to the back end, saving the updated information to the project. This is what allows a user to complete the form in any order. A user can partially complete each section and still navigate to subsequent or previous sections.
-
-![](./app/assets/images/form-nav.gif)
 
 Users can upload an image for their project. These uploads are handled through the AWS S3 connection. Storing images in S3 reduces load time for the app.
 
