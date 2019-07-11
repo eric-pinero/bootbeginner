@@ -96,9 +96,12 @@ This ensures a re-render of the field as every change to the the field and compo
 
 ![](./app/assets/images/form-nav.gif)
 
-The creator can use the preview button to see how their project page will appear to users after it has launched.
+Users can upload an image for their project. By integrating Amazon Web Services S3 load time is minimized and storage space is not a concern.
 
 Every part of a project's edit form is protected by auth routes, ensuring that only the creator can view or edit the incomplete form. If a user attempts to manually enter the url for a project's edit page that they do not own, they will be redirected to the home page.
+
+#### Rewards:
+Every project can have many rewards, which are added as part of project creation, which have a value that must be pledged to receive them. Every user can have many rewards, based on the the pledges they've made to projects. The relationship between a user, a pledge, and a project is tracked in the joins table "pledges", which ties the user id, project id, reward id, and the pledged amount. The sum of pledges in this table determine how much backing a project has received. The association with the users tracks how many rewards will be given and to who.
 
 #### Dropdown:
 Once a user has logged in, they can use the dropdown menu to view their five most recent projects. The dropdown menu's display is tied to the component state "display". The button in the top right corner has an onClick listener that fires the toggleDropdown function, which sets the toggles the display value between true and false. The dropdown variable is defined by a ternary, tied to the display value. 
