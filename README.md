@@ -34,8 +34,6 @@ Whenever the user navigates to the next section of this form, the data they've e
 
 At that point the user is free to edit and add additional information
 
-![](./app/assets/images/form-nav.gif)
-
 * Rewards - What backers will receive for backing the project
 * Title - The main title of the project
 * Funding Goal - The dollar amount that the project is trying to reach
@@ -96,6 +94,8 @@ class ProjectBasics extends React.Component{
 ```
 
 This ensures a re-render of the field as every change to the the field and local state occurs. Every field's value is equal to the corresponding key-value pair in local state. Navigating to the next section of the form triggers an update action to be fired to the back end, saving the updated information to the project. This is what allows a user to complete the form in any order. A user can partially complete each section and still navigate to subsequent or previous sections.
+
+![](./app/assets/images/form-nav.gif)
 
 All fields must be complete before a project can be launched.
 
