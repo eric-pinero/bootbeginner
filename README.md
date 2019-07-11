@@ -29,7 +29,7 @@ Every project must have a minimum of the following to be created
 * Subtitle - A short description of what the project is about
 * Location - The country in which the project is based
 
-Whenever the user navigates to the next section of this form, the data they've entered into the form up to that point is saved to the local state, so they can return to previous sections to review and/or change their prior answers. Upon completion of this form, an instance of the project is saved to the back end.
+Whenever the user navigates to the next section of this form, the data they've entered into the form up to that point is saved to the component state, so they can return to previous sections to review and/or change their prior answers. Upon completion of this form, an instance of the project is saved to the back end.
 
 At that point the user is free to edit and add additional information
 
@@ -40,7 +40,7 @@ At that point the user is free to edit and add additional information
 * Story - A detailed description of the project
 * Risks and Challenges - Potential issues that the project may encounter after launching that could affect the ability to deliver
 
-Similar to the project creation form, there are onChange event listeners on each field of each section of the form that set the a value of a key in local state that corresponds to the field being changed. 
+Similar to the project creation form, there are onChange event listeners on each field of each section of the form that set the value of a key in component state that corresponds to the field being changed. 
 
 ```JavaScript
 class ProjectBasics extends React.Component{
@@ -92,7 +92,7 @@ class ProjectBasics extends React.Component{
 
 ```
 
-This ensures a re-render of the field as every change to the the field and local state occurs. Every field's value is equal to the corresponding key-value pair in local state. Navigating to the next section of the form triggers an update action to be fired to the back end, saving the updated information to the project. This is what allows a user to complete the form in any order. A user can partially complete each section and still navigate to subsequent or previous sections.
+This ensures a re-render of the field as every change to the the field and component state occurs. Every field's value is equal to the corresponding key-value pair in component state. Navigating to the next section of the form triggers an update action to be fired to the back end, saving the updated information to the project. This is what allows a user to complete the form in any order. A user can partially complete each section and still navigate to subsequent or previous sections.
 
 ![](./app/assets/images/form-nav.gif)
 
