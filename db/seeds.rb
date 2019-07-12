@@ -36,21 +36,21 @@ users = User.create(
   {
     username: "Franz Shoebert",
     email: "shoebert@shoe.com",
-    password_digest: "$2a$10$RIG9PuQw3m7MHPF9fZi9euxke2SCewkewxCz0unMRb2HJg11MheVa",
+    password_digest: "$2a$10$FUKCwIjyqHVAV8EtYKGrzu95/EXn4o3XiteRiIcjQEkqLQc70usPm",
     session_token: "8ej_uCQsYwo6bBhx_QnHzg"
   },
 
   {
     username: "John Wilkes Boot",
     email: "feartheboot@boot.net",
-    password_digest: "$2a$10$9V976FZJRWaGYfcT.28E4uIgAQxxVIiuCPHqpgaGN2rw8J2rrPwIK",
+    password_digest: "$2a$10$FUKCwIjyqHVAV8EtYKGrzu95/EXn4o3XiteRiIcjQEkqLQc70usPm",
     session_token: "KaFNP86SNOPkDBKzoPCQkg"
   },
 
   {
     username: "Heelers Without Borders",
-    email: "test2@test.com",
-    password_digest: "$2a$10$RKW.oUjJxb0Lah6MwO22PuwBLrp8DhZ8R29Xm8SMGqSpfz8YTo7ZW",
+    email: "feelings@heelings.org",
+    password_digest: "$2a$10$FUKCwIjyqHVAV8EtYKGrzu95/EXn4o3XiteRiIcjQEkqLQc70usPm",
     session_token: "B5-ed2r2BkLgXbmFhQRudg"
   }
 

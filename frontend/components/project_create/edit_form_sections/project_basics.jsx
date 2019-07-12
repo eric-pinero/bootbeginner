@@ -165,7 +165,7 @@ class ProjectBasics extends React.Component{
                         </div>
 
                         <div className="fields">
-                            <span>test</span>
+                            <span></span>
                             <form>
                                 <input type="file" onChange={this.handleFile}/>
                                 {previewImg}
