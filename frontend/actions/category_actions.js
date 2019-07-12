@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/pledge_api_util';
+import * as APIUtil from '../util/category_api_util';
 
 export const RECEIVE_CATEGORIES = 'RECEIVE_CATEGORIES';
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";

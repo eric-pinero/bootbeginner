@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :projects, only: [:index, :create, :show, :edit, :update, :destroy]
     resources :rewards, only: [:create, :show, :edit, :update, :destroy]
     resources :pledges, only: [:create, :show, :edit, :update, :destroy]
+    resources :categories, only: [:index]
   end
 
 end
