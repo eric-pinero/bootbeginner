@@ -53,7 +53,7 @@ class Index extends React.Component{
                         <img className="rec-img" src={window.bagel}></img>
                         <ul className="rec-project">
                             <li>Bagel Boots</li>
-                            <li className="green-text">13% funded</li>
+                            <li className="green-text">0% funded</li>
                             <li><span>By Franz Shoebert</span></li>
                         </ul>
                     </li>
@@ -63,7 +63,7 @@ class Index extends React.Component{
                         <img className="rec-img" src={window.moonBoot}/>
                         <ul className="rec-project">
                             <li>Moon Boots</li>
-                            <li className="green-text">80% funded</li>
+                            <li className="green-text">0% funded</li>
                             <li><span>By John Wilkes Boot</span></li>
                         </ul>
                     </li>
@@ -73,7 +73,7 @@ class Index extends React.Component{
                         <img className="rec-img" src={window.heel}></img>
                         <ul className="rec-project">
                             <li>Let the Heeling Begin</li>
-                            <li className="green-text">120% funded</li>
+                            <li className="green-text">0% funded</li>
                             <li><span>By Heelers without Borders</span></li>
                         </ul>
                     </li>
