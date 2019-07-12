@@ -7,8 +7,9 @@ import {AuthRoute, ProtRoute} from "../util/route_util";
 import ProjectLearn from "./project_create/project_learn";
 import ProjectFormContainer from "./project_create/project_form_container";
 import EditProjectFormContainer from "./project_create/edit_project_form_container";
-import ShowProjectContainer from "./project/show_project_container"
+import ShowProjectContainer from "./project/show_project_container";
 import ProjectIndexContainer from "./index/project_index_container";
+import CategoriesContainer from "./search/categories_container";
 
 const App = () => (
     <div>
@@ -21,6 +22,7 @@ const App = () => (
                 <ProtRoute path="/projects/start" component={ProjectFormContainer}/>
                 <ProtRoute path="/projects/:projectId/edit" component={EditProjectFormContainer}/>
                 <Route exact path="/projects/:projectId" component={ShowProjectContainer}/>
+                <Route path="/explore" component={CategoriesContainer}/>
             </Switch>
         </header>
     </div>

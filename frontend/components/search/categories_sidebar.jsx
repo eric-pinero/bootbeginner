@@ -2,14 +2,15 @@ import React from 'react';
 import CategoryIndexItem from './category_index_item';
 import {Link} from 'react-router-dom';
 
-class Index extends React.Component{
+class CategoriesSideBar extends React.Component{
     componentDidMount(){
         this.props.requestCategories();
     }
     render(){
-        const categories = 
+        const categories = this.props.categories === {} ?
+            null:
             this.props.categories.map(category => {
-                return <li><CategoryIndexItem category={category} key={category.id}/></li>
+                return <li key={category.id}><CategoryIndexItem name={category.name}/></li>
             })
         ;
         
@@ -25,4 +26,4 @@ class Index extends React.Component{
     }
 }
 
-export default Index;
+export default CategoriesSideBar;

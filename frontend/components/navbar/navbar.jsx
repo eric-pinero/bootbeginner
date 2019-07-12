@@ -24,7 +24,7 @@ class Navbar extends React.Component{
         return(
             <nav className="nav-main">
                 <div className="nav-left">
-                    <Link className="nav-link" to="/">Explore</Link>
+                    <Link className="nav-link" to="/explore">Explore</Link>
                     <Link className="nav-link" to="/projects/learn">Start a project</Link>
                 </div>
 
