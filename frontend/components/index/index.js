@@ -48,7 +48,7 @@ class Index extends React.Component{
             </Link>
                 <ul className="recommended percent-40 left-grey-border">
                     <h3>RECOMMENDED</h3>
-            <Link className="reccommended" to={route2}>
+            <Link className="reccommended" to={route3}>
                     <li className="bottom-grey-border">
                         <img className="rec-img" src={window.bagel}></img>
                         <ul className="rec-project">
@@ -58,7 +58,7 @@ class Index extends React.Component{
                         </ul>
                     </li>
             </Link>
-            <Link to={route3}>
+            <Link to={route2}>
                     <li className="bottom-grey-border">
                         <img className="rec-img" src={window.moonBoot}/>
                         <ul className="rec-project">
