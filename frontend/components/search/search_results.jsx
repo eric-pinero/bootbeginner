@@ -7,13 +7,18 @@ import Footer from '../footer/footer';
 class SearchResults extends React.Component{
     constructor(props){
         super(props);
+        // this.search = this.props.category;
+    }
+
+    componentDidMount(){
+        this.props.requestProjects();
     }
 
     render(){
         const results = this.props.projects.filter(project => project.category_name === this.props.category);
 
         const result_list = results.map(result => {
-            return <li key={result.id}><ProjectIndexItem id={result.id} project={result}/></li>
+            return <li key={result.id}><ProjectIndexItem project={result}/></li>
             }
         );
 
