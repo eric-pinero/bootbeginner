@@ -53,7 +53,7 @@ class Api::ProjectsController < ApplicationController
             :page, :category_id, :creator_id, 
             :title, :description, :subcategory_id, 
             :risks, :faqs, :length, :amount_received, :goal,
-            :image, :project_rewards, :project_pledges
+            :image, :project_rewards, :project_pledges, :creator_name
         )
     end
 end

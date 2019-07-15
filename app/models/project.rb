@@ -55,4 +55,8 @@ class Project < ApplicationRecord
         pledges.all
     end
 
+    def creator_name
+        creator.username
+    end
+
 end

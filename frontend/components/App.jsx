@@ -10,6 +10,7 @@ import EditProjectFormContainer from "./project_create/edit_project_form_contain
 import ShowProjectContainer from "./project/show_project_container";
 import ProjectIndexContainer from "./index/project_index_container";
 import CategoriesContainer from "./search/categories_container";
+import SearchResultsContainer from './search/search_results_container';
 
 const App = () => (
     <div>
@@ -23,6 +24,7 @@ const App = () => (
                 <ProtRoute path="/projects/:projectId/edit" component={EditProjectFormContainer}/>
                 <Route exact path="/projects/:projectId" component={ShowProjectContainer}/>
                 <Route path="/explore" component={CategoriesContainer}/>
+                <Route path="/search/:categoryName" component={SearchResultsContainer}/>
             </Switch>
         </header>
     </div>
