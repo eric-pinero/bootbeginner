@@ -27,7 +27,13 @@ class SearchResults extends React.Component{
         return (
             <>
             <Navbar/>
-            <h1>Explore </h1>
+            <div className="flex ">
+                <h1>Show me </h1>
+                {/* categories */}
+                <h1> projects from</h1>
+                {/* locations */}
+                <h1>sorted by</h1>
+            </div>
             <ul>
                 {result_list}
             </ul>
