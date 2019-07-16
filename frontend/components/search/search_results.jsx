@@ -3,6 +3,7 @@ import ProjectIndexItem from '../index/project_index_item';
 import {Link} from 'react-router-dom';
 import Navbar from '../navbar/navbar';
 import Footer from '../footer/footer';
+import options from 'search_dropdown';
 
 class SearchResults extends React.Component{
     constructor(props){
