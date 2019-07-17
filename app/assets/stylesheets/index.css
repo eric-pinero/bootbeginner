@@ -17,6 +17,10 @@
     background-color: #034752;
 }
 
+.flex-center{
+    justify-content: center;
+}
+
 .category-header{
     justify-content: center;
     align-items: center;

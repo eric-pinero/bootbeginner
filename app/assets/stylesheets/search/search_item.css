@@ -1,0 +1,31 @@
+.padding-top-60{
+    padding-top: 60px;
+}
+
+.cat-dropdown{
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid black;
+    min-width: 100px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    left: -66px;
+    top: 26px;
+}
+
+.cat-button{
+    color: #656969;
+    padding: 12px 12px 12px 18px;
+}
+
+.search-drop-head{
+    padding: 18px 18px 6px 18px;
+}
+.search-drop{
+    padding: 6px 18px 18px 18px;
+}
+
+.search-item{
+    width: 33%;
+}

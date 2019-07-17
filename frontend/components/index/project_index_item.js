@@ -8,9 +8,8 @@ class ProjectIndexItem extends React.Component{
   
   render(){
 
-    debugger
     return(
-      <div>
+      <div className="search-item" >
         <Link to={`/projects/${this.props.project.id}`}>
           <h1>{this.props.project.title}</h1>
           <h2>by {this.props.project.creator_name}</h2>

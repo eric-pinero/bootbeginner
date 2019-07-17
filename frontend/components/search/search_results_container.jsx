@@ -4,11 +4,12 @@ import { requestProjects } from '../../actions/project_actions';
 import { requestCategories } from '../../actions/category_actions';
 
 const msp = (state, ownProps) => {
-    debugger
     const projects = Object.values(state.entities.projects);
+    const categories = Object.values(state.entities.categories);
     const category = ownProps.match.params.categoryName;
     return {
         projects,
+        categories,
         category
     };
 };

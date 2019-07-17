@@ -4,10 +4,6 @@ import Dropdown from "./dropdown_container"
 
 class Navbar extends React.Component{
     
-    displayDropdown(){
-        return <Dropdown/>
-    }
-
     render() {
         const signIn = !this.props.loggedIn ?
             <Link className="nav-link" to="/login">Sign in</Link>

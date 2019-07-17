@@ -3,16 +3,26 @@ import ProjectIndexItem from '../index/project_index_item';
 import {Link} from 'react-router-dom';
 import Navbar from '../navbar/navbar';
 import Footer from '../footer/footer';
-import options from 'search_dropdown';
+import Options from './options';
+import CategoryDropdown from './category_dropdown';
 
 class SearchResults extends React.Component{
     constructor(props){
         super(props);
-        // this.search = this.props.category;
+        this.state = {
+            category_menu: false,
+        };
+        this.toggleDropdown = this.toggleDropdown.bind(this);
+    }
+
+    toggleDropdown(){
+        debugger
+        this.setState({category_menu: !(this.state.category_menu)});
     }
 
     componentDidMount(){
         this.props.requestProjects();
+        this.props.requestCategories();
     }
 
     render(){
@@ -23,21 +33,62 @@ class SearchResults extends React.Component{
             }
         );
 
+        const cat_arr = this.props.categories.map( category => category.name)
+            
+        const loc_arr = [
+            "the Earth",
+            "Australia",
+            "Austria",
+            "Belgium",
+            "Canada",
+            "Denmark",
+            "France",
+            "Germany",
+            "Hong Kong",
+            "Ireland",
+            "Italy",
+            "Japan",
+            "Luxemborg",
+            "Mexico",
+            "New Zealand",
+            "Norway",
+            "Singapore",
+            "Spain",
+            "Switzerland",
+            "the Netherlands",
+            "the United Kingdom",
+            "the United States"
+        ];
 
-        debugger
+
+
+        const category_dropdown = this.state.category_menu ?
+            <CategoryDropdown options={cat_arr}/>
+            :
+            null
+        ;
+        const plural = results.length === 1 ? "" : "s"
+
         return (
             <>
             <Navbar/>
-            <div className="flex ">
-                <h1>Show me </h1>
-                {/* categories */}
-                <h1> projects from</h1>
-                {/* locations */}
-                <h1>sorted by</h1>
+            <div className="flex flex-center padding-top-60">
+                <h1>Show me <span
+                    onClick={this.toggleDropdown}
+                    className="cat-button light-grey-back categories">
+                    {this.props.category}
+                    </span>
+                </h1>
+                <div className="search_drop">
+                    {category_dropdown}
+                </div>
             </div>
-            <ul>
+            <div className='results'>
+                <h1>
+                    Explore <span>{results.length} project{plural}</span>
+                </h1>
                 {result_list}
-            </ul>
+            </div>
             <Footer/>
             </>
         )
@@ -45,3 +96,4 @@ class SearchResults extends React.Component{
 }
 
 export default SearchResults;
+
