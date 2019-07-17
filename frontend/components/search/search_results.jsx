@@ -20,6 +20,7 @@ class SearchResults extends React.Component{
         debugger
         this.setState({category_menu: !(this.state.category_menu)});
     }
+    
 
     componentDidMount(){
         this.props.requestProjects();
@@ -27,7 +28,7 @@ class SearchResults extends React.Component{
     }
 
     render(){
-        const results = this.props.projects.filter(project => project.category_name === this.state.category);
+        const results = this.props.projects.filter(project => project.category_name === this.props.category);
 
         const result_list = results.map(result => {
             return <li key={result.id}><ProjectIndexItem project={result}/></li>
@@ -77,7 +78,7 @@ class SearchResults extends React.Component{
                 <h1>Show me <span
                     onClick={this.toggleDropdown}
                     className="cat-button light-grey-back categories">
-                    {this.state.category}
+                    {this.props.category}
                     </span>
                 </h1>
                 <div className="search_drop">

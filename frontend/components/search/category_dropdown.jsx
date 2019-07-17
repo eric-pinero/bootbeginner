@@ -16,6 +16,7 @@ class CategoryDropdown extends React.Component{
                 <content>
                 <div className="bottom-grey-border search-drop-head">
                     <h1>CATEGORIES</h1>
+                    <Link to="/">test</Link>
                 </div>
                 <div className="dropdown-section search-drop">
                     <Options choices={this.props.options}/>

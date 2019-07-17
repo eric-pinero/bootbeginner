@@ -7,7 +7,7 @@ class ProjectIndexItem extends React.Component{
   }
   
   render(){
-
+    debugger
     return(
       <div className="search-item" >
         <Link to={`/projects/${this.props.project.id}`}>
