@@ -29,6 +29,10 @@
     cursor: pointer;
 }
 
+.results{
+    align-items: center;
+}
+
 .search-drop-head{
     padding: 18px 18px 6px 18px;
 }
@@ -39,4 +43,5 @@
 .search-item{
     width: 33%;
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+    padding: 0 18px;
 }

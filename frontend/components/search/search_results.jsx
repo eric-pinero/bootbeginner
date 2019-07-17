@@ -85,7 +85,7 @@ class SearchResults extends React.Component{
                     {category_dropdown}
                 </div>
             </div>
-            <div className='results'>
+            <div className='results flex-column'>
                 <h1>
                     Explore <span>{results.length} project{plural}</span>
                 </h1>
