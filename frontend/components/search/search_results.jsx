@@ -11,6 +11,7 @@ class SearchResults extends React.Component{
         super(props);
         this.state = {
             category_menu: false,
+            category: this.props.category,
         };
         this.toggleDropdown = this.toggleDropdown.bind(this);
     }
@@ -26,7 +27,7 @@ class SearchResults extends React.Component{
     }
 
     render(){
-        const results = this.props.projects.filter(project => project.category_name === this.props.category);
+        const results = this.props.projects.filter(project => project.category_name === this.state.category);
 
         const result_list = results.map(result => {
             return <li key={result.id}><ProjectIndexItem project={result}/></li>
@@ -72,11 +73,11 @@ class SearchResults extends React.Component{
         return (
             <>
             <Navbar/>
-            <div className="flex flex-center padding-top-60">
+            <div className="flex flex-center padding-top-60 search-page">
                 <h1>Show me <span
                     onClick={this.toggleDropdown}
                     className="cat-button light-grey-back categories">
-                    {this.props.category}
+                    {this.state.category}
                     </span>
                 </h1>
                 <div className="search_drop">
@@ -87,7 +88,9 @@ class SearchResults extends React.Component{
                 <h1>
                     Explore <span>{results.length} project{plural}</span>
                 </h1>
-                {result_list}
+                <ul>
+                    {result_list}
+                </ul>
             </div>
             <Footer/>
             </>

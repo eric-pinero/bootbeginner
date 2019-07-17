@@ -11,7 +11,7 @@ class Options extends React.Component {
             }
         );
         return (
-            <ul>
+            <ul className="no-style">
                 {choices}
             </ul>
         )

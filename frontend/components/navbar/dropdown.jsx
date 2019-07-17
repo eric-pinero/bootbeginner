@@ -50,7 +50,7 @@ class Dropdown extends React.Component{
                     <ul className="created-projects">
                         {recentProjects.map(
                             project => <li key={project.id}><Link to={`/projects/${project.id}/edit/overview`}>{project.subtitle}</Link></li>)
-                            }
+                        }
                     </ul>
                 </div>
                 </content>
