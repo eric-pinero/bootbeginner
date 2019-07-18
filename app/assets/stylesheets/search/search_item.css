@@ -2,9 +2,37 @@
     padding-top: 60px;
 }
 
+.padding-bottom-60{
+    padding-bottom: 60px;
+}
+
+.padding-top-18{
+    padding-top: 18px;
+}
+
+.margin-bottom-30{
+    margin-bottom: 30px;
+}
+
+.max-100{
+    max-width: 100%;
+}
+
 .no-style{
     padding: 0;
     list-style: none;
+}
+
+.green-border-top{
+    border-top: 3px solid #037362;
+}
+
+.grey-text{
+    color: #9b9e9e
+}
+
+.margin-18{
+    margin: 18px;
 }
 
 .search-page{
@@ -30,7 +58,8 @@
 }
 
 .results{
-    align-items: center;
+    padding: 24px 60px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
 }
 
 .search-drop-head{
@@ -41,7 +70,6 @@
 }
 
 .search-item{
-    width: 33%;
+    width: 400px;
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
-    padding: 0 18px;
 }

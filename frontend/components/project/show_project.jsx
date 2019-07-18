@@ -23,7 +23,7 @@ class ShowProject extends React.Component {
 
     render(){
         const {id, project_pledges, project_rewards, title, subtitle,
-             goal, location, length, description, risks, faqs, imageUrl, creator_id} = this.props.project;
+             goal, location, length, description, risks, faqs, imageUrl, creator_id,} = this.props.project;
 
         let username;
         let projects;

@@ -86,8 +86,8 @@ class SearchResults extends React.Component{
                 </div>
             </div>
             <div className='results flex-column'>
-                <h1>
-                    Explore <span>{results.length} project{plural}</span>
+                <h1 className="margin-bottom-30 font-22">
+                    Explore <span className="green-text">{results.length} project{plural}</span>
                 </h1>
                 <ul>
                     {result_list}

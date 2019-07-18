@@ -9,7 +9,7 @@ class Options extends React.Component {
 
     render(){
         const choices = this.props.choices.map(choice => {
-            return <li key={choice}><CategoryIndexItem name={choice}/></li>
+            return <li key={choice}><CategoryIndexItem font="font-14" name={choice}/></li>
             }
         );
         return (

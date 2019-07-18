@@ -42,6 +42,10 @@ input:focus{
 .margin-bottom-20{
     margin-bottom: 20px;
 }
+.margin-tb-20{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
 
 .padding-12{
     padding: 12px;
@@ -68,12 +72,19 @@ input:focus{
 .font-12{
     font-size: 12px;
 }
+.font-13{
+    font-size: 13px;
+}
 .font-14{
     font-size: 14px;
 }
 .font-18{
     font-size: 18px;
 }
+.font-22{
+    font-size: 22px;
+}
+
 
 .grey-bg {
     background-color: #FBFBFA;
