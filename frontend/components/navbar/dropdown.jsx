@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 class Dropdown extends React.Component{
     constructor(props){
-        super(props)
+        super(props);
         this.state = {
             display: false
-        }
+        };
         this.toggleDropdown = this.toggleDropdown.bind(this)
     }
 

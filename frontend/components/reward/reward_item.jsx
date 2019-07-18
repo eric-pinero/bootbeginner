@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect, Link } from 'react-router-dom';
 
 class RewardItem extends React.Component{
     constructor(props){
@@ -20,7 +21,6 @@ class RewardItem extends React.Component{
             reward_id : this.props.projectReward.id,
         };
         this.props.createPledge(pledge);
-
     }
 
     handleChange(field){
@@ -50,7 +50,7 @@ class RewardItem extends React.Component{
                 <h5>Pledge amount</h5>
                 <input type="number" onChange={this.handleChange("pledged_amount")}/>
             </div>
-            <button className="green-button" onClick={this.newPledge}>Continue</button>
+            <Link to="/" className="green-button" onClick={this.newPledge}>Continue</Link>
             </>
             :
             null

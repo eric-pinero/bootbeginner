@@ -25,7 +25,6 @@ class CategoryDropdown extends React.Component{
             </div>
             </>
         ;
-        debugger
 
         return(
         <div className="dropdown">
