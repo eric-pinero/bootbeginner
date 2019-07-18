@@ -73,8 +73,7 @@ class ShowProject extends React.Component {
             
         const editButton = this.props.currentUserId === creator_id ?
             <li className="margin-top-24 dark-grey-bg padding-12">
-                <p>This project has not yet launched. Click  
-                <span className="green-text"> <Link to={`${id}/edit/overview`}>here</Link> </span>
+                <p>Click <span className="green-text"> <Link to={`${id}/edit/overview`}>here</Link> </span>
                 to edit your project</p>
             </li>
             :

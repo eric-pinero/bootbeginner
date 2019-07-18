@@ -1,3 +1,18 @@
+.padding-bottom-12{
+    padding-bottom: 12px;
+}
+
+.font-34{
+    font-size: 34px
+}
+
 .sidebar{
-    
+    margin: 0 auto;
+    padding: 36px 60px;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+}
+
+
+.space-between {
+    justify-content: space-between
 }

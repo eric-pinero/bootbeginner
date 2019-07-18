@@ -10,18 +10,23 @@ class CategoriesSideBar extends React.Component{
         const categories = this.props.categories === {} ?
             null:
             this.props.categories.map(category => {
-                return <li key={category.id}><CategoryIndexItem name={category.name}/></li>
+                return( 
+                    <li className="margin-bottom-12" key={category.id}>
+                        <CategoryIndexItem name={category.name}/>
+                    </li>)
             })
         ;
         
         return (
-            <content className="sidebar">
-                <h1>Categories</h1>
-                <h1><Link to="/">X</Link></h1>
+            <main className="sidebar width-100">
+                <div className="width-75 flex space-between bottom-grey-border padding-bottom-12 margin-bottom-12">
+                    <h1 className="green-text">Categories</h1>
+                    <h1><Link to="/">X</Link></h1>
+                </div>
                 <ul>
                     {categories}
                 </ul>
-            <content/>
+            </main>
         )
     }
 }
