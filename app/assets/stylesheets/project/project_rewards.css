@@ -86,6 +86,9 @@ input:focus{
 .dark-grey-font{
     color: #656969;
 }
+.dark-grey-bg{
+    background-color: #F0F0F0;
+}
 
 .near-black-font{
     color: #282828

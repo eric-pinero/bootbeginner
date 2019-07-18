@@ -110,10 +110,10 @@ class ProjectBasics extends React.Component{
                                 Choose the category that most closely<br/> 
                                 aligns with your project.
                                 <br/>
-                                Think of where backers may look to find it.<br/> 
+                                {/* Think of where backers may look to find it.<br/> 
                                 Reach a more specific community by also<br/> 
-                                choosing a subcategory.
-                                <br/>
+                                choosing a subcategory. */}
+                                {/* <br/> */}
                                 You’ll be able to change the category and<br/> 
                                 subcategory even after your project is live.
                             </p>
@@ -127,9 +127,9 @@ class ProjectBasics extends React.Component{
                                 <option value="heels">Heels</option>
                                 <option value="loafers">Loafers</option>
                                 </select>
-                            <select className="categories subcategory">
+                            {/* <select className="categories subcategory">
 
-                            </select>
+                            </select> */}
                         </div>
                     </section>
 

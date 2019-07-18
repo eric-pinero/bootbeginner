@@ -6,6 +6,10 @@
     background-color: #FAFAFA
 }
 
+.width-90{
+    width: 90%;
+}
+
 .project-head{
     display: flex;
     flex-direction: column;

@@ -15,13 +15,13 @@ class CategoriesSideBar extends React.Component{
         ;
         
         return (
-            <>
-            <h1>Categories</h1>
-            <h1><Link to="/">X</Link></h1>
-            <ul>
-                {categories}
-            </ul>
-            </>
+            <content className="sidebar">
+                <h1>Categories</h1>
+                <h1><Link to="/">X</Link></h1>
+                <ul>
+                    {categories}
+                </ul>
+            <content/>
         )
     }
 }

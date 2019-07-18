@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../navbar/navbar_container";
 import Footer from '../footer/footer';
 import RewardItem from '../reward/reward_item_container';
+import { Link } from 'react-router-dom';
 
 class ShowProject extends React.Component {
     constructor(props){
@@ -22,7 +23,7 @@ class ShowProject extends React.Component {
 
     render(){
         const {id, project_pledges, project_rewards, title, subtitle,
-             goal, location, length, description, risks, faqs, imageUrl} = this.props.project;
+             goal, location, length, description, risks, faqs, imageUrl, creator_id} = this.props.project;
 
         let username;
         let projects;
@@ -67,8 +68,19 @@ class ShowProject extends React.Component {
                 </ul>
             </div>
         ;
-            debugger
+            
         const remainingTime = length === "" ? "0" : length
+            
+        const editButton = this.props.currentUserId === creator_id ?
+            <li className="margin-top-24 dark-grey-bg padding-12">
+                <p>This project has not yet launched. Click  
+                <span className="green-text"> <Link to={`${id}/edit/overview`}>here</Link> </span>
+                to edit your project</p>
+            </li>
+            :
+            null
+        ;
+
         return(
             <>
             <Navbar/>
@@ -105,6 +117,7 @@ class ShowProject extends React.Component {
                             <li>
                                 <div className="submit-button backer-button">Back this Project</div>
                             </li>
+                                {editButton}
                         </ul>
                     </div>
                 </section>
@@ -137,7 +150,7 @@ class ShowProject extends React.Component {
                                     <h3>Make a pledge without a reward</h3>
                                     <div className="dollar-input">
                                         <span>$</span>
-                                        <input type="number"/>
+                                        <input className="width-90" type="number"/>
                                     </div>
                                 </li>
                                 { rewards }
