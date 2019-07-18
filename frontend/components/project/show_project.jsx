@@ -67,6 +67,8 @@ class ShowProject extends React.Component {
                 </ul>
             </div>
         ;
+            debugger
+        const remainingTime = length === "" ? "0" : length
         return(
             <>
             <Navbar/>
@@ -97,7 +99,7 @@ class ShowProject extends React.Component {
                             </li>
 
                             <li>
-                                <p className="big">remaining time</p>
+                                <p className="big">{remainingTime}</p>
                                 <p className="small">days to go</p>
                             </li>
                             <li>
