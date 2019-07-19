@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { requestProject, updateProject, receiveErrors } from "../../actions/project_actions";
+import { createPledge } from "../../actions/pledge_actions";
 import ShowProject from "./show_project";
 
 const msp = (state, ownProps) => {
@@ -37,8 +38,8 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch) => {
     return {
         requestProject: (id) => dispatch(requestProject(id)),
+        createPledge: (pledge) => dispatch(createPledge(pledge)),
         receiveErrors: (errors) => dispatch(receiveErrors(errors)),
-        // will need dispatch for project updates
     };
 };
 

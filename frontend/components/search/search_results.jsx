@@ -17,7 +17,6 @@ class SearchResults extends React.Component{
     }
 
     toggleDropdown(){
-        debugger
         this.setState({category_menu: !(this.state.category_menu)});
     }
     

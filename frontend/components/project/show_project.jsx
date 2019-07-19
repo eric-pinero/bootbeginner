@@ -9,8 +9,13 @@ class ShowProject extends React.Component {
         super(props);
         this.state = {
             selectedTab: "Campaign",
+            menu: false,
+            pledgedAmount: "",
         };
         this.changeTab = this.changeTab.bind(this);
+        this.newPledge = this.newPledge.bind(this);
+        this.menuDisplay = this.menuDisplay.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     changeTab(tabName){
@@ -19,6 +24,27 @@ class ShowProject extends React.Component {
 
     componentDidMount(){
         this.props.requestProject(this.props.match.params.projectId);
+    }
+
+    newPledge(){
+        const pledge = {
+            project_id : this.props.project.id,
+            user_id : this.props.currentUserId,
+            pledged_amount : this.state.pledged_amount,
+            reward_id : null,
+        };
+            debugger
+        this.props.createPledge(pledge);
+    }
+
+    menuDisplay(){
+        this.setState({menu : true});
+    }
+
+    handleChange(field){
+        return (e) => {
+            this.setState({[field]: e.target.value });
+        };
     }
 
     render(){
@@ -76,6 +102,12 @@ class ShowProject extends React.Component {
                 <p>Click <span className="green-text"> <Link to={`${id}/edit/overview`}>here</Link> </span>
                 to edit your project</p>
             </li>
+            :
+            null
+        ;
+
+        const rewardButton = this.state.menu ? 
+            <Link to="/" className="green-button" onClick={this.newPledge}>Continue</Link>
             :
             null
         ;
@@ -145,12 +177,16 @@ class ShowProject extends React.Component {
                             </div>
                             <h2>Support</h2>
                             <ul>
-                                <li className="white-box reward">
+                                <li className="white-box reward flex-column" onClick={this.menuDisplay}>
                                     <h3>Make a pledge without a reward</h3>
                                     <div className="dollar-input">
                                         <span>$</span>
-                                        <input className="width-90" type="number"/>
+                                        <input className="width-90" type="number"
+                                            onChange={this.handleChange('pledged_amount')}
+                                            value={this.state.pledged_amount}
+                                        />
                                     </div>
+                                    {rewardButton}
                                 </li>
                                 { rewards }
                             </ul>
