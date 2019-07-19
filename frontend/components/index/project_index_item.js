@@ -17,7 +17,7 @@ class ProjectIndexItem extends React.Component{
       0
     ;
 
-    const fundPercent = (pledgeTotal / goal) * 100;
+    const fundPercent = goal ? (pledgeTotal / goal) * 100 : 0;
 
 
     return(

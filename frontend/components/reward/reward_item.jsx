@@ -46,11 +46,14 @@ class RewardItem extends React.Component{
         const {title, description, end_time, estimated_month, estimated_year, minimum_value} = this.props.projectReward;
         const pledgeMenu = this.state.menu ?
             <>
-            <div>
+            <div className="flex-column">
                 <h5>Pledge amount</h5>
-                <input type="number" onChange={this.handleChange("pledged_amount")}/>
+                <div className="dollar-input">
+                    <span>$</span>
+                    <input className="width-90" type="number"/>
+                </div>
+                <Link to="/" className="green-button" onClick={this.newPledge}>Continue</Link>
             </div>
-            <Link to="/" className="green-button" onClick={this.newPledge}>Continue</Link>
             </>
             :
             null
@@ -69,8 +72,8 @@ class RewardItem extends React.Component{
                             <h4>Estimated Delivery</h4>
                             <span>{estimated_month} {estimated_year}</span>
                         </div>
+                        {pledgeMenu}
                     </section>
-                    {pledgeMenu}
                 </div>
             </li>
         );

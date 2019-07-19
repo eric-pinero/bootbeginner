@@ -89,7 +89,7 @@ class SearchResults extends React.Component{
                 <h1 className="margin-bottom-30 font-22">
                     Explore <span className="green-text">{results.length} project{plural}</span>
                 </h1>
-                <ul>
+                <ul className="flex space-between">
                     {result_list}
                 </ul>
             </div>
