@@ -7,7 +7,6 @@ class Api::PledgesController < ApplicationController
         @pledge.project_id = pledge_params["project_id"]
         @pledge.reward_id = pledge_params["reward_id"]
         @pledge.pledged_amount = pledge_params["pledged_amount"]
-        debugger
         if @pledge.save
             render :show
         else

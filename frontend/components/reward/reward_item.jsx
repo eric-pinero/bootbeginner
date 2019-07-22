@@ -23,7 +23,7 @@ class RewardItem extends React.Component{
         
         if (pledge.pledged_amount >= this.props.projectReward.minimum_value){
             this.props.createPledge(pledge);
-        }
+        } 
     }
 
     handleChange(field){
@@ -56,7 +56,6 @@ class RewardItem extends React.Component{
                     <input className="width-90" 
                     type="number" onChange={this.handleChange('pledged_amount')}
                     value={this.state.pledged_amount}
-
                 />
                 </div>
                 <Link to="/" className="green-button" onClick={this.newPledge}>Continue</Link>

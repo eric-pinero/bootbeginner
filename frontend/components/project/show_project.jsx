@@ -10,12 +10,18 @@ class ShowProject extends React.Component {
         this.state = {
             selectedTab: "Campaign",
             menu: false,
-            pledgedAmount: "",
+            pledged_amount: "",
         };
         this.changeTab = this.changeTab.bind(this);
         this.newPledge = this.newPledge.bind(this);
         this.menuDisplay = this.menuDisplay.bind(this);
         this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(field){
+        return (e) => {
+            this.setState({[field]: e.target.value });
+        };
     }
 
     changeTab(tabName){
@@ -41,11 +47,6 @@ class ShowProject extends React.Component {
         this.setState({menu : true});
     }
 
-    handleChange(field){
-        return (e) => {
-            this.setState({[field]: e.target.value });
-        };
-    }
 
     render(){
         const {id, project_pledges, project_rewards, title, subtitle,
@@ -146,7 +147,8 @@ class ShowProject extends React.Component {
                                 <p className="small">days to go</p>
                             </li>
                             <li>
-                                <div className="submit-button backer-button">Back this Project</div>
+                                <div onClick={() => window.scroll(0, 1150)} 
+                                className="submit-button backer-button">Back this Project</div>
                             </li>
                                 {editButton}
                         </ul>
