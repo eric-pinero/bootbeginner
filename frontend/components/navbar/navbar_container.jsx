@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Navbar from './navbar'
+import Navbar from './navbar';
 
 
 
