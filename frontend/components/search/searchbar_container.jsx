@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import {logout} from '../../actions/session_actions';
+import Searchbar from './searchbar';
 
 const msp = (state) => {
     const projects = Object.values(state.entities.projects);
@@ -8,12 +9,12 @@ const msp = (state) => {
     };
 };
 
-const mdp = dispatch => {
-    return {
-        logout: (user) => dispatch(logout(user)),
-    };
-};
+// const mdp = dispatch => {
+//     return {
+        
+//     };
+// };
 
 
-export default connect(msp, mdp)(Dropdown);
+export default connect(msp, mdp)(Searchbar);
 
