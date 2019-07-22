@@ -25,6 +25,7 @@ const App = () => (
                 <Route exact path="/projects/:projectId" component={ShowProjectContainer}/>
                 <Route path="/explore" component={CategoriesContainer}/>
                 <Route path="/search/:categoryName" component={SearchResultsContainer}/>
+                <Route path="/search/:criteria" component={SearchResultsContainer}/>
             </Switch>
         </header>
     </div>

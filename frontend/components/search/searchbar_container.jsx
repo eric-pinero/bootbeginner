@@ -16,5 +16,5 @@ const msp = (state) => {
 // };
 
 
-export default connect(msp, mdp)(Searchbar);
+export default connect(msp)(Searchbar);
 

@@ -1,29 +1,52 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 
 class Searchbar extends React.Component{
     constructor(props){
         super(props);
-        this.state= {
-            showSearch : false,
+        this.state = {
+            search : "",
+            searched : false,
         };
-        this.showSearch = this.showSearch.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSearch = this.handleSearch.bind(this);
     }
 
-    showSearch(){
-        this.setState({showSearch: !(this.state.showSearch)});
+    handleChange(field){
+        return (e) => {
+            this.setState({[field]: e.target.value });
+        };
     }
+
+    handleSearch(e){
+        e.preventDefault();
+        this.setState({searched : true});
+    }
+
+
 
     render(){
-        const searchbar = this.state.showSearch ?
-            <input className= "searchBar" type="text"></input>
+
+        const searchBar = this.state.searched ? 
+            <Redirect to={`/search/${this.state.search}`}/>
             :
-            <div className="nav-link" onClick={this.showSearch}>Search
-                <img src="https://img.icons8.com/ios-glyphs/26/000000/search.png"></img>
-            </div>
+            <form onSubmit={this.handleSearch}>
+                <input 
+                    className= "searchBar" 
+                    type="text" 
+                    placeholder="Search for Projects"
+                    value={this.state.search}
+                    onChange={this.handleChange('search')}
+                />
+            </form>
         ;
 
         return(
+            <>
+            {searchBar}
+            </>
         )
-    }
+    };
 }
+
+export default Searchbar
