@@ -30,7 +30,7 @@ class Searchbar extends React.Component{
             :
             <form className="searchnav" onSubmit={this.handleSearch}>
                 <input 
-                    className="searchbar" 
+                    className="searchbar noborder" 
                     type="text" 
                     placeholder="Search for Projects"
                     value={this.state.search}
@@ -39,7 +39,6 @@ class Searchbar extends React.Component{
                 <span className="pointer" onClick={this.props.close}>X</span>
             </form>
         ;
-        debugger
         return(
             <>
             {searchBar}

@@ -37,7 +37,10 @@ class RewardItem extends React.Component{
 
         for (let i = 0; i < elements.length; i++) {
             const element = elements[i];
+            
+            if (element.id === `${this.props.projectReward.id}`){
             element.classList.remove("green-cover");
+            }
         }
 
         this.setState({menu : true});
@@ -46,7 +49,8 @@ class RewardItem extends React.Component{
 
 
     render(){
-        const {title, description, end_time, estimated_month, estimated_year, minimum_value} = this.props.projectReward;
+        const {id, title, description, end_time, 
+            estimated_month, estimated_year, minimum_value} = this.props.projectReward;
         const pledgeMenu = this.state.menu ?
             <>
             <div className="flex-column">
@@ -66,6 +70,7 @@ class RewardItem extends React.Component{
         ;
         return(
             <li 
+                id={this.props.projectReward.id}
                 className="green-cover reward white-box"
                 onClick={this.menuDisplay} 
             >
