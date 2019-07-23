@@ -8,7 +8,6 @@ const msp = (state, ownProps) => {
     const categories = Object.values(state.entities.categories);
     const criteria = ownProps.match.params.criteria;
     const projects = Object.values(state.entities.projects);
-    debugger
     return {
         categories,
         criteria,
