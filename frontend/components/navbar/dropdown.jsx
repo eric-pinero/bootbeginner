@@ -7,11 +7,11 @@ class Dropdown extends React.Component{
         this.state = {
             display: false
         };
-        this.toggleDropdown = this.toggleDropdown.bind(this)
+        this.toggleDropdown = this.toggleDropdown.bind(this);
     }
 
     toggleDropdown(){
-        this.setState({display: !(this.state.display)})
+        this.setState({display: !(this.state.display)});
     }
 
     render() {

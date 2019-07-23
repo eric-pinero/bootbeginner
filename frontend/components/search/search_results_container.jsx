@@ -7,12 +7,11 @@ import { withRouter } from 'react-router-dom';
 const msp = (state, ownProps) => {
     const projects = Object.values(state.entities.projects);
     const categories = Object.values(state.entities.categories);
-    const category = ownProps.match.params.categoryName;
-    const search = ownProps.match.params.search;
+    const criteria = ownProps.match.params.criteria;
     return {
         projects,
         categories,
-        category
+        criteria
     };
 };
 

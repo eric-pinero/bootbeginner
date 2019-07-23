@@ -23,24 +23,23 @@ class Searchbar extends React.Component{
         this.setState({searched : true});
     }
 
-
-
     render(){
 
         const searchBar = this.state.searched ? 
             <Redirect to={`/search/${this.state.search}`}/>
             :
-            <form onSubmit={this.handleSearch}>
+            <form className="searchnav" onSubmit={this.handleSearch}>
                 <input 
-                    className= "searchBar" 
+                    className="searchbar" 
                     type="text" 
                     placeholder="Search for Projects"
                     value={this.state.search}
                     onChange={this.handleChange('search')}
                 />
+                <span className="pointer" onClick={this.props.close}>X</span>
             </form>
         ;
-
+        debugger
         return(
             <>
             {searchBar}

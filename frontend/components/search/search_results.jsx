@@ -11,7 +11,7 @@ class SearchResults extends React.Component{
         super(props);
         this.state = {
             category_menu: false,
-            category: this.props.category,
+            criteria: this.props.criteria,
         };
         this.toggleDropdown = this.toggleDropdown.bind(this);
     }
@@ -27,14 +27,23 @@ class SearchResults extends React.Component{
     }
 
     render(){
-        const results = this.props.projects.filter(project => project.category_name === this.props.category);
-
-        const result_list = results.map(result => {
-            return <li key={result.id}><ProjectIndexItem project={result}/></li>
+        const cat_arr = this.props.categories.map( category => category.name);
+        const category_results = this.props.projects.filter(
+            project => project.category_name === this.props.criteria
+        );
+        const text_results = this.props.projects.filter( project =>{
+            return Object.values(project).includes(this.state.criteria)
             }
         );
 
-        const cat_arr = this.props.categories.map( category => category.name)
+
+        const results = category_results.length !== 0 ? category_results : text_results;
+
+            debugger
+
+        const result_list = results.map(result => {
+            return <li key={result.id}><ProjectIndexItem project={result}/></li>
+        }) 
             
         const loc_arr = [
             "the Earth",
@@ -77,7 +86,7 @@ class SearchResults extends React.Component{
                 <h1>Show me <span
                     onClick={this.toggleDropdown}
                     className="cat-button light-grey-back categories">
-                    {this.props.category}
+                    {this.props.criteria}
                     </span>
                 </h1>
                 <div className="search_drop">

@@ -30,7 +30,7 @@ class Navbar extends React.Component{
         ;
 
         const nav_searchbar = this.state.showSearch ?
-            <Searchbar/>
+            <Searchbar close={this.showSearch}/>
             :
             <>
             <div className="nav-left">
@@ -48,10 +48,11 @@ class Navbar extends React.Component{
                 {dropdown}
             </div>
             </>
-
+        
+        const shadow = this.state.showSearch ? "shadow" : ""
 
         return(
-            <nav className="nav-main">
+            <nav className={`nav-main ${shadow}`}>
                 {nav_searchbar}
             </nav>
         )
