@@ -29,16 +29,6 @@ class SearchResults extends React.Component{
 
     render(){
         const cat_arr = this.props.categories.map(category => category.name);
-        // const category_results = this.props.projects.filter(
-        //     project => project.category_name === this.props.criteria
-        // );
-        // const text_results = this.props.projects.filter( project =>{
-        //     return Object.values(project).includes(this.state.criteria);
-        //     }
-        // );
-
-
-        // const results = category_results.length !== 0 ? category_results : text_results;
 
         const result_list = this.props.projects.map(result => {
             return <li key={result.id}><ProjectIndexItem project={result}/></li>
@@ -69,7 +59,7 @@ class SearchResults extends React.Component{
                 <h1 className="margin-bottom-30 font-22">
                     Explore <span className="green-text">{this.props.projects.length} project{plural}</span>
                 </h1>
-                <ul className="flex">
+                <ul className="flex flex-wrap">
                     {result_list}
                 </ul>
             </div>
