@@ -39,7 +39,6 @@ class ShowProject extends React.Component {
             pledged_amount : this.state.pledged_amount,
             reward_id : null,
         };
-            debugger
         this.props.createPledge(pledge);
     }
 

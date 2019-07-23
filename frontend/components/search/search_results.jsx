@@ -6,6 +6,7 @@ import Footer from '../footer/footer';
 import Options from './options';
 import CategoryDropdown from './category_dropdown';
 
+
 class SearchResults extends React.Component{
     constructor(props){
         super(props);
@@ -22,62 +23,33 @@ class SearchResults extends React.Component{
     
 
     componentDidMount(){
-        this.props.requestProjects();
+        this.props.searchProjects(this.state.criteria);
         this.props.requestCategories();
     }
 
     render(){
-        const cat_arr = this.props.categories.map( category => category.name);
-        const category_results = this.props.projects.filter(
-            project => project.category_name === this.props.criteria
-        );
-        const text_results = this.props.projects.filter( project =>{
-            return Object.values(project).includes(this.state.criteria)
-            }
-        );
+        const cat_arr = this.props.categories.map(category => category.name);
+        // const category_results = this.props.projects.filter(
+        //     project => project.category_name === this.props.criteria
+        // );
+        // const text_results = this.props.projects.filter( project =>{
+        //     return Object.values(project).includes(this.state.criteria);
+        //     }
+        // );
 
 
-        const results = category_results.length !== 0 ? category_results : text_results;
+        // const results = category_results.length !== 0 ? category_results : text_results;
 
-            debugger
-
-        const result_list = results.map(result => {
+        const result_list = this.props.projects.map(result => {
             return <li key={result.id}><ProjectIndexItem project={result}/></li>
         }) 
-            
-        const loc_arr = [
-            "the Earth",
-            "Australia",
-            "Austria",
-            "Belgium",
-            "Canada",
-            "Denmark",
-            "France",
-            "Germany",
-            "Hong Kong",
-            "Ireland",
-            "Italy",
-            "Japan",
-            "Luxemborg",
-            "Mexico",
-            "New Zealand",
-            "Norway",
-            "Singapore",
-            "Spain",
-            "Switzerland",
-            "the Netherlands",
-            "the United Kingdom",
-            "the United States"
-        ];
-
-
 
         const category_dropdown = this.state.category_menu ?
             <CategoryDropdown options={cat_arr}/>
             :
             null
         ;
-        const plural = results.length === 1 ? "" : "s"
+        const plural = this.props.projects.length === 1 ? "" : "s"
 
         return (
             <>
@@ -95,9 +67,9 @@ class SearchResults extends React.Component{
             </div>
             <div className='results flex-column'>
                 <h1 className="margin-bottom-30 font-22">
-                    Explore <span className="green-text">{results.length} project{plural}</span>
+                    Explore <span className="green-text">{this.props.projects.length} project{plural}</span>
                 </h1>
-                <ul className="flex space-between">
+                <ul className="flex">
                     {result_list}
                 </ul>
             </div>

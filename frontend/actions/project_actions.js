@@ -45,6 +45,15 @@ export const requestProjects = () => {
     };
 };
 
+export const searchProjects = (criteria) => {
+    return (dispatch) => {
+        return APIUtil.searchProjects({search: criteria}).then(
+            (projects) => dispatch(receiveProjects(projects)),
+            response => dispatch(receiveErrors(response))
+        );
+    };
+};
+
 export const requestProject = (projectId) => {
     return (dispatch) => {
         return APIUtil.fetchProject(projectId).then(

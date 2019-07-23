@@ -7,6 +7,16 @@ export const fetchProjects = () => {
     );
 };
 
+export const searchProjects = (criteria) => {
+    return(
+        $.ajax({
+            method: 'GET',
+            url: 'api/projects',
+            data: criteria,
+        })
+    );
+};
+
 export const fetchProject = (id) => {
     return(
         $.ajax({

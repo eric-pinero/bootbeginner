@@ -13,6 +13,9 @@ Project.destroy_all
 Reward.destroy_all
 Pledge.destroy_all
 
+
+
+
 categories = Category.create(
     [
         {name: "boots" },
@@ -122,6 +125,17 @@ projects = Project.create([
   
 ]
 )
+
+moon = open("https://bootbeginner-pro.s3.amazonaws.com/sUGwZq5C2bkGbcynfdFbmLQs")
+bagel = open("https://bootbeginner-pro.s3.amazonaws.com/k1iE7uzxd4ZGH2yxqdqPbF1C")
+heeling = open("https://bootbeginner-pro.s3.amazonaws.com/xaNZDjoN5yyjkAemcPF6EVzH")
+eatingshoe =  open("https://bootbeginner-pro.s3.amazonaws.com/W2BugtykHJZTnuJusnPz7o33")
+
+
+projects[0].image.attach(io: moon, filename:"moon.jpg" )
+projects[1].image.attach(io: bagel, filename:"moon.jpg" )
+projects[2].image.attach(io: heeling, filename:"moon.jpg" )
+projects[3].image.attach(io: eatingshoe, filename:"moon.jpg" )
 
 
 rewards = Reward.create!([

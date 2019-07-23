@@ -20,7 +20,7 @@ class Searchbar extends React.Component{
 
     handleSearch(e){
         e.preventDefault();
-        this.setState({searched : true});
+        this.setState({searched : !this.state.searched});
     }
 
     render(){

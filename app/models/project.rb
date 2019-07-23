@@ -21,7 +21,7 @@
 #
 
 class Project < ApplicationRecord
-    validates :subtitle, :location, presence: true, length: { minimum: 1}
+    validates :subtitle, :location, presence: true, length: { minimum: 1 }
 
     has_many :rewards
 
@@ -38,11 +38,6 @@ class Project < ApplicationRecord
 
     belongs_to :subcategory, optional: true
 
-    def launch_ready?
-        errors.add("cannot launch project until all required fields are complete")
-        # need to write a custom validation that checks if all non-optional fields are complete before launch
-    end
-
     def category_name
         category.name
     end
@@ -57,6 +52,19 @@ class Project < ApplicationRecord
 
     def creator_name
         creator.username
+    end
+
+    def self.search(params)
+        str = "%#{params}%"
+        @projects = Project
+            .joins("LEFT OUTER JOIN users ON projects.creator_id = users.id")
+            .joins("LEFT OUTER JOIN categories ON projects.category_id = categories.id")
+            .where(
+                "UPPER(projects.title) LIKE UPPER(:query) OR
+                UPPER(projects.subtitle) LIKE UPPER(:query) OR
+                UPPER(projects.description) LIKE UPPER(:query) OR
+                UPPER(users.username) LIKE UPPER(:query) OR
+                UPPER(categories.name) LIKE UPPER(:query)", query: str)
     end
 
 end

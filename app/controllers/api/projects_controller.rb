@@ -2,7 +2,14 @@ class Api::ProjectsController < ApplicationController
     # before_action :ensure_logged_in
     
     def index
-        @projects = Project.all
+        if params[:search]
+            @projects = Project.search(params[:search])
+            render :index
+        else
+            @projects = Project.all
+
+            render :index
+        end
     end
 
     def create

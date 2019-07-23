@@ -9,8 +9,7 @@ import {
     Object.freeze(state);
     switch (action.type) {
       case RECEIVE_PROJECTS:
-        let newState = merge({}, state, action.projects);
-        return newState;
+        return action.projects;
   
       case RECEIVE_PROJECT:
         newState = merge({}, state, {[action.project.id]: action.project});

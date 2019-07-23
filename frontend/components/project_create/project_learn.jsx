@@ -219,12 +219,18 @@ class ProjectLearn extends React.Component {
                 </h2>
 
                 <ul>
-                    <li className="category-option" onClick={() => this.changeCategory("sneakers")} id="sneakers">Sneakers</li>
-                    <li className="category-option" onClick={() => this.changeCategory("boots")} id="boots">Boots</li>
-                    <li className="category-option" onClick={() => this.changeCategory("clogs")} id="clogs">Clogs</li>
-                    <li className="category-option" onClick={() => this.changeCategory("flats")} id="flats">Flats</li>
-                    <li className="category-option" onClick={() => this.changeCategory("heels")} id="heels">Heels</li>
-                    <li className="category-option" onClick={() => this.changeCategory("loafers")} id="loafers">Loafers</li>
+                    <li className="category-option pointer" 
+                        onClick={() => this.changeCategory("sneakers")} id="sneakers">Sneakers</li>
+                    <li className="category-option pointer" 
+                        onClick={() => this.changeCategory("boots")} id="boots">Boots</li>
+                    <li className="category-option pointer" 
+                        onClick={() => this.changeCategory("clogs")} id="clogs">Clogs</li>
+                    <li className="category-option pointer" 
+                        onClick={() => this.changeCategory("flats")} id="flats">Flats</li>
+                    <li className="category-option pointer" 
+                        onClick={() => this.changeCategory("heels")} id="heels">Heels</li>
+                    <li className="category-option pointer" 
+                        onClick={() => this.changeCategory("loafers")} id="loafers">Loafers</li>
                 </ul>
 
                 <section className="mid-categories">
