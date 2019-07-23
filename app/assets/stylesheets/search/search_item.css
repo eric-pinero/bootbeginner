@@ -78,3 +78,8 @@
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
     margin: 15px 10px
 }
+
+.search-item > a > img {
+    height: 288px;
+    width: 400px;
+}

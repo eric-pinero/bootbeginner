@@ -21,7 +21,7 @@ class ProjectIndexItem extends React.Component{
 
 
     return(
-      <div className="search-item border" >
+      <div className="search-item border " >
         <Link to={`/projects/${id}`}>
         <img className="bottom-grey-border max-100" src={imageUrl}/>
           <div className="margin-18">

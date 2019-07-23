@@ -12,7 +12,7 @@ import {
         return action.projects;
   
       case RECEIVE_PROJECT:
-        newState = merge({}, state, {[action.project.id]: action.project});
+        let newState = merge({}, state, {[action.project.id]: action.project});
         return newState;
   
       case REMOVE_PROJECT:
