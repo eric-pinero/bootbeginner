@@ -12,9 +12,10 @@ class SearchResults extends React.Component{
         super(props);
         this.state = {
             category_menu: false,
-            criteria: this.props.criteria,
+            // criteria: this.props.criteria,
         };
         this.toggleDropdown = this.toggleDropdown.bind(this);
+        this.categorySelect = this.categorySelect.bind(this);
     }
 
     toggleDropdown(){
@@ -23,8 +24,19 @@ class SearchResults extends React.Component{
     
 
     componentDidMount(){
-        this.props.searchProjects(this.state.criteria);
+        this.props.searchProjects(this.props.criteria);
         this.props.requestCategories();
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot){
+        if (prevProps.criteria !== this.props.criteria){
+            this.props.searchProjects(this.props.criteria);
+        }
+        
+    }
+
+    categorySelect(category){
+        this.setState({projects: Object.values(this.props.searchProjects(category))});
     }
 
     render(){
@@ -40,7 +52,6 @@ class SearchResults extends React.Component{
             null
         ;
         const plural = this.props.projects.length === 1 ? "" : "s"
-
         return (
             <>
             <Navbar/>

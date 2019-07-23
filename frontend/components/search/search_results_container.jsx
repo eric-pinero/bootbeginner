@@ -12,7 +12,7 @@ const msp = (state, ownProps) => {
     return {
         categories,
         criteria,
-        projects: Object.values(state.entities.projects),
+        projects,
     };
 };
 
