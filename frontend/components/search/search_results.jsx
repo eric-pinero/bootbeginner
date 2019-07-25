@@ -1,6 +1,6 @@
 import React from 'react';
 import ProjectIndexItem from '../index/project_index_item';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Navbar from '../navbar/navbar';
 import Footer from '../footer/footer';
 import Options from './options';
@@ -12,7 +12,6 @@ class SearchResults extends React.Component{
         super(props);
         this.state = {
             category_menu: false,
-            // criteria: this.props.criteria,
         };
         this.toggleDropdown = this.toggleDropdown.bind(this);
         this.categorySelect = this.categorySelect.bind(this);
@@ -28,7 +27,7 @@ class SearchResults extends React.Component{
         this.props.requestCategories();
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot){
+    componentDidUpdate(prevProps){
         if (prevProps.criteria !== this.props.criteria){
             this.props.searchProjects(this.props.criteria);
         }
@@ -52,14 +51,16 @@ class SearchResults extends React.Component{
             null
         ;
         const plural = this.props.projects.length === 1 ? "" : "s"
+
         return (
             <>
             <Navbar/>
             <div className="flex flex-center padding-top-60 search-page">
-                <h1>Show me <span
-                    onClick={this.toggleDropdown}
-                    className="cat-button light-grey-back categories">
-                    {this.props.criteria}
+                <h1>Show me 
+                    <span
+                        onClick={this.toggleDropdown}
+                        className="cat-button light-grey-back categories">
+                        {this.props.criteria}
                     </span>
                 </h1>
                 <div className="search_drop">

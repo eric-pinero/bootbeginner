@@ -41,8 +41,8 @@ class Navbar extends React.Component{
             <h1><Link to="/">Bootbeginner</Link></h1>
 
             <div className="nav-right">
-                <div className="nav-link" onClick={this.showSearch}>Search
-                <img src="https://img.icons8.com/ios-glyphs/26/000000/search.png"></img>
+                <div className="nav-link pointer" onClick={this.showSearch}>Search
+                    <img src="https://img.icons8.com/ios-glyphs/26/000000/search.png"></img>
                 </div>
                 {signIn}
                 {dropdown}

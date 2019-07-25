@@ -20,14 +20,17 @@ class Searchbar extends React.Component{
 
     handleSearch(e){
         e.preventDefault();
-        this.setState({searched : !this.state.searched});
+        this.setState({searched : true});
+    }
+
+    componentDidUpdate(prevProps){
+        if (this.state.searched){
+            this.setState({searched : false});
+        }
     }
 
     render(){
-
-        const searchBar = this.state.searched ? 
-            <Redirect to={`/search/${this.state.search}`}/>
-            :
+        const searchBar = 
             <form className="searchnav" onSubmit={this.handleSearch}>
                 <input 
                     className="searchbar noborder" 
@@ -39,9 +42,12 @@ class Searchbar extends React.Component{
                 <span className="pointer" onClick={this.props.close}>X</span>
             </form>
         ;
+
+        const search = this.state.searched ? <Redirect to={`/search/${this.state.search}`}/> : null
         return(
             <>
             {searchBar}
+            {search}
             </>
         )
     };
